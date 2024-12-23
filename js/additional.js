@@ -51,7 +51,18 @@ const usefullInfoSwiper = new Swiper(".usefull-info-slider", {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-//     autoplay: {
-//  delay: 5000,
-// },
+    autoplay: {
+ delay: 5000,
+},
+  });
+  const teamSwiper = new Swiper(".our-team-slider", {
+    slidesPerView: 2,
+  spaceBetween: 40,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+ delay: 5000,
+},
   });
