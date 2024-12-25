@@ -360,3 +360,264 @@ document.querySelectorAll("input[type='checkbox']").forEach((checkbox) => {
   checkbox.addEventListener("change", calculateTotal);
 });
 
+
+async function hashPhoneNumber(phoneNumber) {
+  // Кодирование строки в байты
+  const encoder = new TextEncoder();
+  const data = encoder.encode(phoneNumber);
+
+  // Хэширование с использованием SHA-256
+  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+
+  // Преобразование результата в шестнадцатеричную строку
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hashedPhone = hashArray
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("");
+
+  return hashedPhone;
+}
+
+
+async function sendEmail2(params) {
+  const emailJSID = "sw_H53g2nxrTjDn9T"; // Ваш ID
+  const SERVICE_ID = "service_os6nxms"; // Ваш Service ID
+  const TEMPLATE_ID = "template_zmaa8mk"; // Ваш Template ID
+
+  emailjs.init(emailJSID);
+
+  try {
+    const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, params);
+    console.log("Email успішно відправлено!", response.status, response.text);
+    return true; // Успешная отправка
+  } catch (error) {
+    console.error("Помилка відправки:", error);
+    return false; // Ошибка отправки
+  }
+}
+
+const sendPostRequest = async (apiVersion, pixelId, token, eventData) => {
+  const url = `https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${token}`;
+
+  const payload = {
+    data: eventData,
+  };
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Ошибка запроса:", errorData);
+    } else {
+      const responseData = await response.json();
+      console.log("Успешная отправка:", responseData);
+    }
+  } catch (error) {
+    console.error("Ошибка выполнения запроса:", error);
+  }
+};
+
+// Обработчик отправки формы
+
+
+modalForm.addEventListener("submit", async (e) => {
+  e.preventDefault(); // Отмена стандартного поведения формы
+
+  // Получение значений полей
+  const name = modalForm.querySelector('input[name="name"]').value.trim();
+  const phoneInput = modalForm.querySelector(".input_phone");
+  const carMake = modalForm.querySelector("#car_make").value;
+  const carModel = modalForm.querySelector("#car_model").value;
+  const acceptPolitics = modalForm.querySelector(
+    'input[type="checkbox"][required]'
+  ).checked;
+  const selectedServices = Array.from(
+    modalForm.querySelectorAll(
+      ".modal_form_services input[type='checkbox']:checked"
+    )
+  ).map((checkbox) => checkbox.nextElementSibling.textContent.trim());
+  const totalPrice = modalForm.querySelector("#result").textContent.trim();
+
+  // Получаем экземпляр intlTelInput для поля телефона
+  const iti = itiInstances.find(({ input }) => input === phoneInput)?.iti;
+
+  // Проверка валидности телефона
+  const isPhoneValid = iti && iti.isValidNumber();
+
+  // Локализация сообщений
+  const errorMessages = {
+    fillFields: {
+      ua: "Будь ласка, заповніть всі поля і прийміть політику конфіденційності!",
+      en: "Please fill in all fields and accept the privacy policy!",
+      de: "Bitte füllen Sie alle Felder aus und akzeptieren Sie die Datenschutzrichtlinie!",
+    },
+    invalidPhone: {
+      ua: "Будь ласка, введіть дійсний номер телефону!",
+      en: "Please enter a valid phone number!",
+      de: "Bitte geben Sie eine gültige Telefonnummer ein!",
+    },
+    success: {
+      ua: "Дані успішно відправлені!",
+      en: "Data has been successfully sent!",
+      de: "Daten wurden erfolgreich gesendet!",
+    },
+  };
+
+  const errorMessageFillFields =
+    errorMessages.fillFields[lang] || "Language not supported";
+  const errorMessageInvalidPhone =
+    errorMessages.invalidPhone[lang] || "Language not supported";
+  const successMessage =
+    errorMessages.success[lang] || "Language not supported";
+
+  // Проверка всех условий
+  if (!name || !phoneInput.value.trim() || !carMake || !acceptPolitics) {
+    Toastify({
+      text: errorMessageFillFields,
+      duration: 3000,
+      close: true,
+      gravity: "top",
+      position: "center",
+      backgroundColor: "#FF6347", // Красный для ошибки
+    }).showToast();
+    return;
+  }
+
+  if (!isPhoneValid) {
+    Toastify({
+      text: errorMessageInvalidPhone,
+      duration: 3000,
+      close: true,
+      gravity: "top",
+      position: "center",
+      backgroundColor: "#FF6347", // Красный для ошибки
+    }).showToast();
+    phoneInput.style.border = "2px solid red";
+    return;
+  }
+
+  phoneInput.style.border = ""; // Сбрасываем стили ошибок
+
+  const clickedLinks = JSON.parse(localStorage.getItem("clicked_links")) || [];
+
+  // Формируем сообщение
+  const message = `
+    Нова заявка:\nНазва сайту: Shell Auto Öl\nІм'я: ${name}\nТелефон: ${
+    phoneInput.value
+  }\nМарка авто: ${carMake}\nМодель авто: ${carModel}\nПослуги: ${
+    selectedServices.length > 0 ? selectedServices.join(", ") : "Не обрані"
+  }\nСумма: ${totalPrice}\n\nUTM-мітки: ${clickedLinks
+    .map(
+      (link, index) =>
+        `${index + 1}. Ссилка: ${link.href}\n  UTM Source: ${
+          link.utm_source
+        }\n  UTM Medium: ${link.utm_medium}\n  UTM Campaign: ${
+          link.utm_campaign
+        }\n  Час: ${link.timestamp}`
+    )
+    .join("\n\n")}
+  `;
+
+  // Параллельная отправка в Telegram и EmailJS
+  try {
+    // Отправка в Telegram
+    // const telegramResponse = await fetch(
+    //   `https://api.telegram.org/bot8197764205:AAE-XbNUdeNg39ufCTNgo5wLMP_8lp75eXw/sendMessage`,
+    //   {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       chat_id: "-1002295760352",
+    //       text: message,
+    //     }),
+    //   }
+    // );
+
+    // if (!telegramResponse.ok) {
+    //   throw new Error("Не удалось отправить сообщение в Telegram");
+    // }
+
+    // Отправка в EmailJS
+    emailjs.init("sw_H53g2nxrTjDn9T"); // Инициализация EmailJS
+    const emailResponse = await emailjs.send(
+      "service_os6nxms",
+      "template_zmaa8mk",
+      {
+        from_name: "Назва сайту - Shell Auto Öl",
+        name: `${name}`,
+        carType: `${carMake}`,
+        service: `${
+          selectedServices.length > 0
+            ? selectedServices.join(", ")
+            : "Не обрані"
+        }`,
+        phone: `${phoneInput.value}`,
+        comments: `Модель авто: ${carModel}`,
+      }
+    );
+
+    if (emailResponse.status !== 200) {
+      throw new Error("Не удалось отправить сообщение на почту");
+    }
+
+    const phoneNumber = iti.getNumber(); // Получаем номер телефона в формате E.164
+    const hashedPhone = await hashPhoneNumber(phoneNumber); // Хэшируем номер
+
+    const eventData = [
+      {
+        event_name: "Lead",
+        event_time: Math.floor(Date.now() / 1000),
+        user_data: {
+          ph: hashedPhone,
+        },
+        custom_data: {
+          currency: "EUR",
+          value: parseFloat(totalPrice.replace(/[^\d.-]/g, "")) || 0,
+          services:
+            selectedServices.length > 0
+              ? selectedServices
+              : ["No services selected"],
+        },
+      },
+    ];
+
+    // const apiVersion = "v12.0";
+    // const pixelId = "927079089087237"; 
+    // const token =
+    //   "EAA2CZAuNcWIABO2teerfXDNZBl8JVBckLyweuI4I4hy528XsJXjE3dfNZCd64XROdKGRZBNQKx1FMcijLGr0AddqZARHid3kZA9psJP7VYWS6dTkZAAihJkRRZCBCtbRfP5REZCVqPGD4DqF3yvzBi3cHCs0AaDEU6X5nHWYa4pHxHhHN53ZAzQbDZBG7UAsD00Yr7ZAsQZDZD";
+
+    // await sendPostRequest(apiVersion, pixelId, token, eventData);
+
+    Toastify({
+      text: successMessage,
+      duration: 3000,
+      close: true,
+      gravity: "top",
+      position: "center",
+      backgroundColor: "#4CAF50", // Зеленый для успеха
+    }).showToast();
+
+    // Сброс формы и закрытие модалки
+    modalForm.reset();
+    closeModal();
+  } catch (error) {
+    console.error("Ошибка:", error);
+    Toastify({
+      text: "Ошибка отправки данных. Попробуйте позже.",
+      duration: 3000,
+      close: true,
+      gravity: "top",
+      position: "center",
+      backgroundColor: "#FF6347", // Красный для ошибки
+    }).showToast();
+  }
+});

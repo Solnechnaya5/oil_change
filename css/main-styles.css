@@ -18,6 +18,9 @@ body {
   font-weight: 400;
   position: relative;
 }
+#calendar .Hqb7Ue{
+  display:none !important;
+}
 /* logo */
 .company-logo-icon{
   width: 120px;

@@ -4,6 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    
+    <meta name="description"
+      content="Professional car service in Austria: repair and maintenance of all car brands. Quality, reliability, and modern technology. Book your appointment today!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="The best auto service in Austria" />
+    <meta property="og:description"
+      content="Professional car service in Austria: repair and maintenance of all car brands. Quality, reliability, and modern technology. Book your appointment today!" />
+    <meta property="og:image"
+      content="" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
@@ -11,6 +23,9 @@
     <link rel="stylesheet" href="./css/null.css">
     <link rel="stylesheet" href="./css/main-styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+    <script src="./js/translation.js" defer></script>
     <title>Oil change</title>
 </head>
 
@@ -105,40 +120,39 @@
             <div class="site-header_container">
                 <div class="site-header__top">
                     <div class="site-header_contacts">
-
-                        <a href="tel:+440000000000" class="tel-link site-header_link">
+                        <a href="tel:+436602430111" class="tel-link site-header_link">
                             <svg class="tel-icon">
                                 <use xlink:href="#phone"></use>
                             </svg>
-                            +44 000 000 0000</a>
-
+                            +43 660 2430111
+                        </a>
                         <a href="mailto:info.autodienst.at@gmail.com?utm_source=header&utm_medium=email&utm_campaign=contact"
                             class="email-link site-header_link">
                             <svg class="email-icon">
                                 <use xlink:href="#email"></use>
                             </svg>
-                            info.autodienst.at@gmail.com</a>
-
-                        <a href="#" class="address-link site-header_link">
+                            info.autodienst.at@gmail.com
+                        </a>
+                        <a href="#" class="address-link site-header_link" data-translate-key="contact_address">
                             <svg class="map-icon">
                                 <use xlink:href="#map"></use>
                             </svg>
-                            AAAAAAAAA 000, 0000, Gleisdorf,
-                            Austria</a>
+                            Ласніцталь 300, 8200, Гляйсдорв, Австрія
+                        </a>
                     </div>
                     <div class="header-right">
                         <div class="site-header_messengers">
-                            <a href="">
+                            <a href="" data-translate-key="messenger_viber">
                                 <svg class="viber-icon">
                                     <use xlink:href="#viber"></use>
                                 </svg>
                             </a>
-                            <a href="">
+                            <a href="" data-translate-key="messenger_telegram">
                                 <svg class="telegram-icon">
                                     <use xlink:href="#telegram"></use>
                                 </svg>
                             </a>
-                            <a href="">
+                            <a href="" data-translate-key="messenger_whatsapp">
                                 <svg class="whatsapp-icon">
                                     <use xlink:href="#whatsapp"></use>
                                 </svg>
@@ -153,56 +167,59 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="site-header__bottom">
                     <a href="index.html" class="company-logo">
                         <svg class="company-logo-icon">
-                            <use xlink:href="./svg-sprites/top-section.svg#car" />
+                            <use xlink:href="./svg-sprites/top-section.svg#car"></use>
                         </svg>
                     </a>
                     <nav class="site-header__navigation">
-                        <a href="#" class="site-header_link">Головна</a>
-                        <a href="#" class="site-header_link">Про нас</a>
-                        <a href="#" class="site-header_link">Наш сервіси</a>
-                        <a href="#" class="site-header_link">Корисна інформація</a>
-                        <a href="#" class="site-header_link">Відгуки</a>
-                        <a href="#" class="site-header_link">Контакти</a>
+                        <a href="#" class="site-header_link" data-translate-key="nav_main">Головна</a>
+                        <a href="#" class="site-header_link" data-translate-key="nav_about">Про нас</a>
+                        <a href="#" class="site-header_link" data-translate-key="nav_services">Наш сервіси</a>
+                        <a href="#" class="site-header_link" data-translate-key="nav_info">Корисна інформація</a>
+                        <a href="#" class="site-header_link" data-translate-key="nav_reviews">Відгуки</a>
+                        <a href="#" class="site-header_link" data-translate-key="nav_contacts">Контакти</a>
                     </nav>
                 </div>
             </div>
         </header>
+
         <div class="burger-menu">
-            <div class="lang_switcher"> <select id="lang_select">
-                    <option value="de">Deutsch</option>
-                    <option value="en">English</option>
-                    <option value="ua">Українська</option>
+            <div class="lang_switcher">
+                <select id="lang_select">
+                    <option value="de" data-translate-key="lang_german">Deutsch</option>
+                    <option value="en" data-translate-key="lang_english">English</option>
+                    <option value="ua" data-translate-key="lang_ukrainian">Українська</option>
                 </select>
             </div>
             <nav class="burger-menu__navigation">
-                <a href="#" class="site-header_link">Головна</a>
-                <a href="#" class="burger-menu__link">Про нас</a>
-                <a href="#" class="burger-menu__link">Наш сервіси</a>
-                <a href="#" class="burger-menu__link">Корисна інформація</a>
-                <a href="#" class="burger-menu__link">Відгуки</a>
-                <a href="#" class="burger-menu__link">Контакти</a>
+                <a href="#" class="site-header_link" data-translate-key="nav_main">Головна</a>
+                <a href="#" class="burger-menu__link" data-translate-key="nav_about">Про нас</a>
+                <a href="#" class="burger-menu__link" data-translate-key="nav_services">Наш сервіси</a>
+                <a href="#" class="burger-menu__link" data-translate-key="nav_info">Корисна інформація</a>
+                <a href="#" class="burger-menu__link" data-translate-key="nav_reviews">Відгуки</a>
+                <a href="#" class="burger-menu__link" data-translate-key="nav_contacts">Контакти</a>
             </nav>
         </div>
-        <main>
 
+        <main>
             <section class="top">
                 <div class="site-container_first">
                     <div class="banner">
-                        <p> Запишіться вже зараз та отримайте знижку 10% на наші послуги! </p>
-                        <a href="#" class="banner-btn btn-black">
-                            Детальніше
-                        </a>
+                        <p data-translate-key="banner_discount">Запишіться вже зараз та отримайте знижку до 50% на наші
+                            послуги!</p>
+                        <a href="#" class="banner-btn btn-black" data-translate-key="banner_btn_more">Детальніше</a>
                     </div>
                     <div class="top-content_wiget">
-                        <h1 class="main-title">Якісна заміна оливи <br> та діагностика для вашого авто</h1>
-                        <h3 class="top-content_wiget-subtitle subtitle">Ми забезпечимо довготривалу роботу вашого
-                            двигуна та надамо
-                            професійну діагностику всіх систем.</h3>
-                        <a href="#" class="top-content_main-btn btn-orange">Записатися на сервіс</a>
+                        <h1 class="main-title" data-translate-key="top_main_title">Якісна заміна оливи <br> та
+                            діагностика для вашого авто</h1>
+                        <h3 class="top-content_wiget-subtitle subtitle" data-translate-key="top_subtitle">
+                            Ми забезпечимо довготривалу роботу вашого двигуна та надамо професійну діагностику всіх
+                            систем.
+                        </h3>
+                        <a href="#" class="top-content_main-btn btn-orange"
+                            data-translate-key="top_btn_service">Записатися на сервіс</a>
                     </div>
                     <div class="top-content_bottom-row">
                         <div class="top-content_block">
@@ -211,7 +228,7 @@
                                 <svg class="car-icon">
                                     <use xlink:href="./svg-sprites/top-section.svg#car" />
                                 </svg>
-                                <p>Für Fahrzeuge jeder Gewichtsklasse</p>
+                                <p data-translate-key="top_block_text_1">Für Fahrzeuge jeder Gewichtsklasse</p>
                             </div>
                         </div>
                         <div class="top-content_block">
@@ -220,7 +237,7 @@
                                 <svg class="key-icon">
                                     <use xlink:href="./svg-sprites/top-section.svg#key" />
                                 </svg>
-                                <p>Für Fahrzeuge jeder Gewichtsklasse</p>
+                                <p data-translate-key="top_block_text_2">Für Fahrzeuge jeder Gewichtsklasse</p>
                             </div>
                         </div>
                         <div class="top-content_block">
@@ -229,7 +246,7 @@
                                 <svg class="list-icon">
                                     <use xlink:href="./svg-sprites/top-section.svg#list" />
                                 </svg>
-                                <p>Für Fahrzeuge jeder Gewichtsklasse</p>
+                                <p data-translate-key="top_block_text_3">Für Fahrzeuge jeder Gewichtsklasse</p>
                             </div>
                         </div>
                     </div>
@@ -244,15 +261,19 @@
             <section class="about-company">
                 <div class="site-container">
                     <div class="about-company_top">
-                        <h3 class="subtitle"><span>Про нас</span></h3>
-                        <h2 class="second-title">Команда професіоналів з багаторічним досвідом</h2>
-                        <p>Наша компанія Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi minus at rem,
+                        <h3 class="subtitle"><span data-translate-key="about_us_title">Про нас</span></h3>
+                        <h2 class="second-title" data-translate-key="about_us_subtitle">Команда професіоналів з
+                            багаторічним досвідом</h2>
+                        <p data-translate-key="about_us_description">
+                            Наша компанія Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi minus at
+                            rem,
                             nam
                             natus
                             incidunt quod maxime, voluptatibus praesentium cum est ad optio animi deserunt distinctio
                             ea,
                             quos
-                            ipsum non.</p>
+                            ipsum non.
+                        </p>
                     </div>
                     <div class="about-company_row">
                         <div class="about-company-block">
@@ -261,7 +282,7 @@
                             <div class="about-company-block_txt">
                                 <div class="orange-bg"></div>
                                 <div class="about-company-block_top">
-                                    <p>Гарантія на виконані роботи.</p>
+                                    <p data-translate-key="about_us_block_1">Гарантія на виконані роботи.</p>
                                 </div>
                             </div>
                         </div>
@@ -270,7 +291,7 @@
                             <div class="about-company-block_txt">
                                 <div class="orange-bg"></div>
                                 <div class="about-company-block_top">
-                                    <p>Професійний сервіс та досвід</p>
+                                    <p data-translate-key="about_us_block_2">Професійний сервіс та досвід</p>
                                 </div>
                             </div>
                         </div>
@@ -279,7 +300,7 @@
                             <div class="about-company-block_txt">
                                 <div class="orange-bg"></div>
                                 <div class="about-company-block_top">
-                                    <p>Високоякісні мастила та запчастини.</p>
+                                    <p data-translate-key="about_us_block_3">Високоякісні мастила та запчастини.</p>
                                 </div>
                             </div>
                         </div>
@@ -289,316 +310,375 @@
                             <div class="about-company-block_txt">
                                 <div class="orange-bg"></div>
                                 <div class="about-company-block_top">
-                                    <p>Швидка та точна діагностика.</p>
+                                    <p data-translate-key="about_us_block_4">Швидка та точна діагностика.</p>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
             <section class="services">
                 <div class="site-container">
                     <div class="services-top">
-                        <h3 class="subtitle"><span>Наші послуги</span></h3>
-                        <h2 class="second-title">Все, що потрібно для вашого двигуна в одному сервісному центрі!</h2>
+                        <h3 class="subtitle"><span data-translate-key="services_title">Наші послуги</span></h3>
+                        <h2 class="second-title" data-translate-key="services_subtitle">Все, що потрібно для вашого
+                            двигуна в одному сервісному центрі!</h2>
                     </div>
                     <div class="services-blocks">
                         <div class="service-block">
                             <div class="service-block_top">
                                 <div class="service-block_top-hover">
-                                    <h3 class="subtitle">Заміна оливи</h3>
+                                    <h3 class="subtitle" data-translate-key="service_oil_change_title">Заміна оливи</h3>
                                 </div>
-                                <h3 class="subtitle">Заміна оливи</h3>
+                                <h3 class="subtitle" data-translate-key="service_oil_change_title">Заміна оливи</h3>
                                 <img src="./imgs/services/photo_2024-12-03_21-47-03.jpg" alt="oil change">
                             </div>
                             <ul class="service-block_list">
-                                <li>Вибір відповідного масла (синтетичне, напівсинтетичне або мінеральне).</li>
-                                <li>Злив старого масла.</li>
-                                <li>Доливання або заміна на свіже масло.</li>
+                                <li data-translate-key="service_oil_change_1">Вибір відповідного масла (синтетичне,
+                                    напівсинтетичне або мінеральне).</li>
+                                <li data-translate-key="service_oil_change_2">Злив старого масла.</li>
+                                <li data-translate-key="service_oil_change_3">Доливання або заміна на свіже масло.</li>
                             </ul>
                         </div>
                         <div class="service-block">
-
                             <div class="service-block_top">
                                 <div class="service-block_top-hover">
-                                    <h3 class="subtitle">Заміна фільтра</h3>
+                                    <h3 class="subtitle" data-translate-key="service_filter_change_title">Заміна фільтра
+                                    </h3>
                                 </div>
-                                <h3 class="subtitle">Заміна фільтра</h3>
+                                <h3 class="subtitle" data-translate-key="service_filter_change_title">Заміна фільтра
+                                </h3>
                                 <img src="./imgs/services/different-car-accessories-arrangement.jpg"
                                     alt="filter change">
                             </div>
                             <ul class="service-block_list">
-                                <li>Масляний фільтр: для очищення масла від забруднень</li>
-                                <li>Повітряний фільтр: для чистого повітря в двигуні.</li>
-                                <li>Паливний фільтр: для очищення пального від
-                                    забруднень.</li>
-                                <li>Фільтр салону: для очищення повітря в
+                                <li data-translate-key="service_filter_change_1">Масляний фільтр: для очищення масла від
+                                    забруднень</li>
+                                <li data-translate-key="service_filter_change_2">Повітряний фільтр: для чистого повітря
+                                    в двигуні.</li>
+                                <li data-translate-key="service_filter_change_3">Паливний фільтр: для очищення пального
+                                    від забруднень.</li>
+                                <li data-translate-key="service_filter_change_4">Фільтр салону: для очищення повітря в
                                     салоні автомобіля</li>
                             </ul>
                         </div>
                         <div class="service-block">
                             <div class="service-block_top">
                                 <div class="service-block_top-hover">
-                                    <h3 class="subtitle">Додаткові послуги</h3>
+                                    <h3 class="subtitle" data-translate-key="service_additional_services_title">
+                                        Додаткові послуги</h3>
                                 </div>
-                                <h3 class="subtitle">Додаткові послуги</h3>
+                                <h3 class="subtitle" data-translate-key="service_additional_services_title">Додаткові
+                                    послуги</h3>
                                 <img src="./imgs/services/computer-diagnostics-tool.jpg" alt="changefilter service">
                             </div>
                             <ul class="service-block_list">
-                                <li>Перевірка рівня та стану інших рідин
-                                    (охолоджуюча, гальмівна рідини та для миття скла).</li>
-                                <li>Діагностика системи масляного обігу двигуна.</li>
-                                <li>Очищення місця установки масляного фільтра.</li>
-                                <li>Контроль герметичності всіх з'єднань.</li>
+                                <li data-translate-key="service_additional_services_1">Перевірка рівня та стану інших
+                                    рідин (охолоджуюча, гальмівна рідини та для миття скла).</li>
+                                <li data-translate-key="service_additional_services_2">Діагностика системи масляного
+                                    обігу двигуна.</li>
+                                <li data-translate-key="service_additional_services_3">Очищення місця установки
+                                    масляного фільтра.</li>
+                                <li data-translate-key="service_additional_services_4">Контроль герметичності всіх
+                                    з'єднань.</li>
                             </ul>
                         </div>
                     </div>
                     <div class="services-bottom">
-                        <button id="open-popup" class="services-btn btn-orange">Записатися на сервіс</button>
+                        <button id="open-popup" class="services-btn btn-orange"
+                            data-translate-key="service_button">Записатися на сервіс</button>
                     </div>
-
                 </div>
             </section>
-            <section class="our-team">
+            <section class="our-team" data-translate-key="team-section">
                 <div class="site-container">
                     <div class="our-team_top">
-                        <h3 class="subtitle"><span>Наші команда</span></h3>
-                        <h2 class="second-title">Ми зібрали команду справжніх професіоналів для найкращого сервісу</h2>
+                        <h3 class="subtitle" data-translate-key="team-subtitle"><span>Наші команда</span></h3>
+                        <h2 class="second-title" data-translate-key="team-title">Ми зібрали команду справжніх
+                            професіоналів для найкращого сервісу</h2>
                     </div>
                     <div class="swiper our-team-slider">
                         <div class="swiper-wrapper">
+                            <!-- Team Member 1 -->
                             <div class="swiper-slide">
-                                <div class="worker">
+                                <div class="worker" data-translate-key="worker-1">
                                     <div class="worker-info">
                                         <div class="worker-info_img">
                                             <img src="./imgs/team/worker-1.jpg" alt="user photo">
                                         </div>
-                                       <div class="worker-info_about">
-                                            <p class="worker-info_name">Віталій</p>
-                                            <p class="worker-info_position">Старший механік</p>
-                                            <p class="worker-info_experiance">Досвід роботи: 9 років</p>
-                                            <p class="worker-info_description">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam iste
-                                                cupiditate delectus magnam similique ipsum asperiores dolorum obcaecati
-                                                beatae eaque, dolor maxime, commodi amet ad. Quibusdam laudantium odio quas?
-    
+                                        <div class="worker-info_about">
+                                            <p class="worker-info_name" data-translate-key="worker-name-1">Віталій</p>
+                                            <p class="worker-info_position" data-translate-key="worker-position-1">
+                                                Старший механік</p>
+                                            <p class="worker-info_experiance" data-translate-key="worker-experience-1">
+                                                Досвід роботи: 9 років</p>
+                                            <p class="worker-info_description"
+                                                data-translate-key="worker-description-1">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam
+                                                iste cupiditate delectus magnam similique ipsum asperiores dolorum
+                                                obcaecati beatae eaque, dolor maxime, commodi amet ad. Quibusdam
+                                                laudantium odio quas?
                                             </p>
-                                       </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                           <div class="swiper-slide">
-                                <div class="worker">
+                            <!-- Team Member 2 -->
+                            <div class="swiper-slide">
+                                <div class="worker" data-translate-key="worker-2">
                                     <div class="worker-info">
                                         <div class="worker-info_img">
                                             <img src="./imgs/team/img-10.jpg" alt="user photo">
                                         </div>
-                                      <div class="worker-info_about">
-                                            <p class="worker-info_name">Ірина</p>
-                                            <p class="worker-info_position">Менеджер-консультант</p>
-                                            <p class="worker-info_experiance">Досвід роботи: 4 роки</p>
-                                            <p class="worker-info_description">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam iste
-                                                cupiditate delectus magnam similique ipsum asperiores dolorum obcaecati
-                                                beatae eaque, dolor maxime, commodi amet ad. Quibusdam laudantium odio quas?
+                                        <div class="worker-info_about">
+                                            <p class="worker-info_name" data-translate-key="worker-name-2">Ірина</p>
+                                            <p class="worker-info_position" data-translate-key="worker-position-2">
+                                                Менеджер-консультант</p>
+                                            <p class="worker-info_experiance" data-translate-key="worker-experience-2">
+                                                Досвід роботи: 4 роки</p>
+                                            <p class="worker-info_description"
+                                                data-translate-key="worker-description-2">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam
+                                                iste cupiditate delectus magnam similique ipsum asperiores dolorum
+                                                obcaecati beatae eaque, dolor maxime, commodi amet ad. Quibusdam
+                                                laudantium odio quas?
                                             </p>
-                                      </div>
+                                        </div>
                                     </div>
                                 </div>
-                           </div>
-                          <div class="swiper-slide">
-                                <div class="worker">
+                            </div>
+                            <!-- Team Member 3 -->
+                            <div class="swiper-slide">
+                                <div class="worker" data-translate-key="worker-3">
                                     <div class="worker-info">
                                         <div class="worker-info_img">
                                             <img src="./imgs/team/worker-2.jpg" alt="user photo">
                                         </div>
-                                      <div class="worker-info_about">
-                                            <p class="worker-info_name">Михайло</p>
-                                            <p class="worker-info_position">Механік</p>
-                                            <p class="worker-info_experiance">Досвід роботи: 5 років</p>
-                                            <p class="worker-info_description">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam iste
-                                                cupiditate delectus magnam similique ipsum asperiores dolorum obcaecati
-                                                beatae eaque, dolor maxime, commodi amet ad. Quibusdam laudantium odio quas?
+                                        <div class="worker-info_about">
+                                            <p class="worker-info_name" data-translate-key="worker-name-3">Михайло</p>
+                                            <p class="worker-info_position" data-translate-key="worker-position-3">
+                                                Механік</p>
+                                            <p class="worker-info_experiance" data-translate-key="worker-experience-3">
+                                                Досвід роботи: 5 років</p>
+                                            <p class="worker-info_description"
+                                                data-translate-key="worker-description-3">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam
+                                                iste cupiditate delectus magnam similique ipsum asperiores dolorum
+                                                obcaecati beatae eaque, dolor maxime, commodi amet ad. Quibusdam
+                                                laudantium odio quas?
                                             </p>
-                                      </div>
+                                        </div>
                                     </div>
                                 </div>
-                          </div>
+                            </div>
+                            <!-- Team Member 4 -->
                             <div class="swiper-slide">
-                                <div class="worker">
+                                <div class="worker" data-translate-key="worker-4">
                                     <div class="worker-info">
                                         <div class="worker-info_img">
                                             <img src="./imgs/team/worker-3.jpg" alt="user photo">
                                         </div>
-                                      <div class="worker-info_about">
-                                            <p class="worker-info_name">Антон</p>
-                                            <p class="worker-info_position">Механік</p>
-                                            <p class="worker-info_experiance">Досвід роботи: 4 роки</p>
-                                            <p class="worker-info_description">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam iste
-                                                cupiditate delectus magnam similique ipsum asperiores dolorum obcaecati
-                                                beatae eaque, dolor maxime, commodi amet ad. Quibusdam laudantium odio quas?
+                                        <div class="worker-info_about">
+                                            <p class="worker-info_name" data-translate-key="worker-name-4">Антон</p>
+                                            <p class="worker-info_position" data-translate-key="worker-position-4">
+                                                Механік</p>
+                                            <p class="worker-info_experiance" data-translate-key="worker-experience-4">
+                                                Досвід роботи: 4 роки</p>
+                                            <p class="worker-info_description"
+                                                data-translate-key="worker-description-4">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam
+                                                iste cupiditate delectus magnam similique ipsum asperiores dolorum
+                                                obcaecati beatae eaque, dolor maxime, commodi amet ad. Quibusdam
+                                                laudantium odio quas?
                                             </p>
-                                      </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                           <div class="swiper-slide">
-                                <div class="worker">
+                            <!-- Team Member 5 -->
+                            <div class="swiper-slide">
+                                <div class="worker" data-translate-key="worker-5">
                                     <div class="worker-info">
                                         <div class="worker-info_img">
                                             <img src="./imgs/team/worker-4.jpg" alt="user photo">
                                         </div>
                                         <div class="worker-info_about">
-                                            <p class="worker-info_name">Кирило</p>
-                                            <p class="worker-info_position">Механік</p>
-                                            <p class="worker-info_experiance">Досвід роботи: 5 років</p>
-                                            <p class="worker-info_description">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam iste
-                                                cupiditate delectus magnam similique ipsum asperiores dolorum obcaecati
-                                                beatae eaque, dolor maxime, commodi amet ad. Quibusdam laudantium odio quas?
+                                            <p class="worker-info_name" data-translate-key="worker-name-5">Кирило</p>
+                                            <p class="worker-info_position" data-translate-key="worker-position-5">
+                                                Механік</p>
+                                            <p class="worker-info_experiance" data-translate-key="worker-experience-5">
+                                                Досвід роботи: 5 років</p>
+                                            <p class="worker-info_description"
+                                                data-translate-key="worker-description-5">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam
+                                                iste cupiditate delectus magnam similique ipsum asperiores dolorum
+                                                obcaecati beatae eaque, dolor maxime, commodi amet ad. Quibusdam
+                                                laudantium odio quas?
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                           </div>
+                            </div>
+                            <!-- Team Member 1 -->
+                            <div class="swiper-slide">
+                                <div class="worker" data-translate-key="worker-6">
+                                    <div class="worker-info">
+                                        <div class="worker-info_img">
+                                            <img src="./imgs/team/worker-1.jpg" alt="user photo">
+                                        </div>
+                                        <div class="worker-info_about">
+                                            <p class="worker-info_name" data-translate-key="worker-name-6">Віталій</p>
+                                            <p class="worker-info_position" data-translate-key="worker-position-6">
+                                                Старший механік</p>
+                                            <p class="worker-info_experiance" data-translate-key="worker-experience-6">
+                                                Досвід роботи: 9 років</p>
+                                            <p class="worker-info_description"
+                                                data-translate-key="worker-description-6">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam
+                                                iste cupiditate delectus magnam similique ipsum asperiores dolorum
+                                                obcaecati beatae eaque, dolor maxime, commodi amet ad. Quibusdam
+                                                laudantium odio quas?
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev" data-translate-key="swiper-prev"></div>
+                        <div class="swiper-button-next" data-translate-key="swiper-next"></div>
                     </div>
                 </div>
             </section>
             <section class="promo">
                 <div class="site-container">
                     <div class="promo-block">
-                        <h3 class="subtitle">Гаряча акційна пропозиція!</h3>
-                        <p>Звичайна ціна - <span class="old-price">€ 275</span></p>
-                        <div class="new-price">Акційна ціна -
+                        <h3 class="subtitle" data-translate-key="promo_title">Гаряча акційна пропозиція!</h3>
+                        <p data-translate-key="promo_old_price">
+                            Звичайна ціна - <span class="old-price">€ 200</span>
+                        </p>
+                        <div class="new-price">
+                            <span data-translate-key="promo_new_price"> Акційна ціна -</span>
                             <div class="circle-wrapper">
                                 <div class="red-circle circle"></div>
-                                <span class="new-price"> € 199</span>
+                                <span class="new-price"> € 99</span>
                             </div>
                         </div>
-                        <p>Що входить допослуги:</p>
+                        <p data-translate-key="promo_includes">Що входить допослуги:</p>
                         <ul class="promo-block_list">
-                            <li>Заміна масла на: якісне фірмове моторне масло з бочки.</li>
-                            <li>Поміняємо масляний фільтр і подбаємо про екологічну утилізацію старих деталей.</li>
-                            <li>Об'єм масла: до 45 л.</li>
+                            <li data-translate-key="promo_service_1">Заміна масла на: якісне фірмове моторне масло з
+                                бочки.</li>
+                            <li data-translate-key="promo_service_2">"Поміняємо масляний фільтр і подбаємо про
+                                екологічну утилізацію старих деталей.</li>
+                            <li data-translate-key="promo_service_3">Об'єм масла: до 5 л.</li>
                         </ul>
-                        <a href="#" class="promo-block_btn btn-black">Записатися на сервіс</a>
+                        <a href="#" class="promo-block_btn btn-black" data-translate-key="promo_button">Записатися на
+                            сервіс</a>
                     </div>
                 </div>
             </section>
             <section class="usefull-info">
                 <div class="site-container">
                     <div class="usefull-info_top">
-                        <h3 class="subtitle">
+                        <h3 class="subtitle" data-translate-key="useful_info_sub_title">
                             <span>Чому важлива заміна оливи?</span>
                         </h3>
-                        <h2 class="second-title">Вчасна заміна оливи - запорука довговічної роботи двигуна</h2>
+                        <h2 class="second-title" data-translate-key="useful_info_main_title">
+                            Вчасна заміна оливи - запорука довговічної роботи двигуна
+                        </h2>
                     </div>
                     <div class="usefull-info__blocks">
                         <div class="usefull-info__block">
                             <div class="usefull-info__block-top">
                                 <img class="changeoil-icon" src="./svg-sprites/changeoil.svg" alt="change oil">
-                                <h4>
+                                <h4 data-translate-key="block_1_title">
                                     ВСІ ОБЕРТАЛЬНІ ТА ОСЦИЛЮЮЧІ КОМПОНЕНТИ АВТОМОБІЛЯ ЗАЛЕЖАТЬ ВІД ЗМАЩЕННЯ.
                                 </h4>
                             </div>
-                            <p>Коли це змащення відсутнє, відбувається застояння і пошкодження деталей. Зокрема,
-                                компоненти
-                                двигуна, які зазнають великих навантажень, мають бути завжди оптимально змащені. До
-                                таких
-                                компонентів відносятьсяЖ криволінійний вал, поршні та роковий вал</p>
+                            <p data-translate-key="lack_of_lubrication">Коли це змащення відсутнє, відбувається
+                                застояння і пошкодження деталей. Зокрема, компоненти двигуна, які зазнають великих
+                                навантажень, мають бути завжди оптимально змащені. До таких компонентів відносяться
+                                криволінійний вал, поршні та роковий вал</p>
                         </div>
                         <div class="usefull-info__block">
                             <div class="usefull-info__block-top">
                                 <img class="piston-icon" src="./svg-sprites/piston.svg" alt="piston icon">
-                                <h4>
+                                <h4 data-translate-key="regular_oil_replacement">
                                     РЕГУЛЯРНА ЗАМІНА ОЛИВИ СПРИЯЄ БЕЗПЕРЕРВНІЙ РОБОТІ ДВИГУНА І ПОДОВЖЕННЮ ЙОГО ТЕРМІНУ
                                     СЛУЖБИ.
                                 </h4>
                             </div>
-                            <p>Своєчасна заміна оливи допомагає зберегти стабільну роботу двигуна, запобігаючи перегріву
-                                та
-                                зношуванню його компонентів. Пам’ятайте, що якісне змащення є запорукою не тільки
-                                безперебійної
-                                роботи двигуна, але й значного продовження його життя, що важливо для кожного
-                                автовласника.
-                            </p>
+                            <p data-translate-key="engine_oil_lifespan">Своєчасна заміна оливи допомагає зберегти
+                                стабільну роботу двигуна, запобігаючи перегріву та зношуванню його компонентів.
+                                Пам’ятайте, що якісне змащення є запорукою не тільки безперебійної роботи двигуна, але й
+                                значного продовження його життя, що важливо для кожного автовласника.</p>
                         </div>
                         <div class="usefull-info__block">
-
                             <div class="usefull-info__block-top">
                                 <img class="thermometr-icon" src="./svg-sprites/thermometer.svg" alt="thermometr icon">
-                                <h4>ПРИ ЗИМОВИХ ТЕМПЕРАТУРАХ І ХОЛОДНОМУ ДВИГУНІ ПОСТІЙНЕ ЗАБЕЗПЕЧЕННЯ ОЛИВОЮ ТАКОЖ Є
-                                    ВАЖЛИВИМ,
-                                    ЯК І
-                                    ПРИ ГАРЯЧОМУ ДВИГУНІ ВЛІТКУ.</h4>
+                                <h4 data-translate-key="cold_engine_maintenance">
+                                    ПРИ ЗИМОВИХ ТЕМПЕРАТУРАХ І ХОЛОДНОМУ ДВИГУНІ ПОСТІЙНЕ ЗАБЕЗПЕЧЕННЯ ОЛИВОЮ ТАКОЖ Є
+                                    ВАЖЛИВИМ, ЯК І ПРИ ГАРЯЧОМУ ДВИГУНІ ВЛІТКУ.
+                                </h4>
                             </div>
-                            <p>Взимку особливо важливо, щоб олива досягала необхідної температури для нормальної роботи
-                                двигуна,
-                                оскільки на холоді вона може загуснути. Улітку ж, при високих температурах, двигун
-                                потребує
-                                регулярного змащення для запобігання перегріву.</p>
+                            <p data-translate-key="winter_oil_importance">Взимку особливо важливо, щоб олива досягала
+                                необхідної температури для нормальної роботи двигуна, оскільки на холоді вона може
+                                загуснути. Улітку ж, при високих температурах, двигун потребує регулярного змащення для
+                                запобігання перегріву.</p>
                         </div>
                     </div>
-                    <h2 class="second-title">НЕПРИПУСТИМІ ПОМИЛКИ У ВИБОРІ МОТОРНОЇ ОЛИВИ</h2>
+                    <h2 class="second-title" data-translate-key="engine_oil_mistakes">
+                        НЕПРИПУСТИМІ ПОМИЛКИ У ВИБОРІ МОТОРНОЇ ОЛИВИ
+                    </h2>
                     <div class="usefull-info__mistakes">
                         <div class="usefull-info__blocks">
                             <div class="usefull-info__block">
                                 <div class="usefull-info__block-top">
                                     <img class="car-engine-icon" src="./svg-sprites/car-engine.svg" alt="car engine">
-                                    <h4>ЗАНАДТО НИЗЬКИЙ РІВЕНЬ ОЛИВИ МОЖЕ ПРИЗВЕСТИ ДО ПОЛОМОК ДВИГУНА</h4>
+                                    <h4 data-translate-key="low_oil_level">
+                                        ЗАНАДТО НИЗЬКИЙ РІВЕНЬ ОЛИВИ МОЖЕ ПРИЗВЕСТИ ДО ПОЛОМОК ДВИГУНА
+                                    </h4>
                                 </div>
-                                <p>Недостатній рівень оливи може спричинити недостатнє змащення, що призводить до
-                                    підвищеного
-                                    тертя в двигуні, перегріву і, як наслідок, до серйозних поломок.</p>
+                                <p data-translate-key="oil_level_consequences">Недостатній рівень оливи може спричинити
+                                    недостатнє змащення, що призводить до підвищеного тертя в двигуні, перегріву і, як
+                                    наслідок, до серйозних поломок.</p>
                             </div>
                             <div class="usefull-info__block">
                                 <div class="usefull-info__block-top">
                                     <img class="engineering-icon" src="./svg-sprites/engineering.svg" alt="engineering">
-                                    <h4>ЗАСПІЛЬНЕ І ПІЗНЄ ЗАМІНЕНЕ ОЛИВО, ЯКЕ СТАЛО ЗАБРУДНЕНИМ І ПЕРЕПРАЦЬОВАНИМ, МОЖЕ
-                                        ЗАГРОЖУВАТИ
-                                        ФУНКЦІОНУВАННЮ ДВИГУНА.</h4>
+                                    <h4 data-translate-key="used_oil_risks">
+                                        ЗАСПІЛЬНЕ І ПІЗНЄ ЗАМІНЕНЕ ОЛИВО, ЯКЕ СТАЛО ЗАБРУДНЕНИМ І ПЕРЕПРАЦЬОВАНИМ, МОЖЕ
+                                        ЗАГРОЖУВАТИ ФУНКЦІОНУВАННЮ ДВИГУНА.
+                                    </h4>
                                 </div>
-                                <p>Якщо олива не замінюється вчасно, це призводить до зниження її ефективності, що
-                                    збільшує
-                                    знос
-                                    деталей двигуна і може викликати серйозні неполадки.</p>
+                                <p data-translate-key="oil_change_importance">Якщо олива не замінюється вчасно, це
+                                    призводить до зниження її ефективності, що збільшує знос деталей двигуна і може
+                                    викликати серйозні неполадки.</p>
                             </div>
                             <div class="usefull-info__block">
                                 <div class="usefull-info__block-top">
                                     <img class="fuel-icon" src="./svg-sprites/fuel.svg" alt="fuel">
-                                    <h4>ДЕШЕВІ ОЛИВИ, ЯКІ НЕ ВІДПОВІДАЮТЬ СТАНДАРТАМ ЯКОСТІ, ПРИСКОРЮЮТЬ ЗНОШЕННЯ
-                                        ДЕТАЛЕЙ І
-                                        ЗБІЛЬШУЮТЬ ВИТРАТИ ПАЛИВА.</h4>
+                                    <h4 data-translate-key="cheap_oil_consequences">
+                                        ДЕШЕВІ ОЛИВИ, ЯКІ НЕ ВІДПОВІДАЮТЬ СТАНДАРТАМ ЯКОСТІ, ПРИСКОРЮЮТЬ ЗНОШЕННЯ
+                                        ДЕТАЛЕЙ І ЗБІЛЬШУЮТЬ ВИТРАТИ ПАЛИВА.
+                                    </h4>
                                 </div>
-                                <p>Використання неякісних мастильних матеріалів може не тільки пошкодити двигун, але й
-                                    привести
-                                    до збільшення витрат пального, що обтяжує фінансові витрати на експлуатацію
-                                    автомобіля.
-                                </p>
+                                <p data-translate-key="fuel_cost_increase">Використання неякісних мастильних матеріалів
+                                    може не тільки пошкодити двигун, але й привести до збільшення витрат пального, що
+                                    обтяжує фінансові витрати на експлуатацію автомобіля.</p>
                             </div>
                         </div>
                     </div>
-                    <h3 class="subtitle"><span>Корисні поради від наших експертів</span></h3>
+                    <h3 class="subtitle" data-translate-key="expert_tips">
+                        <span>Корисні поради від наших експертів</span>
+                    </h3>
                     <div class="swiper usefull-info-slider">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="swiper-slide_content">
-                                    <div class="swiper-slide_txt">
-                                        Перiодично змiнюйте масло – це життєво важливо для вашого автомобiля, а
-                                        точнiше
+                                    <div class="swiper-slide_txt" data-translate-key="usefull_info_slider_1">
+                                        Перiодично змiнюйте масло – це життєво важливо для вашого автомобiля, а точнiше
                                         для двигуна. Моторне масло забезпечує змащування рухомих частин двигуна, щоб
                                         вони не терлися та не руйнували один одного.
-                                        Що станеться, якщо масла немає або воно не змiнюється регулярно? Коли та як
-                                        часто слiд змiнювати моторне масло? Як перевiрити рiвень масла самостiйно? А
-                                        де
-                                        можна замiнити масло швидко та недорого?
-                                        Наша команда вже зiбрала для вас всю необхiдну iнформацiю щодо замiни масла.
                                     </div>
                                     <div class="swiper-slide_img">
                                         <img src="./imgs/slider/img-8.jpg" alt="man photo">
@@ -607,16 +687,10 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="swiper-slide_content">
-                                    <div class="swiper-slide_txt"> Перiодично змiнюйте масло – це життєво важливо
-                                        для
-                                        вашого автомобiля, а точнiше для двигуна. Моторне масло забезпечує
-                                        змащування
-                                        рухомих частин двигуна, щоб вони не терлися та не руйнували один одного.
-                                        Що станеться, якщо масла немає або воно не змiнюється регулярно? Коли та як
-                                        часто слiд змiнювати моторне масло? Як перевiрити рiвень масла самостiйно? А
-                                        де
-                                        можна замiнити масло швидко та недорого?
-                                        Наша команда вже зiбрала для вас всю необхiдну iнформацiю щодо замiни масла.
+                                    <div class="swiper-slide_txt" data-translate-key="usefull_info_slider_2">
+                                        Перiодично змiнюйте масло – це життєво важливо для вашого автомобiля, а точнiше
+                                        для двигуна. Моторне масло забезпечує змащування рухомих частин двигуна, щоб
+                                        вони не терлися та не руйнували один одного.
                                     </div>
                                     <div class="swiper-slide_img">
                                         <img src="./imgs/slider/img-9.jpg" alt="man photo">
@@ -625,16 +699,34 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="swiper-slide_content">
-                                    <div class="swiper-slide_txt">
-                                        Перiодично змiнюйте масло – це життєво важливо для вашого автомобiля, а
-                                        точнiше
+                                    <div class="swiper-slide_txt" data-translate-key="usefull_info_slider_3">
+                                        Перiодично змiнюйте масло – це життєво важливо для вашого автомобiля, а точнiше
                                         для двигуна. Моторне масло забезпечує змащування рухомих частин двигуна, щоб
                                         вони не терлися та не руйнували один одного.
-                                        Що станеться, якщо масла немає або воно не змiнюється регулярно? Коли та як
-                                        часто слiд змiнювати моторне масло? Як перевiрити рiвень масла самостiйно? А
-                                        де
-                                        можна замiнити масло швидко та недорого?
-                                        Наша команда вже зiбрала для вас всю необхiдну iнформацiю щодо замiни масла.
+                                    </div>
+                                    <div class="swiper-slide_img">
+                                        <img src="./imgs/slider/j182_1.jpg" alt="oil">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide_content">
+                                    <div class="swiper-slide_txt" data-translate-key="usefull_info_slider_4">
+                                        Перiодично змiнюйте масло – це життєво важливо для вашого автомобiля, а точнiше
+                                        для двигуна. Моторне масло забезпечує змащування рухомих частин двигуна, щоб
+                                        вони не терлися та не руйнували один одного.
+                                    </div>
+                                    <div class="swiper-slide_img">
+                                        <img src="./imgs/slider/j182_1.jpg" alt="oil">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide_content">
+                                    <div class="swiper-slide_txt" data-translate-key="usefull_info_slider_5">
+                                        Перiодично змiнюйте масло – це життєво важливо для вашого автомобiля, а точнiше
+                                        для двигуна. Моторне масло забезпечує змащування рухомих частин двигуна, щоб
+                                        вони не терлися та не руйнували один одного.
                                     </div>
                                     <div class="swiper-slide_img">
                                         <img src="./imgs/slider/j182_1.jpg" alt="oil">
@@ -647,50 +739,59 @@
                     </div>
                 </div>
             </section>
+
             <section class="advantages">
                 <div class="advantages_top">
-                    <h3 class="subtitle"><span>Наші переваги</span></h3>
-                    <h2 class="second-title">Індивідуальний підхід - запорука якісного сервісу для автомобiля</h2>
+                    <h3 class="subtitle" data-translate-key="advantages_sub_title">
+                        <span>Наші переваги</span>
+                    </h3>
+                    <h2 class="second-title" data-translate-key="advantages_main_title">
+                        Індивідуальний підхід - запорука якісного сервісу для автомобiля
+                    </h2>
                 </div>
                 <div class="advantages-blocks">
                     <img src="./imgs/advantages/6515212.jpg" alt="background image">
                     <div class="dvantages-blocks_container site-container">
                         <div class="advantages-block">
                             <div class="orange-bg"></div>
-                            <p><b>Швидкість</b> – заміна оливи за 30 хвилин</p>
+                            <p data-translate-key="speed_text"><b>Швидкість</b> – заміна оливи за 30 хвилин</p>
                         </div>
                         <div class="advantages-block">
                             <div class="orange-bg"></div>
-                            <p><b>Якість</b> – лише сертифіковані оливи та фільтри</p>
+                            <p data-translate-key="quality_text"><b>Якість</b> – лише сертифіковані оливи та фільтри</p>
                         </div>
                         <div class="advantages-block">
                             <div class="orange-bg"></div>
-                            <p><b>Ціни</b> – доступні тарифи без прихованих платежів</p>
+                            <p data-translate-key="prices_text"><b>Ціни</b> – доступні тарифи без прихованих платежів
+                            </p>
                         </div>
                         <div class="advantages-block">
                             <div class="orange-bg"></div>
-                            <p><b>Гарантія</b> – 100% відповідальність за результат</p>
+                            <p data-translate-key="warranty_text"><b>Гарантія</b> – 100% відповідальність за результат
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="site-container">
-                    <h3 class="subtitle"><span>Ми в цифрах</span></h3>
+                    <h3 class="subtitle" data-translate-key="numbers_title">
+                        <span>Ми в цифрах</span>
+                    </h3>
                     <div class="advantage-numbers">
                         <div class="advantage-num_block">
-                            <div class="counter" data-count="8">0</div>
-                            <p>Років діяльності</p>
+                            <div class="counter" data-count="14" data-translate-key="years_count">0</div>
+                            <p data-translate-key="years_text">Років діяльності</p>
                         </div>
                         <div class="advantage-num_block">
-                            <div class="counter" data-count="42070">0</div>
-                            <p>Літрів заміненої оливи</p>
+                            <div class="counter" data-count="242070" data-translate-key="oil_count">0</div>
+                            <p data-translate-key="oil_text">Літрів заміненої оливи</p>
                         </div>
                         <div class="advantage-num_block">
-                            <div class="counter" data-count="5258">0</div>
-                            <p>Кільсть наданих сервісних послуг</p>
+                            <div class="counter" data-count="25258" data-translate-key="services_count">0</div>
+                            <p data-translate-key="services_text">Кільсть наданих сервісних послуг</p>
                         </div>
                         <div class="advantage-num_block">
-                            <div class="counter" data-count="2720">0</div>
-                            <p>Кільсть постійних клієнтів</p>
+                            <div class="counter" data-count="22720" data-translate-key="clients_count">0</div>
+                            <p data-translate-key="clients_text">Кільсть постійних клієнтів</p>
                         </div>
                     </div>
                 </div>
@@ -698,8 +799,12 @@
             <section class="testimonials">
                 <div class="site-container">
                     <div class="testimonials_top">
-                        <h3 class="subtitle"><span>Відгуки клієнтів</span></h3>
-                        <h2 class="second-title">Рекомендації наших клієнтів - найкращий доказ якості роботи</h2>
+                        <h3 class="subtitle" data-translate-key="testimonials_sub_title">
+                            <span>Відгуки клієнтів</span>
+                        </h3>
+                        <h2 class="second-title" data-translate-key="ttestimonials_main_title">
+                            Рекомендації наших клієнтів - найкращий доказ якості роботи
+                        </h2>
                     </div>
                     <div class="swiper testimonials-slider">
                         <div class="swiper-wrapper">
@@ -709,13 +814,12 @@
                                         <div class="testimonial-user_img">
                                             <img src="./imgs/testimonial/m2.jpg" alt="user photo">
                                         </div>
-                                        <div class="testimonial-user_name">Віталій</div>
+                                        <div class="testimonial-user_name" data-translate-key="testimonial_user_name_1">
+                                            Віталій</div>
                                     </div>
-                                    <div class="testimonial_txt">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa recusandae
-                                            qui,
-                                            quidem corporis eos culpa eaque vel sed quia unde, molestias labore, error
-                                            tempore impedit facilis voluptates nihil non molestiae!</p>
+                                    <div class="testimonial_txt" data-translate-key="testimonial_text_1">
+                                        <p>Замовляв заміну оливи, залишився дуже задоволений. Все зробили швидко, якісно
+                                            та за доступною ціною!</p>
                                     </div>
                                     <div class="swiper-slide_img"></div>
                                 </div>
@@ -726,13 +830,12 @@
                                         <div class="testimonial-user_img">
                                             <img src="./imgs/testimonial/m1.jpg" alt="user photo">
                                         </div>
-                                        <div class="testimonial-user_name">Володимир</div>
+                                        <div class="testimonial-user_name" data-translate-key="testimonial_user_name_2">
+                                            Володимир</div>
                                     </div>
-                                    <div class="testimonial_txt">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa recusandae
-                                            qui,
-                                            quidem corporis eos culpa eaque vel sed quia unde, molestias labore, error
-                                            tempore impedit facilis voluptates nihil non molestiae!</p>
+                                    <div class="testimonial_txt" data-translate-key="testimonial_text_2">
+                                        <p>Провів діагностику автомобіля. Виявили проблему та швидко її вирішили. Дуже
+                                            вдячний за професіоналізм!</p>
                                     </div>
                                 </div>
                             </div>
@@ -742,15 +845,13 @@
                                         <div class="testimonial-user_img">
                                             <img src="./imgs/testimonial/w1.jpg" alt="user photo">
                                         </div>
-                                        <div class="testimonial-user_name">Ольга</div>
+                                        <div class="testimonial-user_name" data-translate-key="testimonial_user_name_3">
+                                            Ольга</div>
                                     </div>
-                                    <div class="testimonial_txt">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa recusandae
-                                            qui,
-                                            quidem corporis eos culpa eaque vel sed quia unde, molestias labore, error
-                                            tempore impedit facilis voluptates nihil non molestiae!</p>
+                                    <div class="testimonial_txt" data-translate-key="testimonial_text_3">
+                                        <p>Замовляла заміну фільтрів. Все було виконано якісно та швидко. Рекомендую
+                                            всім знайомим!</p>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="swiper-slide">
@@ -759,13 +860,12 @@
                                         <div class="testimonial-user_img">
                                             <img src="./imgs/testimonial/m3.jpg" alt="user photo">
                                         </div>
-                                        <div class="testimonial-user_name">Андрій</div>
+                                        <div class="testimonial-user_name" data-translate-key="testimonial_user_name_4">
+                                            Андрій</div>
                                     </div>
-                                    <div class="testimonial_txt">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa recusandae
-                                            qui,
-                                            quidem corporis eos culpa eaque vel sed quia unde, molestias labore, error
-                                            tempore impedit facilis voluptates nihil non molestiae!</p>
+                                    <div class="testimonial_txt" data-translate-key="testimonial_text_4">
+                                        <p>Дякую за якісне обслуговування. Робив заміну масла. Все пройшло на найвищому
+                                            рівні!</p>
                                     </div>
                                     <div class="swiper-slide_img"></div>
                                 </div>
@@ -779,28 +879,50 @@
             <section class="contact">
                 <div class="site-container">
                     <div class="contact_top">
-                        <h2 class="second-title">Виникли питання? Ми з радістю допоможемо їх вирішити!</h2>
+                        <h2 class="second-title" data-translate-key="contact_subtitle">
+                            Виникли питання? Ми з радістю допоможемо їх вирішити!
+                        </h2>
                     </div>
-                    <div class="contact_google-shedule">
+                    <div id="calendar">
                         <!-- Google Calendar Appointment Scheduling begin -->
                         <iframe
-                            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1qsWGO1jcZFCxSpUqf_Sqiu-xXHNLC7WSIHqE6ctEJRB6GPsOUgblsNBVeIm81M9rRFT4GWLGj?gv=true"
+                            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2niEDvRpkxXDU5kLN3yB-RqsENAEG6eJzMPYIfy8NE2ewaFErcF80sJq0Ftt7CuSRzRh15CLLp?gv=true"
                             style="border: 0" width="100%" height="600" frameborder="0"></iframe>
                         <!-- end Google Calendar Appointment Scheduling -->
                     </div>
-                </div>
-                <div class="contact_calendly-shedule">
-                   <!-- Calendly inline widget begin -->
-<div class="calendly-inline-widget" data-url="https://calendly.com/yuliasolnechnaya/oil-change-clone?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=ff9d08" style="min-width:640px; height:700px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<!-- Calendly inline widget end -->
-                </div>
-                <div class="contact_booking">
-                    <script src="//widget.simplybook.me/v2/widget/widget.js" type="text/javascript"></script>
-                    <script type="text/javascript">
-                        var widget = new SimplybookWidget({ "widget_type": "iframe", "url": "https:\/\/solnechnaya.simplybook.me", "theme": "minimal", "theme_settings": { "timeline_show_end_time": "1", "timeline_modern_display": "as_slots", "hide_company_label": "0", "timeline_hide_unavailable": "1", "hide_past_days": "0", "sb_base_color": "#cb8d75", "btn_color_1": "#f8ad31,#fc591e,#fc591e", "link_color": "#cb8d75", "display_item_mode": "block", "body_bg_color": "#ffffff", "sb_review_image": "", "dark_font_color": "#403733", "light_font_color": "#ffffff", "sb_company_label_color": "#ffffff", "hide_img_mode": "0", "sb_busy": "#c7b3b3", "sb_available": "#2b212b" }, "timeline": "modern", "datepicker": "top_calendar", "is_rtl": false, "app_config": { "clear_session": 0, "allow_switch_to_ada": 0, "predefined": [] } });
-                    </script>
-                </div>
+                    <!-- <div id="calendly-container">
+                        <div id="calendly" class="calendly-inline-widget" 
+                             data-url="https://calendly.com/info-autodienst-at/book-service-clone?hide_gdpr_banner=1&primary_color=ff9d08&locale=en" 
+                             style="min-width:320px;height:700px;">
+                        </div>
+                    </div> -->
+                    <!-- <div id="calendly-ua" class="contact_calendly-shedule">
+                       
+                        <div class="calendly-inline-widget"
+                            data-url="https://calendly.com/info-autodienst-at/book-service-clone?hide_gdpr_banner=1&primary_color=ff9d08"
+                            style="min-width:320px;height:700px;"></div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
+                            async></script>
+                   
+                    </div>
+                    <div id="calendly-en" class="contact_calendly-shedule">
+                     
+                        <div class="calendly-inline-widget"
+                            data-url="https://calendly.com/info-autodienst-at/60min?hide_gdpr_banner=1&primary_color=ff9d08"
+                            style="min-width:320px;height:700px;"></div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
+                            async></script>
+                        
+                    <div id="calendly-de" class="contact_calendly-shedule">
+                      
+                        <div class="calendly-inline-widget"
+                            data-url="https://calendly.com/info-autodienst-at/60min?hide_gdpr_banner=1&primary_color=ff9d08"
+                            style="min-width:320px;height:700px;"></div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
+                            async></script>
+                     
+                    </div>
+                </div> -->
             </section>
         </main>
         <footer class="site-footer">
@@ -815,36 +937,39 @@
                     <div class="site-footer_column">
                         <ul class="site-footer_contacts">
                             <li>
-                                <a href="#" class="address-link">
+                                <a href="#" class="address-link" data-translate-key="footer_address">
                                     <svg class="map-icon">
                                         <use xlink:href="#map"></use>
                                     </svg>
-                                    AAAAAAAAA 000, 0000, Gleisdorf,
-                                    Austria</a>
+                                    Ласніцталь 300, 8200, Гляйсдорв, Австрія</a>
                             </li>
                             <li>
-                                <a href="tel:+440000000000" class="tel-link">
+                                <a href="tel:+436602430111" class="tel-link" data-translate-key="footer_phone">
                                     <svg class="tel-icon">
                                         <use xlink:href="#phone"></use>
                                     </svg>
-                                    +44 000 000 0000</a>
+                                    +43 660 2430111</a>
                             </li>
-                            <li><a href="" class="top_header_icon_subtitle">
+                            <li>
+                                <a href="mailto:info.autodienst.at@gmail.com" class="top_header_icon_subtitle"
+                                    data-translate-key="footer_email">
                                     <svg class="email-icon">
                                         <use xlink:href="#email"></use>
                                     </svg>
-                                    info.autodienst.at@gmail.com</a></li>
-                            <li class="site-footer_messengers"> <a href="">
+                                    info.autodienst.at@gmail.com</a>
+                            </li>
+                            <li class="site-footer_messengers">
+                                <a href="#" data-translate-key="footer_viber">
                                     <svg class="viber-icon">
                                         <use xlink:href="#viber"></use>
                                     </svg>
                                 </a>
-                                <a href="#">
+                                <a href="#" data-translate-key="footer_telegram">
                                     <svg class="telegram-icon">
                                         <use xlink:href="#telegram"></use>
                                     </svg>
                                 </a>
-                                <a href="#">
+                                <a href="#" data-translate-key="footer_whatsapp">
                                     <svg class="whatsapp-icon">
                                         <use xlink:href="#whatsapp"></use>
                                     </svg>
@@ -854,100 +979,135 @@
                     </div>
                     <div class="site-footer_column">
                         <nav class="site-footer__navigation">
-                            <a href="#" class="site-footer__link">Головна</a>
-                            <a href="#" class="site-footer__link">Про нас</a>
-                            <a href="#" class="site-footer__link">Наш сервіси</a>
-                            <a href="#" class="site-footer__link">Корисна інформація</a>
-                            <a href="#" class="site-footer__link">Відгуки</a>
-                            <a href="#" class="site-footer__link">Контакти</a>
+                            <a href="#" class="site-footer__link" data-translate-key="footer_home">Головна</a>
+                            <a href="#" class="site-footer__link" data-translate-key="footer_about">Про нас</a>
+                            <a href="#" class="site-footer__link" data-translate-key="footer_services">Наш сервіси</a>
+                            <a href="#" class="site-footer__link" data-translate-key="footer_info">Корисна
+                                інформація</a>
+                            <a href="#" class="site-footer__link" data-translate-key="footer_reviews">Відгуки</a>
+                            <a href="#" class="site-footer__link" data-translate-key="footer_contacts">Контакти</a>
                         </nav>
                     </div>
                     <div class="site-footer_column">
                         <div class="site-footer_shedule">
-                            <p>Наш графік</p>
+                            <p data-translate-key="footer_schedule_title">Наш графік</p>
                             <ul>
-                                <li>Вт-Сб: 9.00 - 21.00</li>
-                                <li>Нд: 11.00 - 15.00</li>
-                                <li>Пн: вихідний</li>
+                                <li data-translate-key="footer_schedule_weekdays">Вт-Сб: 9.00 - 21.00</li>
+                                <li data-translate-key="footer_schedule_sunday">Нд: 11.00 - 15.00</li>
+                                <li data-translate-key="footer_schedule_monday">Пн: вихідний</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="site-footer_bottom">
-                    <p class="copyright">copyright</p>
-                    <p><a class="privacy-policy" href="#">Політика конфіденційності</a></p>
+                    <p class="copyright" data-translate-key="footer_copyright">copyright</p>
+                    <p><a class="privacy-policy" href="#" data-translate-key="footer_privacy">Політика
+                            конфіденційності</a></p>
                 </div>
             </div>
         </footer>
-    </div>
-    <div id="modal_window">
-        <form class="modal_form" method="POST">
-            <button class="modal_close_btn"> <span>X</span> </button>
-            <div class="form-group">
-                <label for="modal_name_input">Ім'я</label>
-                <input name="name" type="text" id="modal_name_input" />
-            </div>
-            <div class="form-group phone-group">
-                <label for="modal_phone_input">Телефон</label>
-                <input name="phone" class="input_phone" type="tel" value="" id="modal_phone_input" />
-            </div>
-            <div class="form-group">
-                <select name="car_make" id="car_make">
-                    <option value="" disabled selected data-translate-key="modal_carbrand"> Оберіть марку авто...
-                    </option>
-                    <option value="toyota">Toyota</option>
-                    <option value="volkswagen">Volkswagen</option>
-                    <option value="ford">Ford</option>
-                    <option value="honda">Honda</option>
-                    <option value="bmw">BMW</option>
-                    <option value="mercedes">Mercedes-Benz</option>
-                    <option value="hyndai">Hyundai</option>
-                    <option value="nissan">Nissan</option>
-                    <option value="kia">Kia</option>
-                </select>
-            </div>
-            <div class="form-group" id="model_select">
-                <select name="car_model" id="car_model">
-                    <option value="" disabled selected data-translate-key="modal_carmark"> Спочатку оберіть марку авто!
-                    </option>
-                </select>
-            </div>
-            <h4 class="modal_form_title" data-translate-key="modal_services"> Послуги: </h4>
-            <div class="modal_form_services">
-                <div class="modal_labels">
-                    <label for="changeoil_input">
-                        <input name="changeoil" id="changeoil_input" type="checkbox" /> <span
-                            data-translate-key="modal_changeoil">Заміна мастила</span>
-                    </label>
-                    <label for="changefilter_input">
-                        <input name="changefilter" id="changefilter_input" type="checkbox" />
-                        <span data-translate-key="modal_changefilter">Заміна фільтра</span>
-                    </label>
-                    <label for="additional_input">
-                        <input name="additional" id="additional_input" type="checkbox" />
-                        <span data-translate-key="modal_additional">Додаткові послуги</span>
-                    </label>
-
+        <div id="modal_window">
+            <form class="modal_form" method="POST">
+                <button class="modal_close_btn"> <span>X</span> </button>
+                <div class="form-group">
+                    <label for="modal_name_input" data-translate-key="modal_name">Ім'я</label>
+                    <input name="name" type="text" id="modal_name_input" />
                 </div>
-            </div>
-            <p id="result" data-translate-key="modal_total" name="total_price">Сума від: €0.00</p>
-            <div class="modal_politics_block">
-                <label class="politics_label">
-                    <input type="checkbox" />
-                    <span data-translate-key="accept">Я приймаю</span>
-                    <a href="politics.html" class="politics_link" data-translate-key="politics">Політику
-                        конфіденційності</a>
-                </label>
-            </div>
-            <button class="form_button btn-orange" type="submit" data-translate-key="signService"> Записатися на сервіс
-            </button>
-        </form>
-    </div>
+                <div class="form-group phone-group">
+                    <label for="modal_phone_input" data-translate-key="modal_phone">Телефон</label>
+                    <input name="phone" class="input_phone" type="tel" value="" id="modal_phone_input" />
+                </div>
+                <div class="form-group">
+                    <select name="car_make" id="car_make">
+                        <option value="" disabled selected data-translate-key="modal_carbrand">Оберіть марку авто...
+                        </option>
+                        <option value="toyota">Toyota</option>
+                        <option value="volkswagen">Volkswagen</option>
+                        <option value="ford">Ford</option>
+                        <option value="honda">Honda</option>
+                        <option value="bmw">BMW</option>
+                        <option value="mercedes">Mercedes-Benz</option>
+                        <option value="hyndai">Hyundai</option>
+                        <option value="nissan">Nissan</option>
+                        <option value="kia">Kia</option>
+                    </select>
+                </div>
+                <div class="form-group" id="model_select">
+                    <select name="car_model" id="car_model">
+                        <option value="" disabled selected data-translate-key="modal_carmark">Спочатку оберіть марку
+                            авто!</option>
+                    </select>
+                </div>
+                <h4 class="modal_form_title" data-translate-key="modal_services">Послуги:</h4>
+                <div class="modal_form_services">
+                    <div class="modal_labels">
+                        <label for="changeoil_input">
+                            <input name="changeoil" id="changeoil_input" type="checkbox" />
+                            <span data-translate-key="modal_changeoil">Заміна мастила</span>
+                        </label>
+                        <label for="changefilter_input">
+                            <input name="changefilter" id="changefilter_input" type="checkbox" />
+                            <span data-translate-key="modal_changefilter">Заміна фільтра</span>
+                        </label>
+                        <label for="additional_input">
+                            <input name="additional" id="additional_input" type="checkbox" />
+                            <span data-translate-key="modal_additional">Додаткові послуги</span>
+                        </label>
+                    </div>
+                </div>
+                <p id="result" data-translate-key="modal_total" name="total_price">Сума від: €0.00</p>
+                <div class="modal_politics_block">
+                    <label class="politics_label">
+                        <input type="checkbox" />
+                        <span data-translate-key="accept">Я приймаю</span>
+                        <a href="politics.html" class="politics_link" data-translate-key="politics">Політику
+                            конфіденційності</a>
+                    </label>
+                </div>
+                <button class="form_button btn-orange" type="submit" data-translate-key="signService">Записатися на
+                    сервіс</button>
+            </form>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./js/additional.js"></script>
-    <script src="./js/calculator-form.js"></script>
-    <!-- <script src="./js/script-main.js"></script> -->
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="./js/additional.js"></script>
+        <script src="./js/calculator-form.js"></script>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+       
+        <!-- Meta Pixel Code -->
+        <script>
+            !function (f, b, e, v, n, t, s) {
+                if (f.fbq) return; n = f.fbq = function () {
+                    n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+                n.queue = []; t = b.createElement(e); t.async = !0;
+                t.src = v; s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window, document, 'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '927079089087237');
+            fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+                src="https://www.facebook.com/tr?id=927079089087237&ev=PageView&noscript=1" /></noscript>
+        <!-- End Meta Pixel Code -->
+
+        <!-- clarity -->
+        <script type="text/javascript">
+            (function (c, l, a, r, i, t, y) {
+              c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+              t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+              y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+            })(window, document, "clarity", "script", "p0f31py6en");
+          </script>
+
+
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+          </script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 </body>
 
 </html>

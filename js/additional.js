@@ -66,3 +66,10 @@ const usefullInfoSwiper = new Swiper(".usefull-info-slider", {
  delay: 5000,
 },
   });
+
+  // burgermenu
+  function toggleMenu() {
+    const nav = document.getElementById("burgerNav");
+    nav.style.display = nav.style.display === "block" ? "none" : "block";
+  }
+  

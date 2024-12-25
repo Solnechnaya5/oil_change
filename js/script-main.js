@@ -811,7 +811,3 @@ modalForm.addEventListener("submit", async (e) => {
   }
 });
 
-function toggleMenu() {
-  const nav = document.getElementById("burgerNav");
-  nav.style.display = nav.style.display === "block" ? "none" : "block";
-}
