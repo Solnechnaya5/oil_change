@@ -85,7 +85,7 @@ const translations = {
     },
     // Банер
     banner_discount: {
-        ua: "Запишіться вже зараз та отримайте знижку 10% на наші послуги!",
+        ua: "Запишіться вже зараз та отримайте знижку до 50% на наші послуги!",
         en: "Sign up now and get up to 50 off our services!",
         de: "Melden Sie sich jetzt an und sichern Sie sich bis zu 50 % Rabatt auf unsere Dienstleistungen!"
     },
@@ -97,9 +97,9 @@ const translations = {
 
     // Основний заголовок і текст
     top_main_title: {
-        ua: "Якісна заміна оливи <br> та діагностика для вашого авто",
-        en: "Quality Oil Change <br> and Diagnostics for Your Car",
-        de: "Qualitäts-Ölwechsel <br> und Diagnose für Ihr Auto"
+        ua: "Якісна заміна оливи  та діагностика для вашого авто",
+        en: "Quality Oil Change  and Diagnostics for Your Car",
+        de: "Qualitäts-Ölwechsel  und Diagnose für Ihr Auto"
     },
     top_subtitle: {
         ua: "Ми забезпечимо довготривалу роботу вашого двигуна та надамо професійну діагностику всіх систем.",
@@ -334,7 +334,7 @@ const translations = {
         de: "Erfahrung: 4 Jahre"
     },
     worker_4_description: {
-        ua: "Працюємо із сучасним обладнанням, допомагаючи клієнтам підтримувати їхні автомобілі в ідеальному стані.",
+        ua: "Працює із сучасним обладнанням, допомагаючи клієнтам підтримувати їхні автомобілі в ідеальному стані.",
         en: "We work with modern equipment, helping customers keep their cars in perfect condition.",
         de: "Wir arbeiten mit modernen Geräten, um unseren Kunden zu helfen, ihre Autos in perfektem Zustand zu halten."
     },
@@ -514,29 +514,29 @@ const translations = {
         de: "Unsere Vorteile"
     },
     advantages_main_title: {
-        ua: "<b>Індивідуальний підхід</b> - запорука якісного сервісу для автомобiля",
-        en: "<b>Individual approach</b> - the key to quality car service",
-        de: "<b>Individueller Ansatz</b> - Garant für einen hochwertigen Service für Ihr Fahrzeug "
+        ua: "Індивідуальний підхід - запорука якісного сервісу для автомобiля",
+        en: "Individual approach - the key to quality car service",
+        de: "Individueller Ansatz - Garant für einen hochwertigen Service für Ihr Fahrzeug "
     },
     speed_text: {
-        ua: "<b>Швидкість</b> – заміна оливи за 30 хвилин",
-        en: "<b>Speed</b> – oil change in 30 minutes",
-        de: "<b>Schnelligkeit</b> – Ölwechsel in nur 30 Minuten"
+        ua: "Швидкість – заміна оливи за 30 хвилин",
+        en: "Speed – oil change in 30 minutes",
+        de: "Schnelligkeit – Ölwechsel in nur 30 Minuten"
     },
     quality_text: {
-        ua: "<b>Якість</b> – лише сертифіковані оливи та фільтри",
-        en: "<b>Quality</b> – only certified oils and filters",
-        de: "<b>Qualität</b> – Nur zertifizierte Öle und Filter"
+        ua: "Якість – лише сертифіковані оливи та фільтри",
+        en: "Quality – only certified oils and filters",
+        de: "Qualität – Nur zertifizierte Öle und Filter"
     },
     prices_text: {
-        ua: "<b>Ціни</b> – доступні тарифи без прихованих платежів",
-        en: "<b>Prices</b> – affordable rates with no hidden fees",
-        de: "<b>Preise</b> – Erschwingliche Tarife ohne versteckte Kosten  "
+        ua: "Ціни – доступні тарифи без прихованих платежів",
+        en: "Prices – affordable rates with no hidden fees",
+        de: "Preise – Erschwingliche Tarife ohne versteckte Kosten  "
     },
     warranty_text: {
-        ua: "<b>Гарантія</b> – 100% відповідальність за результат",
-        en: "<b>Warranty</b> – 100% responsibility for the result",
-        de: "<b>Garantie</b> – 100% Verantwortung für das Ergebnis"
+        ua: "Гарантія – 100% відповідальність за результат",
+        en: "Warranty – 100% responsibility for the result",
+        de: "Garantie – 100% Verantwortung für das Ergebnis"
     },
     numbers_title: {
         ua: "Ми в цифрах",
@@ -670,23 +670,27 @@ const translations = {
         en: "Privacy Policy",
         de: "Datenschutzrichtlinie"
     },
-    modal_form_labels: {
-        name: {
+    modal_services:{
+        ua: "Послуги:",
+        en: "Services",
+        de: "Dienstleistungen:"
+    },
+    modal_name:{
             ua: "Ім'я",
             en: "Name",
             de: "Name"
         },
-        phone: {
+        modal_phone: {
             ua: "Телефон",
             en: "Phone",
             de: "Telefon"
         },
-        car_brand: {
+        modal_carbrand: {
             ua: "Оберіть марку авто...",
             en: "Select car brand...",
             de: "Wählen Sie die Automarke aus..."
         },
-        car_model: {
+        modal_carmark: {
             ua: "Спочатку оберіть марку авто!",
             en: "Please select a car brand first!",
             de: "Bitte wählen Sie zuerst eine Automarke!"
@@ -696,17 +700,17 @@ const translations = {
             en: "Services:",
             de: "Dienstleistungen:"
         },
-        change_oil: {
+        modal_changeoil: {
             ua: "Заміна мастила",
             en: "Oil Change",
             de: "Ölwechsel"
         },
-        change_filter: {
+        modal_changefilter: {
             ua: "Заміна фільтра",
             en: "Filter Replacement",
             de: "Filterwechsel"
         },
-        additional_services: {
+        modal_additional: {
             ua: "Додаткові послуги",
             en: "Additional Services",
             de: "Zusätzliche Dienstleistungen"
@@ -721,22 +725,48 @@ const translations = {
             en: "I accept",
             de: "Ich akzeptiere"
         },
-        privacy_policy_link: {
+        modal_privacy_policy_link: {
             ua: "Політику конфіденційності",
             en: "Privacy Policy",
             de: "Datenschutzrichtlinie"
         },
-        sign_up_service: {
+        modal_big_btn: {
             ua: "Записатися на сервіс",
             en: "Sign up for service",
             de: "Für den Service anmelden"
         }
     }
-};
 
 
+let currentLang = localStorage.getItem("selectedLang") || "de";
 
+function updateTranslation() {
+  const elements = document.querySelectorAll("[data-translate-key]");
 
+  elements.forEach((element) => {
+    const key = element.dataset.translateKey; // Читаем ключ
+    if (translations[key] && translations[key][currentLang]) {
+      element.textContent = translations[key][currentLang]; // Обновляем текст
+    }
+  });
+ 
+}
 
+// Слушатель изменения языка
+document.getElementById("lang_select").addEventListener("change", (event) => {
+  currentLang = event.target.value; // Получаем выбранный язык
+  localStorage.setItem("selectedLang", currentLang); // Сохраняем выбранный язык
+  updateTranslation(); // Обновляем перевод
+});
+
+// Устанавливаем язык из LocalStorage при загрузке страницы
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("selectedLang");
+  if (savedLang) {
+    currentLang = savedLang; // Устанавливаем язык из LocalStorage
+    document.getElementById("lang_select").value = savedLang; // Устанавливаем значение в select
+  }
+  updateTranslation(); // Обновляем перевод
+});
 
 

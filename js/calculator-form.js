@@ -396,33 +396,33 @@ async function sendEmail2(params) {
   }
 }
 
-const sendPostRequest = async (apiVersion, pixelId, token, eventData) => {
-  const url = `https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${token}`;
+// const sendPostRequest = async (apiVersion, pixelId, token, eventData) => {
+//   const url = `https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${token}`;
 
-  const payload = {
-    data: eventData,
-  };
+//   const payload = {
+//     data: eventData,
+//   };
 
-  try {
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
+//   try {
+//     const response = await fetch(url, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(payload),
+//     });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error("Ошибка запроса:", errorData);
-    } else {
-      const responseData = await response.json();
-      console.log("Успешная отправка:", responseData);
-    }
-  } catch (error) {
-    console.error("Ошибка выполнения запроса:", error);
-  }
-};
+//     if (!response.ok) {
+//       const errorData = await response.json();
+//       console.error("Ошибка запроса:", errorData);
+//     } else {
+//       const responseData = await response.json();
+//       console.log("Успешная отправка:", responseData);
+//     }
+//   } catch (error) {
+//     console.error("Ошибка выполнения запроса:", error);
+//   }
+// };
 
 // Обработчик отправки формы
 
@@ -435,22 +435,14 @@ modalForm.addEventListener("submit", async (e) => {
   const phoneInput = modalForm.querySelector(".input_phone");
   const carMake = modalForm.querySelector("#car_make").value;
   const carModel = modalForm.querySelector("#car_model").value;
-  const acceptPolitics = modalForm.querySelector(
-    'input[type="checkbox"][required]'
-  ).checked;
+  const acceptPolitics = modalForm.querySelector("#politics").checked;
   const selectedServices = Array.from(
     modalForm.querySelectorAll(
       ".modal_form_services input[type='checkbox']:checked"
     )
   ).map((checkbox) => checkbox.nextElementSibling.textContent.trim());
   const totalPrice = modalForm.querySelector("#result").textContent.trim();
-
-  // Получаем экземпляр intlTelInput для поля телефона
-  const iti = itiInstances.find(({ input }) => input === phoneInput)?.iti;
-
-  // Проверка валидности телефона
-  const isPhoneValid = iti && iti.isValidNumber();
-
+  
   // Локализация сообщений
   const errorMessages = {
     fillFields: {
@@ -490,18 +482,18 @@ modalForm.addEventListener("submit", async (e) => {
     return;
   }
 
-  if (!isPhoneValid) {
-    Toastify({
-      text: errorMessageInvalidPhone,
-      duration: 3000,
-      close: true,
-      gravity: "top",
-      position: "center",
-      backgroundColor: "#FF6347", // Красный для ошибки
-    }).showToast();
-    phoneInput.style.border = "2px solid red";
-    return;
-  }
+  // if (!isPhoneValid) {
+  //   Toastify({
+  //     text: errorMessageInvalidPhone,
+  //     duration: 3000,
+  //     close: true,
+  //     gravity: "top",
+  //     position: "center",
+  //     backgroundColor: "#FF6347", // Красный для ошибки
+  //   }).showToast();
+  //   phoneInput.style.border = "2px solid red";
+  //   return;
+  // }
 
   phoneInput.style.border = ""; // Сбрасываем стили ошибок
 
@@ -527,26 +519,6 @@ modalForm.addEventListener("submit", async (e) => {
 
   // Параллельная отправка в Telegram и EmailJS
   try {
-    // Отправка в Telegram
-    // const telegramResponse = await fetch(
-    //   `https://api.telegram.org/bot8197764205:AAE-XbNUdeNg39ufCTNgo5wLMP_8lp75eXw/sendMessage`,
-    //   {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       chat_id: "-1002295760352",
-    //       text: message,
-    //     }),
-    //   }
-    // );
-
-    // if (!telegramResponse.ok) {
-    //   throw new Error("Не удалось отправить сообщение в Telegram");
-    // }
-
-    // Отправка в EmailJS
     emailjs.init("sw_H53g2nxrTjDn9T"); // Инициализация EmailJS
     const emailResponse = await emailjs.send(
       "service_os6nxms",
@@ -609,15 +581,16 @@ modalForm.addEventListener("submit", async (e) => {
     // Сброс формы и закрытие модалки
     modalForm.reset();
     closeModal();
-  } catch (error) {
+  } 
+  catch (error) {
     console.error("Ошибка:", error);
-    Toastify({
-      text: "Ошибка отправки данных. Попробуйте позже.",
-      duration: 3000,
-      close: true,
-      gravity: "top",
-      position: "center",
-      backgroundColor: "#FF6347", // Красный для ошибки
-    }).showToast();
+    // Toastify({
+    //   text: "Ошибка отправки данных. Попробуйте позже.",
+    //   duration: 3000,
+    //   close: true,
+    //   gravity: "top",
+    //   position: "center",
+    //   backgroundColor: "#FF6347", // Красный для ошибки
+    // }).showToast();
   }
 });

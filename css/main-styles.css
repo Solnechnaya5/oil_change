@@ -27,10 +27,9 @@ body {
   height: 60px;
   fill: var(--orange);
 }
-.company-logo-icon_footer{
-  width: 120px;
-  height: 60px;
-  fill: var(--white);
+.company-logo_footer img{
+  width: auto;
+  height: 100px;
 }
 
 /* icons */
@@ -127,22 +126,31 @@ fill: var(--orange-hover);
   width: 100%;
   padding: 0 80px;
   margin: 0 auto;
+  display: flex;
+  position: relative;
+}
+.site-header_all{
+display: flex;
+flex-direction: column;
+
 }
 .site-container_first {
-  max-width: 1440px;
+  position: relative;
+  height: calc(100vh + 90px);
   width: 100%;
-  height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
   margin: 0px 80px 48px;
   margin: 0 auto;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .site-container_first::after{
   content: "";
   display: block;
   position: absolute;
+  top: 90px;
   z-index: 2;
   width: 100%;
   height: 100%;
@@ -274,7 +282,10 @@ fill: var(--orange-hover);
 }
 .site-header_link,
 .site-header_link:active,
-.site-header_link:visited {
+.site-header_link:visited,
+.burger-menu__link,
+.burger-menu__link:active,
+.burger-menu__link:visited {
   display: flex;
   align-items: center;
   color: var(--orange);
@@ -285,7 +296,8 @@ fill: var(--orange-hover);
   text-align: right;
   transition: all 0.4 ease-in;
 }
-.site-header_link:hover {
+.site-header_link:hover,
+.burger-menu__link:hover {
   color: var(--orange-hover);
 }
 
@@ -314,15 +326,24 @@ fill: var(--orange-hover);
 }
 .company-logo {
   display: flex;
-  width: 120px;
-  height: 60px;
+  height: 100px;
   /* margin-right: 120px; */
+  margin-right: 50px;
 }
-
+.company-logo img{
+  width: 100%;
+  height: 100%;
+}
 .site-header__navigation {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+#lang_select{
+  background-color: var(--orange);
+}
+#lang_select option:hover{
+  color: #e01f1f;
 }
 .site-header__navigation .site-header_link {
   margin: 0 10px;
@@ -330,6 +351,7 @@ fill: var(--orange-hover);
 .burger-menu {
   display: none;
 }
+
 .burger-menu__navigation {
 }
 .burger-menu__link {
@@ -347,6 +369,7 @@ fill: var(--orange-hover);
       z-index: 10;
       width: inherit;
       padding: 20px;
+      margin-bottom: 50px;
 }
 .banner p {
   font-size: 20px;
@@ -355,7 +378,7 @@ fill: var(--orange-hover);
   margin-right: 30px;
 }
 .banner-btn {
-  width: 150px;
+  width: auto;
   height: 40px;
   padding: 10px 15px;
 }
@@ -387,7 +410,7 @@ fill: var(--orange-hover);
       width: inherit;
       position: absolute;
       z-index: 10;
-      bottom: 0px;
+      bottom:-90px;
 }
 .top-content_block {
   display: flex;
@@ -414,7 +437,8 @@ fill: var(--orange-hover);
   text-align: center;
 }
 .top-videobg {
-  max-width: 1440px;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 90px;
   left: 0;
@@ -423,6 +447,7 @@ fill: var(--orange-hover);
 
 .top video{
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .about-company {
@@ -938,9 +963,10 @@ padding: 0 20px;
   font-size: 18px;
   line-height: 24px;
   position: absolute;
-  left: 15px;
+  left: 25px;
   z-index: 9;
 }
+
 .advantage-numbers {
   display: flex;
   justify-content: space-between;
@@ -1033,9 +1059,10 @@ padding:48px
   flex: 1 1 33.333%;
   width: 100%;
 }
-.company-logo_f{
+.company-logo_footer{
   display: block;
 width: 120px;
+height: 100px;
   margin-bottom: 30px;
 }
 .site-footer_contacts {

@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
-    
+
     <meta name="description"
-      content="Professional car service in Austria: repair and maintenance of all car brands. Quality, reliability, and modern technology. Book your appointment today!" />
+        content="Professional car service in Austria: repair and maintenance of all car brands. Quality, reliability, and modern technology. Book your appointment today!" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="" />
     <meta property="og:title" content="The best auto service in Austria" />
     <meta property="og:description"
-      content="Professional car service in Austria: repair and maintenance of all car brands. Quality, reliability, and modern technology. Book your appointment today!" />
-    <meta property="og:image"
-      content="" />
+        content="Professional car service in Austria: repair and maintenance of all car brands. Quality, reliability, and modern technology. Book your appointment today!" />
+    <meta property="og:image" content="" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +21,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./css/null.css">
     <link rel="stylesheet" href="./css/main-styles.css">
+    <link rel="stylesheet" href="./css/media-styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
@@ -117,99 +117,138 @@
     </svg>
     <div style="position: relative;">
         <header class="site-header">
+
             <div class="site-header_container">
-                <div class="site-header__top">
-                    <div class="site-header_contacts">
-                        <a href="tel:+436602430111" class="tel-link site-header_link">
-                            <svg class="tel-icon">
-                                <use xlink:href="#phone"></use>
-                            </svg>
-                            +43 660 2430111
-                        </a>
-                        <a href="mailto:info.autodienst.at@gmail.com?utm_source=header&utm_medium=email&utm_campaign=contact"
-                            class="email-link site-header_link">
-                            <svg class="email-icon">
-                                <use xlink:href="#email"></use>
-                            </svg>
-                            info.autodienst.at@gmail.com
-                        </a>
-                        <a href="#" class="address-link site-header_link" data-translate-key="contact_address">
-                            <svg class="map-icon">
-                                <use xlink:href="#map"></use>
-                            </svg>
-                            Ласніцталь 300, 8200, Гляйсдорв, Австрія
-                        </a>
+                <a href="index.html" class="company-logo">
+                    <img src="./imgs/company-logo.png" alt="company logo">
+                </a>
+                <div class="site-header_all">
+                    <div class="site-header__top">
+                        <div class="site-header_contacts">
+                            <a href="tel:+436602430111" class="tel-link site-header_link">
+                                <svg class="tel-icon">
+                                    <use xlink:href="#phone"></use>
+                                </svg>
+                                +43 660 2430111
+                            </a>
+                            <a href="mailto:info.autodienst.at@gmail.com?utm_source=header&utm_medium=email&utm_campaign=contact"
+                                class="email-link site-header_link">
+                                <svg class="email-icon">
+                                    <use xlink:href="#email"></use>
+                                </svg>
+                                info.autodienst.at@gmail.com
+                            </a>
+                            <a href="#" class="address-link site-header_link" data-translate-key="contact_address">
+                                <svg class="map-icon">
+                                    <use xlink:href="#map"></use>
+                                </svg>
+                                Ласніцталь 300, 8200, Гляйсдорв, Австрія
+                            </a>
+                        </div>
+                        <div class="header-right">
+                            <div class="site-header_messengers">
+                                <a href="" data-translate-key="messenger_viber">
+                                    <svg class="viber-icon">
+                                        <use xlink:href="#viber"></use>
+                                    </svg>
+                                </a>
+                                <a href="" data-translate-key="messenger_telegram">
+                                    <svg class="telegram-icon">
+                                        <use xlink:href="#telegram"></use>
+                                    </svg>
+                                </a>
+                                <a href="" data-translate-key="messenger_whatsapp">
+                                    <svg class="whatsapp-icon">
+                                        <use xlink:href="#whatsapp"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="lang_switcher">
+                                <select id="lang_select">
+                                    <option value="de" selected>Deu</option>
+                                    <option value="en">Eng</option>
+                                    <option value="ua">Ukr</option>
+                                </select>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="header-right">
-                        <div class="site-header_messengers">
-                            <a href="" data-translate-key="messenger_viber">
-                                <svg class="viber-icon">
-                                    <use xlink:href="#viber"></use>
-                                </svg>
-                            </a>
-                            <a href="" data-translate-key="messenger_telegram">
-                                <svg class="telegram-icon">
-                                    <use xlink:href="#telegram"></use>
-                                </svg>
-                            </a>
-                            <a href="" data-translate-key="messenger_whatsapp">
-                                <svg class="whatsapp-icon">
-                                    <use xlink:href="#whatsapp"></use>
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="lang_switcher">
-                            <select id="lang_select">
-                                <option value="de">Deu</option>
-                                <option value="en">Eng</option>
-                                <option value="ua">Ukr</option>
-                            </select>
-                        </div>
+                    <div class="site-header__bottom">
+
+                        <nav class="site-header__navigation">
+                            <a href="#main" class="site-header_link" data-translate-key="nav_main">Головна</a>
+                            <a href="#about-us" class="site-header_link" data-translate-key="nav_about">Про нас</a>
+                            <a href="#services" class="site-header_link" data-translate-key="nav_services">Наш сервіси</a>
+                            <a href="#info" class="site-header_link" data-translate-key="nav_info">Корисна інформація</a>
+                            <a href="#testimonials" class="site-header_link" data-translate-key="nav_reviews">Відгуки</a>
+                            <a href="#contacts" class="site-header_link" data-translate-key="nav_contacts">Контакти</a>
+                        </nav>
                     </div>
                 </div>
-                <div class="site-header__bottom">
-                    <a href="index.html" class="company-logo">
-                        <svg class="company-logo-icon">
-                            <use xlink:href="./svg-sprites/top-section.svg#car"></use>
-                        </svg>
-                    </a>
-                    <nav class="site-header__navigation">
-                        <a href="#" class="site-header_link" data-translate-key="nav_main">Головна</a>
-                        <a href="#" class="site-header_link" data-translate-key="nav_about">Про нас</a>
-                        <a href="#" class="site-header_link" data-translate-key="nav_services">Наш сервіси</a>
-                        <a href="#" class="site-header_link" data-translate-key="nav_info">Корисна інформація</a>
-                        <a href="#" class="site-header_link" data-translate-key="nav_reviews">Відгуки</a>
-                        <a href="#" class="site-header_link" data-translate-key="nav_contacts">Контакти</a>
+
+
+                <div class="burger-menu">
+                    <div id="burger-icon" class="burger-icon"><span></span></div>
+                    <nav class="burger-menu__navigation">
+                        <a href="#main" class="burger-menu__link" data-translate-key="nav_main">Головна</a>
+                        <a href="#about-us" class="burger-menu__link" data-translate-key="nav_about">Про нас</a>
+                        <a href="#services" class="burger-menu__link" data-translate-key="nav_services">Наш сервіси</a>
+                        <a href="#info" class="burger-menu__link" data-translate-key="nav_info">Корисна інформація</a>
+                        <a href="#testimonials" class="burger-menu__link" data-translate-key="nav_reviews">Відгуки</a>
+                        <a href="#contacts" class="burger-menu__link" data-translate-key="nav_contacts">Контакти</a>
+                        <div class="burger_contacts">
+                            <a href="tel:+436602430111" class="tel-link site-header_link">
+                                <svg class="tel-icon">
+                                    <use xlink:href="#phone"></use>
+                                </svg>
+                                +43 660 2430111
+                            </a>
+                            <a href="mailto:info.autodienst.at@gmail.com?utm_source=header&utm_medium=email&utm_campaign=contact"
+                                class="email-link site-header_link">
+                                <svg class="email-icon">
+                                    <use xlink:href="#email"></use>
+                                </svg>
+                                info.autodienst.at@gmail.com
+                            </a>
+                            <a href="#" class="address-link site-header_link" data-translate-key="contact_address">
+                                <svg class="map-icon">
+                                    <use xlink:href="#map"></use>
+                                </svg>
+                                Ласніцталь 300, 8200, Гляйсдорв, Австрія
+                            </a>
+                            <div class="site-header_messengers">
+                                <a href="" data-translate-key="messenger_viber">
+                                    <svg class="viber-icon">
+                                        <use xlink:href="#viber"></use>
+                                    </svg>
+                                </a>
+                                <a href="" data-translate-key="messenger_telegram">
+                                    <svg class="telegram-icon">
+                                        <use xlink:href="#telegram"></use>
+                                    </svg>
+                                </a>
+                                <a href="" data-translate-key="messenger_whatsapp">
+                                    <svg class="whatsapp-icon">
+                                        <use xlink:href="#whatsapp"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
                     </nav>
                 </div>
             </div>
+
         </header>
 
-        <div class="burger-menu">
-            <div class="lang_switcher">
-                <select id="lang_select">
-                    <option value="de" data-translate-key="lang_german">Deutsch</option>
-                    <option value="en" data-translate-key="lang_english">English</option>
-                    <option value="ua" data-translate-key="lang_ukrainian">Українська</option>
-                </select>
-            </div>
-            <nav class="burger-menu__navigation">
-                <a href="#" class="site-header_link" data-translate-key="nav_main">Головна</a>
-                <a href="#" class="burger-menu__link" data-translate-key="nav_about">Про нас</a>
-                <a href="#" class="burger-menu__link" data-translate-key="nav_services">Наш сервіси</a>
-                <a href="#" class="burger-menu__link" data-translate-key="nav_info">Корисна інформація</a>
-                <a href="#" class="burger-menu__link" data-translate-key="nav_reviews">Відгуки</a>
-                <a href="#" class="burger-menu__link" data-translate-key="nav_contacts">Контакти</a>
-            </nav>
-        </div>
+
 
         <main>
-            <section class="top">
+            <section id="main" class="top">
                 <div class="site-container_first">
                     <div class="banner">
                         <p data-translate-key="banner_discount">Запишіться вже зараз та отримайте знижку до 50% на наші
                             послуги!</p>
-                        <a href="#" class="banner-btn btn-black" data-translate-key="banner_btn_more">Детальніше</a>
+                        <a href="#promo" class="banner-btn btn-black" data-translate-key="banner_btn_more">Детальніше</a>
                     </div>
                     <div class="top-content_wiget">
                         <h1 class="main-title" data-translate-key="top_main_title">Якісна заміна оливи <br> та
@@ -258,21 +297,18 @@
                     </div>
                 </div>
             </section>
-            <section class="about-company">
+            <section id="about-us" class="about-company">
                 <div class="site-container">
                     <div class="about-company_top">
                         <h3 class="subtitle"><span data-translate-key="about_us_title">Про нас</span></h3>
                         <h2 class="second-title" data-translate-key="about_us_subtitle">Команда професіоналів з
                             багаторічним досвідом</h2>
                         <p data-translate-key="about_us_description">
-                            Наша компанія Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi minus at
-                            rem,
-                            nam
-                            natus
-                            incidunt quod maxime, voluptatibus praesentium cum est ad optio animi deserunt distinctio
-                            ea,
-                            quos
-                            ipsum non.
+                            Ласкаво просимо до нашого автоцентру! Ми прагнемо забезпечити максимальний комфорт і безпеку
+                            для вас та вашого автомобіля. Наші послуги включають швидку, якісну заміну масла та
+                            професійну діагностику всіх важливих систем автомобіля.Ми надаємо велике значення якості
+                            обслуговування та задоволенню клієнтів. Завдяки нашим досвідченим майстрам і новітнім
+                            технологіям ми можемо подарувати вашому автомобілю надійність після кожного обслуговування.
                         </p>
                     </div>
                     <div class="about-company_row">
@@ -317,7 +353,7 @@
                     </div>
                 </div>
             </section>
-            <section class="services">
+            <section id="services" class="services">
                 <div class="site-container">
                     <div class="services-top">
                         <h3 class="subtitle"><span data-translate-key="services_title">Наші послуги</span></h3>
@@ -393,7 +429,7 @@
             <section class="our-team" data-translate-key="team-section">
                 <div class="site-container">
                     <div class="our-team_top">
-                        <h3 class="subtitle" data-translate-key="team-subtitle"><span>Наші команда</span></h3>
+                        <h3 class="subtitle" data-translate-key="team-subtitle"><span>Наша команда</span></h3>
                         <h2 class="second-title" data-translate-key="team-title">Ми зібрали команду справжніх
                             професіоналів для найкращого сервісу</h2>
                     </div>
@@ -401,23 +437,22 @@
                         <div class="swiper-wrapper">
                             <!-- Team Member 1 -->
                             <div class="swiper-slide">
-                                <div class="worker" data-translate-key="worker-1">
+                                <div class="worker">
                                     <div class="worker-info">
                                         <div class="worker-info_img">
                                             <img src="./imgs/team/worker-1.jpg" alt="user photo">
                                         </div>
                                         <div class="worker-info_about">
-                                            <p class="worker-info_name" data-translate-key="worker-name-1">Віталій</p>
-                                            <p class="worker-info_position" data-translate-key="worker-position-1">
+                                            <p class="worker-info_name" data-translate-key="worker_name_1">Віталій</p>
+                                            <p class="worker-info_position" data-translate-key="worker_position_1">
                                                 Старший механік</p>
                                             <p class="worker-info_experiance" data-translate-key="worker-experience-1">
                                                 Досвід роботи: 9 років</p>
                                             <p class="worker-info_description"
                                                 data-translate-key="worker-description-1">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam
-                                                iste cupiditate delectus magnam similique ipsum asperiores dolorum
-                                                obcaecati beatae eaque, dolor maxime, commodi amet ad. Quibusdam
-                                                laudantium odio quas?
+                                                Відповідає за професійну та ефективну заміну моторного масла, проведення
+                                                діагностики автомобіля та дотримання стандартів безпеки. Має глибокі
+                                                технічні знання, вправність і уважність до деталей.
                                             </p>
                                         </div>
                                     </div>
@@ -431,17 +466,18 @@
                                             <img src="./imgs/team/img-10.jpg" alt="user photo">
                                         </div>
                                         <div class="worker-info_about">
-                                            <p class="worker-info_name" data-translate-key="worker-name-2">Ірина</p>
-                                            <p class="worker-info_position" data-translate-key="worker-position-2">
+                                            <p class="worker-info_name" data-translate-key="worker_name_2">Ірина</p>
+                                            <p class="worker-info_position" data-translate-key="worker_position_2">
                                                 Менеджер-консультант</p>
-                                            <p class="worker-info_experiance" data-translate-key="worker-experience-2">
+                                            <p class="worker-info_experiance" data-translate-key="worker_experience_2">
                                                 Досвід роботи: 4 роки</p>
                                             <p class="worker-info_description"
                                                 data-translate-key="worker-description-2">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam
-                                                iste cupiditate delectus magnam similique ipsum asperiores dolorum
-                                                obcaecati beatae eaque, dolor maxime, commodi amet ad. Quibusdam
-                                                laudantium odio quas?
+                                                Вона являється першою точкою взаємодії з клієнтами . Відповідає за
+                                                координацію записів, консультує щодо послуг, цін та технічних деталей.
+                                                Забезпечує високий рівень задоволення клієнтів завдяки своїм
+                                                комунікаційним навичкам та базовим технічним знанням, які є ключовими
+                                                для цієї ролі.
                                             </p>
                                         </div>
                                     </div>
@@ -449,23 +485,23 @@
                             </div>
                             <!-- Team Member 3 -->
                             <div class="swiper-slide">
-                                <div class="worker" data-translate-key="worker-3">
+                                <div class="worker">
                                     <div class="worker-info">
                                         <div class="worker-info_img">
                                             <img src="./imgs/team/worker-2.jpg" alt="user photo">
                                         </div>
                                         <div class="worker-info_about">
-                                            <p class="worker-info_name" data-translate-key="worker-name-3">Михайло</p>
-                                            <p class="worker-info_position" data-translate-key="worker-position-3">
+                                            <p class="worker-info_name" data-translate-key="worker_name_3">Михайло</p>
+                                            <p class="worker-info_position" data-translate-key="worker_position_3">
                                                 Механік</p>
                                             <p class="worker-info_experiance" data-translate-key="worker-experience-3">
                                                 Досвід роботи: 5 років</p>
                                             <p class="worker-info_description"
                                                 data-translate-key="worker-description-3">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam
-                                                iste cupiditate delectus magnam similique ipsum asperiores dolorum
-                                                obcaecati beatae eaque, dolor maxime, commodi amet ad. Quibusdam
-                                                laudantium odio quas?
+                                                Забезпечує швидкий і якісний сервіс заміни мастила та технічного
+                                                обслуговування автомобілів. Справжній професіонал, який готовий до
+                                                динамічної роботи, здатний знаходити нестандартні рішення та дбати про
+                                                безпеку автомобіля клієнта.
                                             </p>
                                         </div>
                                     </div>
@@ -473,23 +509,21 @@
                             </div>
                             <!-- Team Member 4 -->
                             <div class="swiper-slide">
-                                <div class="worker" data-translate-key="worker-4">
+                                <div class="worker">
                                     <div class="worker-info">
                                         <div class="worker-info_img">
                                             <img src="./imgs/team/worker-3.jpg" alt="user photo">
                                         </div>
                                         <div class="worker-info_about">
-                                            <p class="worker-info_name" data-translate-key="worker-name-4">Антон</p>
-                                            <p class="worker-info_position" data-translate-key="worker-position-4">
+                                            <p class="worker-info_name" data-translate-key="worker_name_4">Антон</p>
+                                            <p class="worker-info_position" data-translate-key="worker_position_4">
                                                 Механік</p>
                                             <p class="worker-info_experiance" data-translate-key="worker-experience-4">
                                                 Досвід роботи: 4 роки</p>
                                             <p class="worker-info_description"
                                                 data-translate-key="worker-description-4">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam
-                                                iste cupiditate delectus magnam similique ipsum asperiores dolorum
-                                                obcaecati beatae eaque, dolor maxime, commodi amet ad. Quibusdam
-                                                laudantium odio quas?
+                                                Працює із сучасним обладнанням, допомагаючи клієнтам підтримувати їхні
+                                                автомобілі в ідеальному стані.
                                             </p>
                                         </div>
                                     </div>
@@ -503,37 +537,34 @@
                                             <img src="./imgs/team/worker-4.jpg" alt="user photo">
                                         </div>
                                         <div class="worker-info_about">
-                                            <p class="worker-info_name" data-translate-key="worker-name-5">Кирило</p>
-                                            <p class="worker-info_position" data-translate-key="worker-position-5">
+                                            <p class="worker-info_name" data-translate-key="worker_name_5">Іван</p>
+                                            <p class="worker-info_position" data-translate-key="worker_position_5">
                                                 Механік</p>
-                                            <p class="worker-info_experiance" data-translate-key="worker-experience-5">
+                                            <p class="worker-info_experiance" data-translate-key="worker_experience_5">
                                                 Досвід роботи: 5 років</p>
                                             <p class="worker-info_description"
                                                 data-translate-key="worker-description-5">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam
-                                                iste cupiditate delectus magnam similique ipsum asperiores dolorum
-                                                obcaecati beatae eaque, dolor maxime, commodi amet ad. Quibusdam
-                                                laudantium odio quas?
-                                            </p>
+                                                Спеціаліст, який не тільки виконує технічну роботу, але й бере участь у
+                                                створенні довіри клієнтів та який прагне досягти найвищих стандартів
+                                                якості.
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Team Member 1 -->
-                            <div class="swiper-slide">
+                            <!-- <div class="swiper-slide">
                                 <div class="worker" data-translate-key="worker-6">
                                     <div class="worker-info">
                                         <div class="worker-info_img">
-                                            <img src="./imgs/team/worker-1.jpg" alt="user photo">
+                                            <img src="./imgs/team/worker-5.jpg" alt="user photo">
                                         </div>
                                         <div class="worker-info_about">
-                                            <p class="worker-info_name" data-translate-key="worker-name-6">Віталій</p>
-                                            <p class="worker-info_position" data-translate-key="worker-position-6">
+                                            <p class="worker-info_name" data-translate-key="worker_name_6">Іван</p>
+                                            <p class="worker-info_position" data-translate-key="worker_position_6">
                                                 Старший механік</p>
-                                            <p class="worker-info_experiance" data-translate-key="worker-experience-6">
+                                            <p class="worker-info_experiance" data-translate-key="worker_experience_6">
                                                 Досвід роботи: 9 років</p>
                                             <p class="worker-info_description"
-                                                data-translate-key="worker-description-6">
+                                                data-translate-key="worker_description_6">
                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam
                                                 iste cupiditate delectus magnam similique ipsum asperiores dolorum
                                                 obcaecati beatae eaque, dolor maxime, commodi amet ad. Quibusdam
@@ -542,14 +573,14 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="swiper-button-prev" data-translate-key="swiper-prev"></div>
                         <div class="swiper-button-next" data-translate-key="swiper-next"></div>
                     </div>
                 </div>
             </section>
-            <section class="promo">
+            <section id="promo" class="promo">
                 <div class="site-container">
                     <div class="promo-block">
                         <h3 class="subtitle" data-translate-key="promo_title">Гаряча акційна пропозиція!</h3>
@@ -576,7 +607,7 @@
                     </div>
                 </div>
             </section>
-            <section class="usefull-info">
+            <section id="info" class="usefull-info">
                 <div class="site-container">
                     <div class="usefull-info_top">
                         <h3 class="subtitle" data-translate-key="useful_info_sub_title">
@@ -754,20 +785,20 @@
                     <div class="dvantages-blocks_container site-container">
                         <div class="advantages-block">
                             <div class="orange-bg"></div>
-                            <p data-translate-key="speed_text"><b>Швидкість</b> – заміна оливи за 30 хвилин</p>
+                            <p data-translate-key="speed_text">Швидкість – заміна оливи за 30 хвилин</p>
                         </div>
                         <div class="advantages-block">
                             <div class="orange-bg"></div>
-                            <p data-translate-key="quality_text"><b>Якість</b> – лише сертифіковані оливи та фільтри</p>
+                            <p data-translate-key="quality_text">Якість – лише сертифіковані оливи та фільтри</p>
                         </div>
                         <div class="advantages-block">
                             <div class="orange-bg"></div>
-                            <p data-translate-key="prices_text"><b>Ціни</b> – доступні тарифи без прихованих платежів
+                            <p data-translate-key="prices_text">Ціни – доступні тарифи без прихованих платежів
                             </p>
                         </div>
                         <div class="advantages-block">
                             <div class="orange-bg"></div>
-                            <p data-translate-key="warranty_text"><b>Гарантія</b> – 100% відповідальність за результат
+                            <p data-translate-key="warranty_text">Гарантія – 100% відповідальність за результат
                             </p>
                         </div>
                     </div>
@@ -796,7 +827,7 @@
                     </div>
                 </div>
             </section>
-            <section class="testimonials">
+            <section id="testimonials" class="testimonials">
                 <div class="site-container">
                     <div class="testimonials_top">
                         <h3 class="subtitle" data-translate-key="testimonials_sub_title">
@@ -876,7 +907,7 @@
                     </div>
                 </div>
             </section>
-            <section class="contact">
+            <section id="contacts" class="contact">
                 <div class="site-container">
                     <div class="contact_top">
                         <h2 class="second-title" data-translate-key="contact_subtitle">
@@ -890,47 +921,13 @@
                             style="border: 0" width="100%" height="600" frameborder="0"></iframe>
                         <!-- end Google Calendar Appointment Scheduling -->
                     </div>
-                    <!-- <div id="calendly-container">
-                        <div id="calendly" class="calendly-inline-widget" 
-                             data-url="https://calendly.com/info-autodienst-at/book-service-clone?hide_gdpr_banner=1&primary_color=ff9d08&locale=en" 
-                             style="min-width:320px;height:700px;">
-                        </div>
-                    </div> -->
-                    <!-- <div id="calendly-ua" class="contact_calendly-shedule">
-                       
-                        <div class="calendly-inline-widget"
-                            data-url="https://calendly.com/info-autodienst-at/book-service-clone?hide_gdpr_banner=1&primary_color=ff9d08"
-                            style="min-width:320px;height:700px;"></div>
-                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
-                            async></script>
-                   
-                    </div>
-                    <div id="calendly-en" class="contact_calendly-shedule">
-                     
-                        <div class="calendly-inline-widget"
-                            data-url="https://calendly.com/info-autodienst-at/60min?hide_gdpr_banner=1&primary_color=ff9d08"
-                            style="min-width:320px;height:700px;"></div>
-                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
-                            async></script>
-                        
-                    <div id="calendly-de" class="contact_calendly-shedule">
-                      
-                        <div class="calendly-inline-widget"
-                            data-url="https://calendly.com/info-autodienst-at/60min?hide_gdpr_banner=1&primary_color=ff9d08"
-                            style="min-width:320px;height:700px;"></div>
-                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
-                            async></script>
-                     
-                    </div>
-                </div> -->
+
             </section>
         </main>
         <footer class="site-footer">
             <div class="footer-container">
-                <a href="index.html" class="company-logo_f">
-                    <svg class="company-logo-icon">
-                        <use xlink:href="./svg-sprites/top-section.svg#car" />
-                    </svg>
+                <a href="index.html" class="company-logo_footer">
+                    <img src="./imgs/company-logo.png" alt="company logo">
                 </a>
                 <div class="site-footer_top">
 
@@ -1058,13 +1055,14 @@
                 <p id="result" data-translate-key="modal_total" name="total_price">Сума від: €0.00</p>
                 <div class="modal_politics_block">
                     <label class="politics_label">
-                        <input type="checkbox" />
+                        <input id="politics" type="checkbox" />
                         <span data-translate-key="accept">Я приймаю</span>
-                        <a href="politics.html" class="politics_link" data-translate-key="politics">Політику
+                        <a href="politics.html" class="politics_link"
+                            data-translate-key="modal_privacy_policy_link">Політику
                             конфіденційності</a>
                     </label>
                 </div>
-                <button class="form_button btn-orange" type="submit" data-translate-key="signService">Записатися на
+                <button class="form_button btn-orange" type="submit" data-translate-key="modal_big_btn">Записатися на
                     сервіс</button>
             </form>
         </div>
@@ -1074,13 +1072,13 @@
         <script src="./js/additional.js"></script>
         <script src="./js/calculator-form.js"></script>
         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-       
+
         <!-- Meta Pixel Code -->
         <script>
             !function (f, b, e, v, n, t, s) {
                 if (f.fbq) return; n = f.fbq = function () {
                     n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
                 };
                 if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
                 n.queue = []; t = b.createElement(e); t.async = !0;
@@ -1098,16 +1096,15 @@
         <!-- clarity -->
         <script type="text/javascript">
             (function (c, l, a, r, i, t, y) {
-              c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-              t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-              y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+                c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+                t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+                y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
             })(window, document, "clarity", "script", "p0f31py6en");
-          </script>
+        </script>
 
 
-          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-          </script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 </body>
 
 </html>
