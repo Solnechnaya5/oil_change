@@ -579,7 +579,7 @@ modalForm.addEventListener("submit", async (e) => {
     }).showToast();
 
     // Сброс формы и закрытие модалки
-    modalForm.reset();
+    // modalForm.reset();
     closeModal();
   } 
   catch (error) {
