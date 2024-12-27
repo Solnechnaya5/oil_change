@@ -2,7 +2,7 @@
 const carSelect = document.querySelector("#car_make");
 const modelSelect = document.querySelector("#car_model");
 const carSelectedValue = carSelect.value;
-const openModal = document.getElementById("open-popup");
+const openModal = document.querySelector(".open-popup");
 const modalWindow = document.getElementById("modal_window");
 const closeModalBtn = document.querySelector(".modal_close_btn");
 const modalForm = document.querySelector(".modal_form");
@@ -31,7 +31,7 @@ function closeModal() {
 function resetFormFields() {
   const form = modalWindow.querySelector(".modal_form");
   form.reset();
-  form.querySelector('input[type="tel"]').value = "+000000000000";
+  form.querySelector('input[type="tel"]').value = "+43";
   document.getElementById("car_model").innerHTML =
   lang === "en"
   ? '<option value="" disabled selected>Choose your car model!</option>'
@@ -45,22 +45,22 @@ openModal.addEventListener("click", () =>
  {   modalWindow.classList.add("active");}
   );
 
-// modalWindow.addEventListener("mousedown", (event) => {
-//   if (event.target !== modalWindow) {
-//     return;
-//   }
-//   closeModal();
-// });
+modalWindow.addEventListener("mousedown", (event) => {
+  if (event.target !== modalWindow) {
+    return;
+  }
+  closeModal();
+});
 
 closeModalBtn.addEventListener("click", () => {
   closeModal();
 });
 
-// document.addEventListener("keydown", (event) => {
-//   if (event.key === "Escape") {
-//     closeModal();
-//   }
-// });
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeModal();
+  }
+});
 
 // Selects with Cars
 carSelect.addEventListener("change", () => {
@@ -224,8 +224,8 @@ carSelect.addEventListener("change", () => {
 });
 
 // CALCULATOR
-const changeOil = 20;
-const changeFilter = 25;
+const changeOil = 30;
+const changeFilter = 30;
 const additional = 30;
 
 
@@ -362,14 +362,11 @@ document.querySelectorAll("input[type='checkbox']").forEach((checkbox) => {
 
 
 async function hashPhoneNumber(phoneNumber) {
-  // Кодирование строки в байты
+
   const encoder = new TextEncoder();
   const data = encoder.encode(phoneNumber);
 
-  // Хэширование с использованием SHA-256
   const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-
-  // Преобразование результата в шестнадцатеричную строку
   const hashArray = Array.from(new Uint8Array(hashBuffer));
   const hashedPhone = hashArray
     .map((byte) => byte.toString(16).padStart(2, "0"))
@@ -380,9 +377,9 @@ async function hashPhoneNumber(phoneNumber) {
 
 
 async function sendEmail2(params) {
-  const emailJSID = "sw_H53g2nxrTjDn9T"; // Ваш ID
-  const SERVICE_ID = "service_os6nxms"; // Ваш Service ID
-  const TEMPLATE_ID = "template_zmaa8mk"; // Ваш Template ID
+    const emailJSID = "f-9iJDVJajodVpgnA"; // Ваш ID
+    const SERVICE_ID = "service_duehlmq"; // Ваш Service ID
+    const TEMPLATE_ID = "template_yn4v6qu"; // Ваш Template ID
 
   emailjs.init(emailJSID);
 
@@ -396,33 +393,33 @@ async function sendEmail2(params) {
   }
 }
 
-// const sendPostRequest = async (apiVersion, pixelId, token, eventData) => {
-//   const url = `https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${token}`;
+const sendPostRequest = async (apiVersion, pixelId, token, eventData) => {
+  const url = `https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${token}`;
 
-//   const payload = {
-//     data: eventData,
-//   };
+  const payload = {
+    data: eventData,
+  };
 
-//   try {
-//     const response = await fetch(url, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(payload),
-//     });
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
 
-//     if (!response.ok) {
-//       const errorData = await response.json();
-//       console.error("Ошибка запроса:", errorData);
-//     } else {
-//       const responseData = await response.json();
-//       console.log("Успешная отправка:", responseData);
-//     }
-//   } catch (error) {
-//     console.error("Ошибка выполнения запроса:", error);
-//   }
-// };
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Ошибка запроса:", errorData);
+    } else {
+      const responseData = await response.json();
+      console.log("Успешная отправка:", responseData);
+    }
+  } catch (error) {
+    console.error("Ошибка выполнения запроса:", error);
+  }
+};
 
 // Обработчик отправки формы
 
@@ -482,18 +479,18 @@ modalForm.addEventListener("submit", async (e) => {
     return;
   }
 
-  // if (!isPhoneValid) {
-  //   Toastify({
-  //     text: errorMessageInvalidPhone,
-  //     duration: 3000,
-  //     close: true,
-  //     gravity: "top",
-  //     position: "center",
-  //     backgroundColor: "#FF6347", // Красный для ошибки
-  //   }).showToast();
-  //   phoneInput.style.border = "2px solid red";
-  //   return;
-  // }
+  if (!isPhoneValid) {
+    Toastify({
+      text: errorMessageInvalidPhone,
+      duration: 3000,
+      close: true,
+      gravity: "top",
+      position: "center",
+      backgroundColor: "#FF6347", // Красный для ошибки
+    }).showToast();
+    phoneInput.style.border = "2px solid red";
+    return;
+  }
 
   phoneInput.style.border = ""; // Сбрасываем стили ошибок
 
@@ -519,12 +516,12 @@ modalForm.addEventListener("submit", async (e) => {
 
   // Параллельная отправка в Telegram и EmailJS
   try {
-    emailjs.init("sw_H53g2nxrTjDn9T"); // Инициализация EmailJS
+    emailjs.init("f-9iJDVJajodVpgnA"); // Инициализация EmailJS
     const emailResponse = await emailjs.send(
-      "service_os6nxms",
-      "template_zmaa8mk",
+      "service_duehlmq",
+      "template_yn4v6qu",
       {
-        from_name: "Назва сайту - Shell Auto Öl",
+        from_name: "Назва сайту - Oil change",
         name: `${name}`,
         carType: `${carMake}`,
         service: `${
@@ -562,12 +559,11 @@ modalForm.addEventListener("submit", async (e) => {
       },
     ];
 
-    // const apiVersion = "v12.0";
-    // const pixelId = "927079089087237"; 
-    // const token =
-    //   "EAA2CZAuNcWIABO2teerfXDNZBl8JVBckLyweuI4I4hy528XsJXjE3dfNZCd64XROdKGRZBNQKx1FMcijLGr0AddqZARHid3kZA9psJP7VYWS6dTkZAAihJkRRZCBCtbRfP5REZCVqPGD4DqF3yvzBi3cHCs0AaDEU6X5nHWYa4pHxHhHN53ZAzQbDZBG7UAsD00Yr7ZAsQZDZD";
-
-    // await sendPostRequest(apiVersion, pixelId, token, eventData);
+    const apiVersion = "v12.0";
+    const pixelId = "927079089087237"; 
+    const token =
+"EAA2CZAuNcWIABOzULs5stMMqb4B25WsrL6ep01cJof4Tt1QiSqV8aecnwjhX4RX44bUqFVgu8GpgzwlQXhMhAYjAt8IXHJr1RrOZAYVAsmgwZCerArmZAqGR6nzcuW2IUQKxtA1BWoqI2NpZBlyVoYx19utRGR0mopDMOuhFfUGPakpV2RjVHi8yU33SvvENeqwZDZD"
+    await sendPostRequest(apiVersion, pixelId, token, eventData);
 
     Toastify({
       text: successMessage,
@@ -579,18 +575,18 @@ modalForm.addEventListener("submit", async (e) => {
     }).showToast();
 
     // Сброс формы и закрытие модалки
-    // modalForm.reset();
+    modalForm.reset();
     closeModal();
   } 
   catch (error) {
     console.error("Ошибка:", error);
-    // Toastify({
-    //   text: "Ошибка отправки данных. Попробуйте позже.",
-    //   duration: 3000,
-    //   close: true,
-    //   gravity: "top",
-    //   position: "center",
-    //   backgroundColor: "#FF6347", // Красный для ошибки
-    // }).showToast();
+    Toastify({
+      text: "Ошибка отправки данных. Попробуйте позже.",
+      duration: 3000,
+      close: true,
+      gravity: "top",
+      position: "center",
+      backgroundColor: "#FF6347", // Красный для ошибки
+    }).showToast();
   }
 });

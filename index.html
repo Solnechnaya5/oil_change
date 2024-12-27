@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="./css/media-styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
     <script src="./js/translation.js" defer></script>
     <title>Oil change</title>
@@ -138,7 +139,10 @@
                                 </svg>
                                 info.autodienst.at@gmail.com
                             </a>
-                            <a href="#" class="address-link site-header_link" data-translate-key="contact_address">
+                            <a href="https://www.google.com/maps/dir//La%C3%9Fnitzthal+300,+8200+La%C3%9Fnitzthal,+%D0%90%D0%B2%D1%81%D1%82%D1%80%D0%B8%D1%8F/@47.0788412,15.6473568,17z/data=!4m18!1m8!3m7!1s0x476e4de11889771b:0x15a56e06f63a932d!2zTGHDn25pdHp0aGFsIDMwMCwgODIwMCBMYcOfbml0enRoYWwsINCQ0LLRgdGC0YDQuNGP!3b1!8m2!3d47.0788412!4d15.6473568!16s%2Fg%2F11c2g8hg69!4m8!1m0!1m5!1m1!1s0x476e4de11889771b:0x15a56e06f63a932d!2m2!1d15.6473568!2d47.0788412!3e3?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw&utm_source=header&utm_medium=maps&utm_campaign=address"
+                                class="address-link site-header_link" data-translate-key="contact_address"
+                                target="_blank">
+                                >
                                 <svg class="map-icon">
                                     <use xlink:href="#map"></use>
                                 </svg>
@@ -147,17 +151,23 @@
                         </div>
                         <div class="header-right">
                             <div class="site-header_messengers">
-                                <a href="" data-translate-key="messenger_viber">
+                                    <a
+                                    href="viber://chat?number=%2B380665809263&utm_source=header&utm_medium=social&utm_campaign=viber"
+                                    class="top_header_icon_subtitle" target="_blank" data-translate-key="messenger_viber">
                                     <svg class="viber-icon">
                                         <use xlink:href="#viber"></use>
                                     </svg>
                                 </a>
-                                <a href="" data-translate-key="messenger_telegram">
+                                    <a
+                href="https://t.me/+380665809263?utm_source=header&utm_medium=social&utm_campaign=telegram"
+                class="top_header_icon_subtitle" target="_blank" data-translate-key="messenger_telegram">
                                     <svg class="telegram-icon">
                                         <use xlink:href="#telegram"></use>
                                     </svg>
                                 </a>
-                                <a href="" data-translate-key="messenger_whatsapp">
+                                    <a
+                                    href="https://wa.me/380665809263?utm_source=header&utm_medium=social&utm_campaign=whatsapp"
+                                    class="top_header_icon_subtitle" target="_blank" data-translate-key="messenger_whatsapp">
                                     <svg class="whatsapp-icon">
                                         <use xlink:href="#whatsapp"></use>
                                     </svg>
@@ -178,9 +188,12 @@
                         <nav class="site-header__navigation">
                             <a href="#main" class="site-header_link" data-translate-key="nav_main">Головна</a>
                             <a href="#about-us" class="site-header_link" data-translate-key="nav_about">Про нас</a>
-                            <a href="#services" class="site-header_link" data-translate-key="nav_services">Наш сервіси</a>
-                            <a href="#info" class="site-header_link" data-translate-key="nav_info">Корисна інформація</a>
-                            <a href="#testimonials" class="site-header_link" data-translate-key="nav_reviews">Відгуки</a>
+                            <a href="#services" class="site-header_link" data-translate-key="nav_services">Наш
+                                сервіси</a>
+                            <a href="#info" class="site-header_link" data-translate-key="nav_info">Корисна
+                                інформація</a>
+                            <a href="#testimonials" class="site-header_link"
+                                data-translate-key="nav_reviews">Відгуки</a>
                             <a href="#contacts" class="site-header_link" data-translate-key="nav_contacts">Контакти</a>
                         </nav>
                     </div>
@@ -239,16 +252,14 @@
             </div>
 
         </header>
-
-
-
         <main>
             <section id="main" class="top">
                 <div class="site-container_first">
                     <div class="banner">
                         <p data-translate-key="banner_discount">Запишіться вже зараз та отримайте знижку до 50% на наші
                             послуги!</p>
-                        <a href="#promo" class="banner-btn btn-black" data-translate-key="banner_btn_more">Детальніше</a>
+                        <a href="#promo" class="banner-btn btn-black"
+                            data-translate-key="banner_btn_more">Детальніше</a>
                     </div>
                     <div class="top-content_wiget">
                         <h1 class="main-title" data-translate-key="top_main_title">Якісна заміна оливи <br> та
@@ -257,7 +268,7 @@
                             Ми забезпечимо довготривалу роботу вашого двигуна та надамо професійну діагностику всіх
                             систем.
                         </h3>
-                        <a href="#" class="top-content_main-btn btn-orange"
+                        <a href="#" class="top-content_main-btn btn-orange open-popup"
                             data-translate-key="top_btn_service">Записатися на сервіс</a>
                     </div>
                     <div class="top-content_bottom-row">
@@ -421,7 +432,7 @@
                         </div>
                     </div>
                     <div class="services-bottom">
-                        <button id="open-popup" class="services-btn btn-orange"
+                        <button class="services-btn btn-orange open-popup"
                             data-translate-key="service_button">Записатися на сервіс</button>
                     </div>
                 </div>
@@ -551,29 +562,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="swiper-slide">
-                                <div class="worker" data-translate-key="worker-6">
-                                    <div class="worker-info">
-                                        <div class="worker-info_img">
-                                            <img src="./imgs/team/worker-5.jpg" alt="user photo">
-                                        </div>
-                                        <div class="worker-info_about">
-                                            <p class="worker-info_name" data-translate-key="worker_name_6">Іван</p>
-                                            <p class="worker-info_position" data-translate-key="worker_position_6">
-                                                Старший механік</p>
-                                            <p class="worker-info_experiance" data-translate-key="worker_experience_6">
-                                                Досвід роботи: 9 років</p>
-                                            <p class="worker-info_description"
-                                                data-translate-key="worker_description_6">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quam
-                                                iste cupiditate delectus magnam similique ipsum asperiores dolorum
-                                                obcaecati beatae eaque, dolor maxime, commodi amet ad. Quibusdam
-                                                laudantium odio quas?
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                         <div class="swiper-button-prev" data-translate-key="swiper-prev"></div>
                         <div class="swiper-button-next" data-translate-key="swiper-next"></div>
@@ -901,6 +889,22 @@
                                     <div class="swiper-slide_img"></div>
                                 </div>
                             </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial">
+                                    <div class="testimonial-user">
+                                        <div class="testimonial-user_img">
+                                            <img src="./imgs/testimonial/m3.jpg" alt="user photo">
+                                        </div>
+                                        <div class="testimonial-user_name" data-translate-key="testimonial_user_name_4">
+                                            Андрій</div>
+                                    </div>
+                                    <div class="testimonial_txt" data-translate-key="testimonial_text_4">
+                                        <p>Дякую за якісне обслуговування. Робив заміну масла. Все пройшло на найвищому
+                                            рівні!</p>
+                                    </div>
+                                    <div class="swiper-slide_img"></div>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
@@ -934,7 +938,10 @@
                     <div class="site-footer_column">
                         <ul class="site-footer_contacts">
                             <li>
-                                <a href="#" class="address-link" data-translate-key="footer_address">
+                                
+                                    <a
+            href="https://www.google.com/maps/dir//La%C3%9Fnitzthal+300,+8200+La%C3%9Fnitzthal,+%D0%90%D0%B2%D1%81%D1%82%D1%80%D0%B8%D1%8F/@47.0788412,15.6473568,17z/data=!4m18!1m8!3m7!1s0x476e4de11889771b:0x15a56e06f63a932d!2zTGHDn25pdHp0aGFsIDMwMCwgODIwMCBMYcOfbml0enRoYWwsINCQ0LLRgdGC0YDQuNGP!3b1!8m2!3d47.0788412!4d15.6473568!16s%2Fg%2F11c2g8hg69!4m8!1m0!1m5!1m1!1s0x476e4de11889771b:0x15a56e06f63a932d!2m2!1d15.6473568!2d47.0788412!3e3?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw&utm_source=footer&utm_medium=maps&utm_campaign=address"
+            target="_blank" cclass="address-link" data-translate-key="footer_address">
                                     <svg class="map-icon">
                                         <use xlink:href="#map"></use>
                                     </svg>
@@ -948,25 +955,32 @@
                                     +43 660 2430111</a>
                             </li>
                             <li>
-                                <a href="mailto:info.autodienst.at@gmail.com" class="top_header_icon_subtitle"
-                                    data-translate-key="footer_email">
+                                    <a
+                                    href="mailto:info.autodienst.at@gmail.com?utm_source=footer&utm_medium=email&utm_campaign=contact"
+                                    target="_blank" class="top_header_icon_subtitle" data-translate-key="footer_email">
                                     <svg class="email-icon">
                                         <use xlink:href="#email"></use>
                                     </svg>
                                     info.autodienst.at@gmail.com</a>
                             </li>
                             <li class="site-footer_messengers">
-                                <a href="#" data-translate-key="footer_viber">
+                          
+                                    <a
+            href="viber://chat?number=%2B380665809263&utm_source=footer&utm_medium=social&utm_campaign=viber"   target="_blank"  data-translate-key="footer_viber">
                                     <svg class="viber-icon">
                                         <use xlink:href="#viber"></use>
                                     </svg>
                                 </a>
-                                <a href="#" data-translate-key="footer_telegram">
+                                    <a
+                                    href="https://t.me/+380665809263?utm_source=footer&utm_medium=social&utm_campaign=telegram" target="_blank"
+                                    data-translate-key="footer_telegram">
                                     <svg class="telegram-icon">
                                         <use xlink:href="#telegram"></use>
                                     </svg>
                                 </a>
-                                <a href="#" data-translate-key="footer_whatsapp">
+                                    <a
+            href="https://wa.me/380665809263?utm_source=footer&utm_medium=social&utm_campaign=whatsapp" target="_blank"
+            data-translate-key="footer_whatsapp">
                                     <svg class="whatsapp-icon">
                                         <use xlink:href="#whatsapp"></use>
                                     </svg>
@@ -998,12 +1012,12 @@
                 </div>
                 <div class="site-footer_bottom">
                     <p class="copyright" data-translate-key="footer_copyright">copyright</p>
-                    <p><a class="privacy-policy" href="#" data-translate-key="footer_privacy">Політика
+                    <p><a class="privacy-policy" href="./politic.html" data-translate-key="footer_privacy">Політика
                             конфіденційності</a></p>
                 </div>
             </div>
         </footer>
-        <div id="modal_window">
+        <!-- <div id="modal_window">
             <form class="modal_form" method="POST">
                 <button class="modal_close_btn"> <span>X</span> </button>
                 <div class="form-group">
@@ -1012,7 +1026,8 @@
                 </div>
                 <div class="form-group phone-group">
                     <label for="modal_phone_input" data-translate-key="modal_phone">Телефон</label>
-                    <input name="phone" class="input_phone" type="tel" value="" id="modal_phone_input" />
+                    <input name="phone" class="input_phone" type="tel" value="+43"
+              required /> 
                 </div>
                 <div class="form-group">
                     <select name="car_make" id="car_make">
@@ -1057,7 +1072,7 @@
                     <label class="politics_label">
                         <input id="politics" type="checkbox" />
                         <span data-translate-key="accept">Я приймаю</span>
-                        <a href="politics.html" class="politics_link"
+                        <a href="./politic.html" class="politics_link"
                             data-translate-key="modal_privacy_policy_link">Політику
                             конфіденційності</a>
                     </label>
@@ -1065,14 +1080,78 @@
                 <button class="form_button btn-orange" type="submit" data-translate-key="modal_big_btn">Записатися на
                     сервіс</button>
             </form>
+        </div> -->
+
+        <div id="modal_window">
+            <form class="modal_form" method="POST">
+                <button class="modal_close_btn"> <span>X</span> </button>
+                <div class="form-group">
+                    <label for="modal_name_input" data-translate-key="modal_name">Ім'я</label>
+                    <input name="name" type="text" id="modal_name_input" />
+                </div>
+                <div class="form-group phone-group">
+                    <label for="modal_phone_input" data-translate-key="modal_phone">Телефон</label>
+                    <input name="phone" class="input_phone" type="tel" value="+43"
+              required /> 
+                </div>
+                <div class="form-group">
+                    <select name="car_make" id="car_make">
+                        <option value="" disabled selected data-translate-key="modal_carbrand">Оберіть марку авто...
+                        </option>
+                        <option value="toyota">Toyota</option>
+                        <option value="volkswagen">Volkswagen</option>
+                        <option value="ford">Ford</option>
+                        <option value="honda">Honda</option>
+                        <option value="bmw">BMW</option>
+                        <option value="mercedes">Mercedes-Benz</option>
+                        <option value="hyndai">Hyundai</option>
+                        <option value="nissan">Nissan</option>
+                        <option value="kia">Kia</option>
+                    </select>
+                </div>
+                <div class="form-group" id="model_select">
+                    <select name="car_model" id="car_model">
+                        <option value="" disabled selected data-translate-key="modal_carmark">Спочатку оберіть марку
+                            авто!</option>
+                    </select>
+                </div>
+                <h4 class="modal_form_title" data-translate-key="modal_services">Послуги:</h4>
+                <div class="modal_form_services">
+                    <div class="modal_labels">
+                        <label for="changeoil_input">
+                            <input name="changeoil" id="changeoil_input" type="checkbox" />
+                            <span data-translate-key="modal_changeoil">Заміна мастила</span>
+                        </label>
+                        <label for="changefilter_input">
+                            <input name="changefilter" id="changefilter_input" type="checkbox" />
+                            <span data-translate-key="modal_changefilter">Заміна фільтра</span>
+                        </label>
+                        <label for="additional_input">
+                            <input name="additional" id="additional_input" type="checkbox" />
+                            <span data-translate-key="modal_additional">Додаткові послуги</span>
+                        </label>
+                    </div>
+                </div>
+                <p id="result" data-translate-key="modal_total" name="total_price">Сума від: €0.00</p>
+                <div class="modal_politics_block">
+                    <label class="politics_label">
+                        <input id="politics" type="checkbox" name="politics"  />
+                        <span data-translate-key="accept">Я приймаю</span>
+                        <a href="./politic.html" class="politics_link"
+                            data-translate-key="modal_privacy_policy_link">Політику
+                            конфіденційності</a>
+                    </label>
+                </div>
+                <button class="form_button btn-orange" type="button" data-translate-key="modal_big_btn">Записатися на
+                    сервіс</button>
+            </form>
         </div>
 
-
+        
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script src="./js/additional.js"></script>
-        <script src="./js/calculator-form.js"></script>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
+       
         <!-- Meta Pixel Code -->
         <script>
             !function (f, b, e, v, n, t, s) {
@@ -1101,10 +1180,8 @@
                 y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
             })(window, document, "clarity", "script", "p0f31py6en");
         </script>
-
-
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+ <script src="./js/additional.js"></script>
+ <script src="./js/calculator-form.js"></script>
 </body>
 
 </html>

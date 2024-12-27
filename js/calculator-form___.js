@@ -1,3 +1,4 @@
+
 const carSelect = document.querySelector("#car_make");
 const modelSelect = document.querySelector("#car_model");
 const carSelectedValue = carSelect.value;
@@ -10,7 +11,7 @@ const modalResult = document.getElementById("result");
 const modalPhoneInput = document.querySelector(".input_phone");
 const lang = localStorage.getItem("selectedLang");
 
-//Close Modal
+// Close Modal
 function closeModal() {
   const lang = localStorage.getItem("selectedLang");
   modalWindow.classList.remove("active");
@@ -20,10 +21,10 @@ function closeModal() {
     lang === "en"
       ? "Total cost from: €0.00"
       : lang === "de"
-      ? "Summe ab: €0.00"
-      : lang === "ua"
-      ? "Сума від: €0.00"
-      : "Language not supported";
+        ? "Summe ab: €0.00"
+        : lang === "ua"
+          ? "Сума від: €0.00"
+          : "Language not supported";
   modalPhoneInput.style.border = "";
 }
 
@@ -41,22 +42,12 @@ cardButtons.forEach((button) => {
   });
 });
 
-modalWindow.addEventListener("mousedown", (event) => {
-  if (event.target !== modalWindow) {
-    return;
-  }
-  closeModal();
-});
 
 closeModalBtn.addEventListener("click", () => {
   closeModal();
 });
 
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeModal();
-  }
-});
+
 
 // Selects with Cars
 carSelect.addEventListener("change", () => {
@@ -219,7 +210,6 @@ carSelect.addEventListener("change", () => {
   });
 });
 
-
 // CALCULATOR
 const changeOil = 20;
 const changeFilter = 25;
@@ -358,58 +348,6 @@ document.querySelectorAll("input[type='checkbox']").forEach((checkbox) => {
 });
 
 
-
-// Input Phone Validate
-const phoneInputs = document.querySelectorAll(".input_phone");
-const itiInstances = [];
-
-// Инициализация полей для intlTelInput
-phoneInputs.forEach((input) => {
-  const iti = window.intlTelInput(input, {
-    initialCountry: "at", // Инициализация с кодом страны
-    geoIpLookup: (callback) => {
-      fetch("https://ipinfo.io/json?token=your_token_here")
-        .then((response) => response.json())
-        .then((data) => callback(data.country))
-        .catch(() => callback("us"));
-    },
-    utilsScript:
-      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-  });
-
-  itiInstances.push({ input, iti }); // Добавляем экземпляр в массив
-});
-
-document.querySelectorAll('a[target="_blank"]').forEach((link) => {
-  link.addEventListener("click", (event) => {
-    const url = new URL(link.href);
-    const utmParams = new URLSearchParams(url.search);
-
-    // Извлечение текущего массива из localStorage
-    const clickedLinks =
-      JSON.parse(localStorage.getItem("clicked_links")) || [];
-
-    // Создаем объект с данными текущего нажатия
-    const clickedData = {
-      href: link.href,
-      utm_source: utmParams.get("utm_source") || "Не указано",
-      utm_medium: utmParams.get("utm_medium") || "Не указано",
-      utm_campaign: utmParams.get("utm_campaign") || "Не указано",
-      utm_content: utmParams.get("utm_content") || "Не указано",
-      utm_term: utmParams.get("utm_term") || "Не указано",
-      timestamp: new Date().toISOString(), // Время клика
-    };
-
-    // Добавляем новые данные в массив
-    clickedLinks.push(clickedData);
-
-    // Сохраняем обновленный массив в localStorage
-    localStorage.setItem("clicked_links", JSON.stringify(clickedLinks));
-
-    console.log("Данные о нажатии сохранены:", clickedData);
-  });
-});
-
 async function hashPhoneNumber(phoneNumber) {
   // Кодирование строки в байты
   const encoder = new TextEncoder();
@@ -428,7 +366,6 @@ async function hashPhoneNumber(phoneNumber) {
 }
 
 
-
 async function sendEmail2(params) {
   const emailJSID = "sw_H53g2nxrTjDn9T"; // Ваш ID
   const SERVICE_ID = "service_os6nxms"; // Ваш Service ID
@@ -445,7 +382,6 @@ async function sendEmail2(params) {
     return false; // Ошибка отправки
   }
 }
-
 
 const sendPostRequest = async (apiVersion, pixelId, token, eventData) => {
   const url = `https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${token}`;
@@ -476,144 +412,6 @@ const sendPostRequest = async (apiVersion, pixelId, token, eventData) => {
 };
 
 // Обработчик отправки формы
-const feedbackForm = document.querySelector(".feedback_form");
-
-feedbackForm.addEventListener("submit", async (e) => {
-  e.preventDefault(); // Отмена стандартного поведения
-
-  // Получение значений полей
-  const name = feedbackForm.querySelector('input[name="name"]').value.trim();
-  const phoneInput = feedbackForm.querySelector(".input_phone");
-  const car = feedbackForm.querySelector('input[name="car_name"]').value.trim();
-  const acceptPolitics = feedbackForm.querySelector(
-    'input[type="checkbox"]'
-  ).checked;
-
-  // Получаем экземпляр intlTelInput для поля телефона
-  const iti = itiInstances.find(({ input }) => input === phoneInput)?.iti;
-
-  // Проверка валидности телефона
-  const isPhoneValid = iti && iti.isValidNumber();
-
-  // Локализация сообщений
-  const messages = {
-    fillFields: {
-      ua: "Будь ласка, заповніть всі поля і прийміть політику конфіденційності!",
-      en: "Please fill in all fields and accept the privacy policy!",
-      de: "Bitte füllen Sie alle Felder aus und akzeptieren Sie die Datenschutzrichtlinie!",
-    },
-    invalidPhone: {
-      ua: "Будь ласка, введіть дійсний номер телефону!",
-      en: "Please enter a valid phone number!",
-      de: "Bitte geben Sie eine gültige Telefonnummer ein!",
-    },
-    success: {
-      ua: "Дані успішно відправлені!",
-      en: "Data has been successfully sent!",
-      de: "Daten wurden erfolgreich gesendet!",
-    },
-  };
-
-  const lang = langSelect.value;
-  const errorMessageFillFields =
-    messages.fillFields[lang] || "Language not supported";
-  const errorMessageInvalidPhone =
-    messages.invalidPhone[lang] || "Language not supported";
-  const successMessage = messages.success[lang] || "Language not supported";
-
-  // Валидация формы
-  if (!name || !phoneInput.value.trim() || !car || !acceptPolitics) {
-    Toastify({
-      text: errorMessageFillFields,
-      duration: 3000,
-      close: true,
-      gravity: "top",
-      position: "center",
-      backgroundColor: "#FF6347", // Красный для ошибки
-    }).showToast();
-    return;
-  }
-
-  if (!isPhoneValid) {
-    Toastify({
-      text: errorMessageInvalidPhone,
-      duration: 3000,
-      close: true,
-      gravity: "top",
-      position: "center",
-      backgroundColor: "#FF6347",
-    }).showToast();
-    phoneInput.style.border = "2px solid red";
-    return;
-  }
-
-  // Если данные валидны
-  phoneInput.style.border = ""; // Убираем ошибку
-
-  const token = "8197764205:AAE-XbNUdeNg39ufCTNgo5wLMP_8lp75eXw";
-  const chatId = "-1002295760352";
-  const message = `Назва сайту: Turbo Autoservice\nФорма для консультації:\nІм'я: ${name}\nТелефон: ${phoneInput.value}\nАвтомобіль: ${car}`;
-
-  try {
-    // Отправка данных в Telegram
-    const telegramResponse = await fetch(
-      `https://api.telegram.org/bot${token}/sendMessage`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: message,
-        }),
-      }
-    );
-
-    if (!telegramResponse.ok) {
-      throw new Error("Не удалось отправить сообщение в Telegram");
-    }
-
-    // Отправка данных в EmailJS
-    emailjs.init("izUn8c8DGbhnXBEc8"); // Инициализация EmailJS
-    const emailResponse = await emailjs.send(
-      "service_q0nga99",
-      "template_z8ca37o",
-      {
-        from_name: "Назва сайту - Turbo Autoservice",
-        name: `${name} /// Авто користувача: ${car} `,
-        phone: `${phoneInput.value}`,
-      }
-    );
-
-    if (emailResponse.status !== 200) {
-      throw new Error("Не удалось отправить сообщение на почту");
-    }
-
-    // Успешное уведомление
-    Toastify({
-      text: successMessage,
-      duration: 3000,
-      close: true,
-      gravity: "top",
-      position: "center",
-      backgroundColor: "#4CAF50", // Зеленый для успеха
-    }).showToast();
-
-    // Очистка формы
-    feedbackForm.reset();
-  } catch (error) {
-    console.error(error);
-    Toastify({
-      text: "Ошибка отправки данных. Попробуйте позже.",
-      duration: 3000,
-      close: true,
-      gravity: "top",
-      position: "center",
-      backgroundColor: "#FF6347", // Красный для ошибки
-    }).showToast();
-  }
-});
 
 modalForm.addEventListener("submit", async (e) => {
   e.preventDefault(); // Отмена стандартного поведения формы
@@ -697,7 +495,7 @@ modalForm.addEventListener("submit", async (e) => {
 
   // Формируем сообщение
   const message = `
-    Нова заявка:\nНазва сайту: Turbo Autroservice\nІм'я: ${name}\nТелефон: ${
+    Нова заявка:\nНазва сайту: Oil change\nІм'я: ${name}\nТелефон: ${
     phoneInput.value
   }\nМарка авто: ${carMake}\nМодель авто: ${carModel}\nПослуги: ${
     selectedServices.length > 0 ? selectedServices.join(", ") : "Не обрані"
@@ -735,10 +533,10 @@ modalForm.addEventListener("submit", async (e) => {
     }
 
     // Отправка в EmailJS
-    emailjs.init("izUn8c8DGbhnXBEc8"); // Инициализация EmailJS
+    emailjs.init("sw_H53g2nxrTjDn9T"); // Инициализация EmailJS
     const emailResponse = await emailjs.send(
-      "service_q0nga99",
-      "template_5mwmhdt",
+      "service_os6nxms",
+      "template_zmaa8mk",
       {
         from_name: "Назва сайту - Turbo Autoservice",
         name: `${name}`,
@@ -757,8 +555,8 @@ modalForm.addEventListener("submit", async (e) => {
       throw new Error("Не удалось отправить сообщение на почту");
     }
 
-    const phoneNumber = iti.getNumber(); // Получаем номер телефона в формате E.164
-    const hashedPhone = await hashPhoneNumber(phoneNumber); // Хэшируем номер
+    const phoneNumber = iti.getNumber();
+    const hashedPhone = await hashPhoneNumber(phoneNumber);
 
     const eventData = [
       {
@@ -779,10 +577,9 @@ modalForm.addEventListener("submit", async (e) => {
     ];
 
     const apiVersion = "v12.0";
-    const pixelId = "1071062520995467"; // Замените на ваш Pixel ID
+    const pixelId = "927079089087237";
     const token =
-      "EAA2CZAuNcWIABO2teerfXDNZBl8JVBckLyweuI4I4hy528XsJXjE3dfNZCd64XROdKGRZBNQKx1FMcijLGr0AddqZARHid3kZA9psJP7VYWS6dTkZAAihJkRRZCBCtbRfP5REZCVqPGD4DqF3yvzBi3cHCs0AaDEU6X5nHWYa4pHxHhHN53ZAzQbDZBG7UAsD00Yr7ZAsQZDZD"; // Замените на ваш Access Token
-
+"EAA2CZAuNcWIABOzULs5stMMqb4B25WsrL6ep01cJof4Tt1QiSqV8aecnwjhX4RX44bUqFVgu8GpgzwlQXhMhAYjAt8IXHJr1RrOZAYVAsmgwZCerArmZAqGR6nzcuW2IUQKxtA1BWoqI2NpZBlyVoYx19utRGR0mopDMOuhFfUGPakpV2RjVHi8yU33SvvENeqwZDZD"
     await sendPostRequest(apiVersion, pixelId, token, eventData);
 
     Toastify({
@@ -791,10 +588,9 @@ modalForm.addEventListener("submit", async (e) => {
       close: true,
       gravity: "top",
       position: "center",
-      backgroundColor: "#4CAF50", // Зеленый для успеха
+      backgroundColor: "#4CAF50",
     }).showToast();
 
-    // Сброс формы и закрытие модалки
     modalForm.reset();
     closeModal();
   } catch (error) {
@@ -809,8 +605,3 @@ modalForm.addEventListener("submit", async (e) => {
     }).showToast();
   }
 });
-
-function toggleMenu() {
-  const nav = document.getElementById("burgerNav");
-  nav.style.display = nav.style.display === "block" ? "none" : "block";
-}

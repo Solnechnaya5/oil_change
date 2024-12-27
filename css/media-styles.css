@@ -647,7 +647,7 @@ align-items: center;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        width: 500px;
+        width:100%;
         height: 100%;
         position: absolute;
         z-index: 5;
@@ -656,7 +656,7 @@ align-items: center;
     .advantages-block {
         display: flex;
         align-items: center;
-        width: 200px;
+        /* width: 300px; */
         position: relative;
     }
     .advantages-block p {
@@ -666,6 +666,7 @@ align-items: center;
         left: 25px;
         z-index: 9;
     }
+  
 
     .advantage-numbers {
         max-width: 800px;
@@ -1158,10 +1159,10 @@ padding: 20px;
         width: 150px;
         right: -15px;
     }
-    .orange-bg {
+    /* .orange-bg {
         width: 150px;
         height: 100px;
-    }
+    } */
     .about-company-block_top{
         width: 100px;
     }
@@ -1203,13 +1204,14 @@ padding: 20px;
         align-items: center;
     }
     .orange-bg {
-        width: 270px;
+        width: 290px;
+        height: 140px;
     }
     .advantages-blocks{
-        height: 550px;
+        height: 650px;
     }
     .advantages-block{
-        width: 270px;
+        width: 320px;
         margin-bottom: 20px;
     }
     .advantages-block:last-child{

@@ -54,29 +54,30 @@ const testimonialsSwiper = new Swiper(".testimonials-slider", {
   autoplay: {
     delay: 5000,
   },
+ 
   breakpoints: {
-    breakpoints:{
-      // when window width is >= 320px
-      320: {
-       slidesPerView: 1,
-       spaceBetween: 20
-     },
-     // when window width is >= 480px
-     480: {
-       slidesPerView: 1,
-       spaceBetween: 20
-     },
-     // when window width is >= 640px
-     640: {
-       slidesPerView: 1,
-       spaceBetween: 20
-     }
-   
- }
-   
-  }
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 40,
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 40,
+    },
+    // when window width is >= 640px
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 40,
+    },
+    1920: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+  },
 });
-const teamSwiper = new Swiper(".our-team-slider", {
+const team = new Swiper(".our-team-slider", {
   slidesPerView: 2,
   spaceBetween: 40,
   navigation: {
@@ -86,25 +87,29 @@ const teamSwiper = new Swiper(".our-team-slider", {
   autoplay: {
     delay: 5000,
   },
-  breakpoints:{
-     // when window width is >= 320px
-     320: {
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
       slidesPerView: 1,
-      spaceBetween: 20
+      spaceBetween: 40,
     },
     // when window width is >= 480px
     480: {
       slidesPerView: 1,
-      spaceBetween: 20
+      spaceBetween: 40,
     },
     // when window width is >= 640px
     640: {
       slidesPerView: 1,
-      spaceBetween: 20
-    }
-  
-}
+      spaceBetween: 40,
+    },
+    1920: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+  },
 });
+
 
 // burgermenu
 function toggleMenu() {
