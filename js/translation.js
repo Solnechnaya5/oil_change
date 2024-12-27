@@ -760,7 +760,6 @@ const translations = {
            en:"The stored data comes from the database of the FOP Kolisnyk T.M. will be removed after the expiration of all prescribed laws. The Gir period is not quite what it once was. When using information, you must be aware at all times of what is happening on the basis of the data. In such cases, even if you have other wishes related to personal names. These animals are close to animals.",
             de: "Die gespeicherten Daten stammen aus der Datenbank des FOP Kolisnyk T.M. wird nach Ablauf aller vorgeschriebenen Gesetze entfernt. Die Gir-Zeit ist nicht mehr ganz das, was sie einmal war. Wenn Sie Informationen nutzen, müssen Sie jederzeit wissen, was auf der Grundlage der Daten geschieht. In solchen Fällen auch, wenn Sie andere Wünsche im Zusammenhang mit Personennamen haben. Diese Tiere stehen Tieren nahe."
         },
-
     }
 
 
