@@ -248,12 +248,12 @@ const translations = {
         en: "Book a Service",
         de: "Service buchen"
     },
-    team_section_title: {
+    team_subtitle: {
         ua: "Наша команда",
         en: "Our Team",
         de: "Unser Team"
     },
-    team_section_subtitle: {
+    team_title: {
         ua: "Ми зібрали команду справжніх професіоналів для найкращого сервісу",
         en: "We have gathered a team of true professionals for the best service",
         de: "Wir haben ein Team von echten Profis für den besten Service zusammengestellt"
@@ -340,8 +340,8 @@ const translations = {
     },
     worker_5_name: {
         ua: "Іван",
-        en: "Іван",
-        de: "Іван"
+        en: "Іvan",
+        de: "Іvan"
     },
     worker_5_position: {
         ua: "Технічний спеціаліст",
@@ -613,6 +613,16 @@ const translations = {
         en: "Thanks for the quick help! The oil change was done in less than 30 minutes, and the diagnostics revealed a small problem that was fixed right away.",
         de: "Vielen Dank für die schnelle Hilfe! Der Ölwechsel wurde in weniger als 30 Minuten durchgeführt, und die Diagnose hat ein kleines Problem aufgedeckt, das sofort behoben wurde."
     },
+    testimonial_user_name_5: {
+        ua: "Степан",
+        en: "Stepan",
+        de: "Stepan"
+    },
+    testimonial_text_5: {
+        ua: "Відмінний сервіс! Працівники дуже привітні та професійні. Особливо ціную прозорі ціни без прихованих витрат.",
+        en: "Excellent service! The employees are very friendly and professional. I especially appreciate transparent prices without hidden costs.",
+        de: "Exzellenter Service! Die Mitarbeiter sind sehr freundlich und professionell. Ich schätze besonders die transparente Preisgestaltung ohne versteckte Kosten. "
+    },
     contact_subtitle: {
         ua: "Виникли питання? Ми з радістю допоможемо їх вирішити!",
         en: "Have questions? We are happy to help you solve them!",
@@ -623,175 +633,184 @@ const translations = {
         en: "Lasnitzthal 300, 8200, Gleisdorf, Austria",
         de: "Laßnitzthal 300, 8200, Gleisdorf, Austria"
     },
-    footer_schedule: {
+    footer_schedule_title: {
         ua: "Наш графік",
         en: "Our schedule",
         de: "Unser Zeitplan"
     },
     footer_schedule_days: {
-        ua: "Вт-Сб: 9.00 - 21.00\nНд: 11.00 - 15.00\nПн: вихідний",
-        en: "Tue-Sat: 9:00 AM - 9:00 PM\nSun: 11:00 AM - 3:00 PM\nMon: closed",
-        de: "Di-Sa: 9:00 - 21:00\nSo: 11:00 - 15:00\nMo: geschlossen"
+        ua: "Вт-Сб: 9.00 - 21.00",
+        en: "Tue-Sat: 9:00 AM - 9:00 PM",
+        de: "Di-Sa: 9:00 - 21:00"
     },
-    footer_navigation: {
-        home: {
-            ua: "Головна",
-            en: "Home",
-            de: "Startseite"
-        },
-        about: {
-            ua: "Про нас",
-            en: "About Us",
-            de: "Über uns"
-        },
-        services: {
-            ua: "Наш сервіси",
-            en: "Our Services",
-            de: "Unsere Dienstleistungen"
-        },
-        info: {
-            ua: "Корисна інформація",
-            en: "Useful Information",
-            de: "Nützliche Informationen"
-        },
-        testimonials: {
-            ua: "Відгуки",
-            en: "Testimonials",
-            de: "Referenzen"
-        },
-        contacts: {
-            ua: "Контакти",
-            en: "Contacts",
-            de: "Kontakte"
-        }
+    footer_schedule_sunday:{
+        ua: "Нд: 11.00 - 15.00",
+        en: "Sun: 11:00 AM - 3:00 PM",
+        de: "So: 11:00 - 15:00"
+    },
+    footer_schedule_monday:{
+        ua: "Пн: вихідний",
+        en: "Mon: closed",
+        de: "Mo: geschlossen"
+    },
+
+    footer_home: {
+        ua: "Головна",
+        en: "Home",
+        de: "Startseite"
+    },
+    footer_about: {
+        ua: "Про нас",
+        en: "About Us",
+        de: "Über uns"
+    },
+    footer_services: {
+        ua: "Наш сервіси",
+        en: "Our Services",
+        de: "Unsere Dienstleistungen"
+    },
+    footer_info: {
+        ua: "Корисна інформація",
+        en: "Useful Information",
+        de: "Nützliche Informationen"
+    },
+    footer_reviews: {
+        ua: "Відгуки",
+        en: "Testimonials",
+        de: "Referenzen"
+    },
+    footer_contacts: {
+        ua: "Контакти",
+        en: "Contacts",
+        de: "Kontakte"
     },
     footer_privacy_policy: {
         ua: "Політика конфіденційності",
         en: "Privacy Policy",
         de: "Datenschutzrichtlinie"
     },
-    modal_services:{
+    modal_services: {
         ua: "Послуги:",
         en: "Services",
         de: "Dienstleistungen:"
     },
-    modal_name:{
-            ua: "Ім'я",
-            en: "Name",
-            de: "Name"
-        },
-        modal_phone: {
-            ua: "Телефон",
-            en: "Phone",
-            de: "Telefon"
-        },
-        modal_carbrand: {
-            ua: "Оберіть марку авто...",
-            en: "Select car brand...",
-            de: "Wählen Sie die Automarke aus..."
-        },
-        modal_carmark: {
-            ua: "Спочатку оберіть марку авто!",
-            en: "Please select a car brand first!",
-            de: "Bitte wählen Sie zuerst eine Automarke!"
-        },
-        services_title: {
-            ua: "Послуги:",
-            en: "Services:",
-            de: "Dienstleistungen:"
-        },
-        modal_changeoil: {
-            ua: "Заміна мастила",
-            en: "Oil Change",
-            de: "Ölwechsel"
-        },
-        modal_changefilter: {
-            ua: "Заміна фільтра",
-            en: "Filter Replacement",
-            de: "Filterwechsel"
-        },
-        modal_additional: {
-            ua: "Додаткові послуги",
-            en: "Additional Services",
-            de: "Zusätzliche Dienstleistungen"
-        },
-        total_price: {
-            ua: "Сума від: €0.00",
-            en: "Total from: €0.00",
-            de: "Gesamt ab: €0.00"
-        },
-        accept: {
-            ua: "Я приймаю",
-            en: "I accept",
-            de: "Ich akzeptiere"
-        },
-        modal_privacy_policy_link: {
-            ua: "Політику конфіденційності",
-            en: "Privacy Policy",
-            de: "Datenschutzrichtlinie"
-        },
-        modal_big_btn: {
-            ua: "Записатися на сервіс",
-            en: "Sign up for service",
-            de: "Für den Service anmelden"
-        },
-        policy_btn:{
-            ua: "Назад до сайту",
-            en: "Back to site",
-            de: "Zurück zur Website"
-        },
-        policy_title:{
-            ua: "ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ",
-            en: "PRIVACY POLICY",
-            de: "DATENSCHUTZRICHTLINIE"
-        },
-        policy_p_first:{
-            ua:"ФОП Колісник Т.М. Ми поважаємо конфіденційну інформацію всіх відвідувачів нашого сайту. Усі дані клієнтів збиратимуться, оброблятимуться та використовуватимуться відповідно до вимог чинного законодавства України.​",
-            en:"FOP Kolisnyk T.M. We respect the privacy of all visitors to our website. All customer data is collected, processed and used in accordance with the requirements of the current legislation of Ukraine.",
-            de:"FOP Kolisnyk T.M. Wir respektieren die Privatsphäre aller Besucher unserer Website. Alle Kundendaten werden gemäß den Anforderungen der aktuellen Gesetzgebung der Ukraine erhoben, verarbeitet und genutzt."
-        },
-        policy_p_second:{
-            ua:"Ми збираємо інформацію про вас, яку використовуємо, щоб надавати вам повний спектр наших послуг. Ми добровільно надаємо інформацію або даємо згоду на її використання. Ми зобов’язуємося не використовувати, не обробляти та не передавати цю інформацію у спосіб, який перевищує вимоги чинного законодавства України. Передача персональних даних буде відбуватися виключно на підставі  рішення суду або іншого порядку, передбаченого чинним законодавством України.",
-            en:"We collect information about you that we use to provide you with the full range of our services. Providing information or consenting to its use is voluntary. We undertake not to use, process or transfer this information in a manner that goes beyond the requirements of the current legislation of Ukraine. The transfer of personal data is carried out exclusively on the basis of a court decision or other procedure provided for by the current legislation of Ukraine.",
-            de: "Wir sammeln Informationen über Sie, die wir verwenden, um Ihnen das gesamte Spektrum unserer Dienstleistungen anzubieten. Die Angabe bzw. Zustimmung zur Nutzung erfolgt durch uns freiwillig. Wir verpflichten uns, diese Informationen nicht in einer Weise zu verwenden, zu verarbeiten oder zu übertragen, die über die Anforderungen der geltenden Gesetzgebung der Ukraine hinausgeht. Die Übermittlung personenbezogener Daten erfolgt ausschließlich auf der Grundlage einer Gerichtsentscheidung oder eines anderen in der geltenden Gesetzgebung der Ukraine vorgesehenen Verfahrens."
-        },
-        policy_p_third:{
-            ua:"Збережені дані взяті з бази даних ФОП Колісник Т.М. будуть видалені після закінчення будь-якого передбаченого законом періоду зберігання або  якщо нам більше не потрібно зберігати певні дані. Ви маєте право  вимагати видалення інформації про Вас з нашої бази даних у будь-який час. У таких випадках, а також, якщо у Вас виникають інші побажання, пов’язані з Вашими персональними даними, просимо Вас звернутися до наших менеджерів.",
-           en:"The stored data comes from the database of the FOP Kolisnyk T.M. will be removed after the expiration of all prescribed laws. The Gir period is not quite what it once was. When using information, you must be aware at all times of what is happening on the basis of the data. In such cases, even if you have other wishes related to personal names. These animals are close to animals.",
-            de: "Die gespeicherten Daten stammen aus der Datenbank des FOP Kolisnyk T.M. wird nach Ablauf aller vorgeschriebenen Gesetze entfernt. Die Gir-Zeit ist nicht mehr ganz das, was sie einmal war. Wenn Sie Informationen nutzen, müssen Sie jederzeit wissen, was auf der Grundlage der Daten geschieht. In solchen Fällen auch, wenn Sie andere Wünsche im Zusammenhang mit Personennamen haben. Diese Tiere stehen Tieren nahe."
-        },
-    }
+    modal_name: {
+        ua: "Ім'я",
+        en: "Name",
+        de: "Name"
+    },
+    modal_phone: {
+        ua: "Телефон",
+        en: "Phone",
+        de: "Telefon"
+    },
+    modal_carbrand: {
+        ua: "Оберіть марку авто...",
+        en: "Select car brand...",
+        de: "Wählen Sie die Automarke aus..."
+    },
+    modal_carmark: {
+        ua: "Спочатку оберіть марку авто!",
+        en: "Please select a car brand first!",
+        de: "Bitte wählen Sie zuerst eine Automarke!"
+    },
+    services_title: {
+        ua: "Послуги:",
+        en: "Services:",
+        de: "Dienstleistungen:"
+    },
+    modal_changeoil: {
+        ua: "Заміна мастила",
+        en: "Oil Change",
+        de: "Ölwechsel"
+    },
+    modal_changefilter: {
+        ua: "Заміна фільтра",
+        en: "Filter Replacement",
+        de: "Filterwechsel"
+    },
+    modal_additional: {
+        ua: "Додаткові послуги",
+        en: "Additional Services",
+        de: "Zusätzliche Dienstleistungen"
+    },
+    total_price: {
+        ua: "Сума від: €0.00",
+        en: "Total from: €0.00",
+        de: "Gesamt ab: €0.00"
+    },
+    accept: {
+        ua: "Я приймаю",
+        en: "I accept",
+        de: "Ich akzeptiere"
+    },
+    modal_privacy_policy_link: {
+        ua: "Політику конфіденційності",
+        en: "Privacy Policy",
+        de: "Datenschutzrichtlinie"
+    },
+    modal_big_btn: {
+        ua: "Записатися на сервіс",
+        en: "Sign up for service",
+        de: "Für den Service anmelden"
+    },
+    policy_btn: {
+        ua: "Назад до сайту",
+        en: "Back to site",
+        de: "Zurück zur Website"
+    },
+    policy_title: {
+        ua: "ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ",
+        en: "PRIVACY POLICY",
+        de: "DATENSCHUTZRICHTLINIE"
+    },
+    policy_p_first: {
+        ua: "ФОП Колісник Т.М. Ми поважаємо конфіденційну інформацію всіх відвідувачів нашого сайту. Усі дані клієнтів збиратимуться, оброблятимуться та використовуватимуться відповідно до вимог чинного законодавства України.​",
+        en: "FOP Kolisnyk T.M. We respect the privacy of all visitors to our website. All customer data is collected, processed and used in accordance with the requirements of the current legislation of Ukraine.",
+        de: "FOP Kolisnyk T.M. Wir respektieren die Privatsphäre aller Besucher unserer Website. Alle Kundendaten werden gemäß den Anforderungen der aktuellen Gesetzgebung der Ukraine erhoben, verarbeitet und genutzt."
+    },
+    policy_p_second: {
+        ua: "Ми збираємо інформацію про вас, яку використовуємо, щоб надавати вам повний спектр наших послуг. Ми добровільно надаємо інформацію або даємо згоду на її використання. Ми зобов’язуємося не використовувати, не обробляти та не передавати цю інформацію у спосіб, який перевищує вимоги чинного законодавства України. Передача персональних даних буде відбуватися виключно на підставі  рішення суду або іншого порядку, передбаченого чинним законодавством України.",
+        en: "We collect information about you that we use to provide you with the full range of our services. Providing information or consenting to its use is voluntary. We undertake not to use, process or transfer this information in a manner that goes beyond the requirements of the current legislation of Ukraine. The transfer of personal data is carried out exclusively on the basis of a court decision or other procedure provided for by the current legislation of Ukraine.",
+        de: "Wir sammeln Informationen über Sie, die wir verwenden, um Ihnen das gesamte Spektrum unserer Dienstleistungen anzubieten. Die Angabe bzw. Zustimmung zur Nutzung erfolgt durch uns freiwillig. Wir verpflichten uns, diese Informationen nicht in einer Weise zu verwenden, zu verarbeiten oder zu übertragen, die über die Anforderungen der geltenden Gesetzgebung der Ukraine hinausgeht. Die Übermittlung personenbezogener Daten erfolgt ausschließlich auf der Grundlage einer Gerichtsentscheidung oder eines anderen in der geltenden Gesetzgebung der Ukraine vorgesehenen Verfahrens."
+    },
+    policy_p_third: {
+        ua: "Збережені дані взяті з бази даних ФОП Колісник Т.М. будуть видалені після закінчення будь-якого передбаченого законом періоду зберігання або  якщо нам більше не потрібно зберігати певні дані. Ви маєте право  вимагати видалення інформації про Вас з нашої бази даних у будь-який час. У таких випадках, а також, якщо у Вас виникають інші побажання, пов’язані з Вашими персональними даними, просимо Вас звернутися до наших менеджерів.",
+        en: "The stored data comes from the database of the FOP Kolisnyk T.M. will be removed after the expiration of all prescribed laws. The Gir period is not quite what it once was. When using information, you must be aware at all times of what is happening on the basis of the data. In such cases, even if you have other wishes related to personal names. These animals are close to animals.",
+        de: "Die gespeicherten Daten stammen aus der Datenbank des FOP Kolisnyk T.M. wird nach Ablauf aller vorgeschriebenen Gesetze entfernt. Die Gir-Zeit ist nicht mehr ganz das, was sie einmal war. Wenn Sie Informationen nutzen, müssen Sie jederzeit wissen, was auf der Grundlage der Daten geschieht. In solchen Fällen auch, wenn Sie andere Wünsche im Zusammenhang mit Personennamen haben. Diese Tiere stehen Tieren nahe."
+    },
+}
 
 
 let currentLang = localStorage.getItem("selectedLang") || "de";
 
 function updateTranslation() {
-  const elements = document.querySelectorAll("[data-translate-key]");
+    const elements = document.querySelectorAll("[data-translate-key]");
 
-  elements.forEach((element) => {
-    const key = element.dataset.translateKey; // Читаем ключ
-    if (translations[key] && translations[key][currentLang]) {
-      element.textContent = translations[key][currentLang]; // Обновляем текст
-    }
-  });
- 
+    elements.forEach((element) => {
+        const key = element.dataset.translateKey; // Читаем ключ
+        if (translations[key] && translations[key][currentLang]) {
+            element.textContent = translations[key][currentLang]; // Обновляем текст
+        }
+    });
+
 }
 
 // Слушатель изменения языка
 document.getElementById("lang_select").addEventListener("change", (event) => {
-  currentLang = event.target.value; // Получаем выбранный язык
-  localStorage.setItem("selectedLang", currentLang); // Сохраняем выбранный язык
-  updateTranslation(); // Обновляем перевод
+    currentLang = event.target.value; // Получаем выбранный язык
+    localStorage.setItem("selectedLang", currentLang); // Сохраняем выбранный язык
+    updateTranslation(); // Обновляем перевод
 });
 
 // Устанавливаем язык из LocalStorage при загрузке страницы
 document.addEventListener("DOMContentLoaded", () => {
-  const savedLang = localStorage.getItem("selectedLang");
-  if (savedLang) {
-    currentLang = savedLang; // Устанавливаем язык из LocalStorage
-    document.getElementById("lang_select").value = savedLang; // Устанавливаем значение в select
-  }
-  updateTranslation(); // Обновляем перевод
+    const savedLang = localStorage.getItem("selectedLang");
+    if (savedLang) {
+        currentLang = savedLang; // Устанавливаем язык из LocalStorage
+        document.getElementById("lang_select").value = savedLang; // Устанавливаем значение в select
+    }
+    updateTranslation(); // Обновляем перевод
 });
 
 

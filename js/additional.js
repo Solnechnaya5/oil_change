@@ -57,7 +57,23 @@ const testimonialsSwiper = new Swiper(".testimonials-slider", {
  
   breakpoints: {
     // when window width is >= 320px
-    320: {
+    1920: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    1440: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    1360: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    1240: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    640: {
       slidesPerView: 1,
       spaceBetween: 40,
     },
@@ -67,14 +83,12 @@ const testimonialsSwiper = new Swiper(".testimonials-slider", {
       spaceBetween: 40,
     },
     // when window width is >= 640px
-    640: {
+   
+    320: {
       slidesPerView: 1,
       spaceBetween: 40,
     },
-    1920: {
-      slidesPerView: 2,
-      spaceBetween: 40,
-    },
+    
   },
 });
 const team = new Swiper(".our-team-slider", {
@@ -89,7 +103,23 @@ const team = new Swiper(".our-team-slider", {
   },
   breakpoints: {
     // when window width is >= 320px
-    320: {
+    1920: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    1440: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    1360: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    1240: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    640: {
       slidesPerView: 1,
       spaceBetween: 40,
     },
@@ -99,14 +129,12 @@ const team = new Swiper(".our-team-slider", {
       spaceBetween: 40,
     },
     // when window width is >= 640px
-    640: {
+   
+    320: {
       slidesPerView: 1,
       spaceBetween: 40,
     },
-    1920: {
-      slidesPerView: 2,
-      spaceBetween: 40,
-    },
+    
   },
 });
 
