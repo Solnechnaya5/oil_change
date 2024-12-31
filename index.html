@@ -23,9 +23,20 @@
     <link rel="stylesheet" href="./css/main-styles.css">
     <link rel="stylesheet" href="./css/media-styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"
+  />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
     <script src="./js/translation.js" defer></script>
     <title>Oil change</title>
 </head>
@@ -572,8 +583,8 @@
                 <div class="site-container">
                     <div class="promo-block">
                         <h3 class="subtitle" data-translate-key="promo_title">Гаряча акційна пропозиція!</h3>
-                        <p data-translate-key="promo_old_price">
-                            Звичайна ціна - <span class="old-price">€ 200</span>
+                        <p >
+                            <span data-translate-key="promo_old_price">Звичайна ціна</span> - <span class="old-price">€ 200</span>
                         </p>
                         <div class="new-price">
                             <span data-translate-key="promo_new_price"> Акційна ціна -</span>
@@ -590,7 +601,7 @@
                                 екологічну утилізацію старих деталей.</li>
                             <li data-translate-key="promo_service_3">Об'єм масла: до 5 л.</li>
                         </ul>
-                        <a href="#" class="promo-block_btn btn-black" data-translate-key="promo_button">Записатися на
+                        <a href="#" class="promo-block_btn btn-black open-popup" data-translate-key="promo_button">Записатися на
                             сервіс</a>
                     </div>
                 </div>
@@ -1017,139 +1028,92 @@
                 </div>
             </div>
         </footer>
-        <!-- <div id="modal_window">
-            <form class="modal_form" method="POST">
-                <button class="modal_close_btn"> <span>X</span> </button>
-                <div class="form-group">
-                    <label for="modal_name_input" data-translate-key="modal_name">Ім'я</label>
-                    <input name="name" type="text" id="modal_name_input" />
-                </div>
-                <div class="form-group phone-group">
-                    <label for="modal_phone_input" data-translate-key="modal_phone">Телефон</label>
-                    <input name="phone" class="input_phone" type="tel" value="+43"
-              required /> 
-                </div>
-                <div class="form-group">
-                    <select name="car_make" id="car_make">
-                        <option value="" disabled selected data-translate-key="modal_carbrand">Оберіть марку авто...
-                        </option>
-                        <option value="toyota">Toyota</option>
-                        <option value="volkswagen">Volkswagen</option>
-                        <option value="ford">Ford</option>
-                        <option value="honda">Honda</option>
-                        <option value="bmw">BMW</option>
-                        <option value="mercedes">Mercedes-Benz</option>
-                        <option value="hyndai">Hyundai</option>
-                        <option value="nissan">Nissan</option>
-                        <option value="kia">Kia</option>
-                    </select>
-                </div>
-                <div class="form-group" id="model_select">
-                    <select name="car_model" id="car_model">
-                        <option value="" disabled selected data-translate-key="modal_carmark">Спочатку оберіть марку
-                            авто!</option>
-                    </select>
-                </div>
-                <h4 class="modal_form_title" data-translate-key="modal_services">Послуги:</h4>
-                <div class="modal_form_services">
-                    <div class="modal_labels">
-                        <label for="changeoil_input">
-                            <input name="changeoil" id="changeoil_input" type="checkbox" />
-                            <span data-translate-key="modal_changeoil">Заміна мастила</span>
-                        </label>
-                        <label for="changefilter_input">
-                            <input name="changefilter" id="changefilter_input" type="checkbox" />
-                            <span data-translate-key="modal_changefilter">Заміна фільтра</span>
-                        </label>
-                        <label for="additional_input">
-                            <input name="additional" id="additional_input" type="checkbox" />
-                            <span data-translate-key="modal_additional">Додаткові послуги</span>
-                        </label>
-                    </div>
-                </div>
-                <p id="result" data-translate-key="modal_total" name="total_price">Сума від: €0.00</p>
-                <div class="modal_politics_block">
-                    <label class="politics_label">
-                        <input id="politics" type="checkbox" />
-                        <span data-translate-key="accept">Я приймаю</span>
-                        <a href="./politic.html" class="politics_link"
-                            data-translate-key="modal_privacy_policy_link">Політику
-                            конфіденційності</a>
-                    </label>
-                </div>
-                <button class="form_button btn-orange" type="submit" data-translate-key="modal_big_btn">Записатися на
-                    сервіс</button>
-            </form>
-        </div> -->
 
-        <div id="modal_window">
-            <form class="modal_form" method="POST">
-                <button class="modal_close_btn"> <span>X</span> </button>
-                <div class="form-group">
-                    <label for="modal_name_input" data-translate-key="modal_name">Ім'я</label>
-                    <input name="name" type="text" id="modal_name_input" />
-                </div>
-                <div class="form-group phone-group">
-                    <label for="modal_phone_input" data-translate-key="modal_phone">Телефон</label>
-                    <input name="phone" class="input_phone" type="tel" value="+43"
-              required /> 
-                </div>
-                <div class="form-group">
-                    <select name="car_make" id="car_make">
-                        <option value="" disabled selected data-translate-key="modal_carbrand">Оберіть марку авто...
-                        </option>
-                        <option value="toyota">Toyota</option>
-                        <option value="volkswagen">Volkswagen</option>
-                        <option value="ford">Ford</option>
-                        <option value="honda">Honda</option>
-                        <option value="bmw">BMW</option>
-                        <option value="mercedes">Mercedes-Benz</option>
-                        <option value="hyndai">Hyundai</option>
-                        <option value="nissan">Nissan</option>
-                        <option value="kia">Kia</option>
-                    </select>
-                </div>
-                <div class="form-group" id="model_select">
-                    <select name="car_model" id="car_model">
-                        <option value="" disabled selected data-translate-key="modal_carmark">Спочатку оберіть марку
-                            авто!</option>
-                    </select>
-                </div>
-                <h4 class="modal_form_title" data-translate-key="modal_services">Послуги:</h4>
-                <div class="modal_form_services">
-                    <div class="modal_labels">
-                        <label for="changeoil_input">
-                            <input name="changeoil" id="changeoil_input" type="checkbox" />
-                            <span data-translate-key="modal_changeoil">Заміна мастила</span>
-                        </label>
-                        <label for="changefilter_input">
-                            <input name="changefilter" id="changefilter_input" type="checkbox" />
-                            <span data-translate-key="modal_changefilter">Заміна фільтра</span>
-                        </label>
-                        <label for="additional_input">
-                            <input name="additional" id="additional_input" type="checkbox" />
-                            <span data-translate-key="modal_additional">Додаткові послуги</span>
-                        </label>
-                    </div>
-                </div>
-                <p id="result" data-translate-key="modal_total" name="total_price">Сума від: €0.00</p>
-                <div class="modal_politics_block">
-                    <label class="politics_label">
-                        <input id="politics" type="checkbox" name="politics"  />
-                        <span data-translate-key="accept">Я приймаю</span>
-                        <a href="./politic.html" class="politics_link"
-                            data-translate-key="modal_privacy_policy_link">Політику
-                            конфіденційності</a>
-                    </label>
-                </div>
-                <button class="form_button btn-orange" type="button" data-translate-key="modal_big_btn">Записатися на
-                    сервіс</button>
-            </form>
-        </div>
 
         
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+        <div id="modal_window">
+            <form  class="modal_form"  method="POST">
+              <div class="modal_close_btn">
+                <span>X</span>
+              </div>
+              <div class="form-group">
+                <input name="name" type="text" placeholder="Введіть ваше ім’я..." required id="modal_name_input" />
+              </div>
+              <div class="form-group phone-group">
+                <input
+                name="phone"
+                  class="input_phone"
+                  type="tel"
+                  value="+43"
+                  class="phone_input"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <select name="car_make" id="car_make" >
+                  <option value="" disabled selected data-translate-key="modal_carbrand">
+                    Оберіть марку авто...
+                  </option>
+                  <option value="toyota">Toyota</option>
+                  <option value="volkswagen">Volkswagen</option>
+                  <option value="ford">Ford</option>
+                  <option value="honda">Honda</option>
+                  <option value="bmw">BMW</option>
+                  <option value="mercedes">Mercedes-Benz</option>
+                  <option value="hyndai">Hyundai</option>
+                  <option value="nissan">Nissan</option>
+                  <option value="kia">Kia</option>
+                </select>
+              </div>
+  
+              <div class="form-group" id="model_select">
+                <select name="car_model" id="car_model">
+                  <option value="" disabled selected data-translate-key="modal_carmark">
+                    Спочатку оберіть марку авто!
+                  </option>
+                </select>
+              </div>
+  
+              <h3 class="modal_form_title" data-translate-key="modal_services">
+                Послуги:
+              </h3>
+              <div class="modal_form_services">
+                <div class="modal_labels">
+                    <label for="changeoil_input">
+                        <input name="changeoil" id="changeoil_input" type="checkbox" />
+                        <span data-translate-key="modal_changeoil">Заміна мастила</span>
+                    </label>
+                    <label for="changefilter_input">
+                        <input name="changefilter" id="changefilter_input" type="checkbox" />
+                        <span data-translate-key="modal_changefilter">Заміна фільтра</span>
+                    </label>
+                    <label for="additional_input">
+                        <input name="additional" id="additional_input" type="checkbox" />
+                        <span data-translate-key="modal_additional">Додаткові послуги</span>
+                    </label>
+                </div>
+              </div>
+              <p id="result" data-translate-key="modal_total" name="total_price">Сума від: €0.00</p>
+              <div class="modal_politics_block">
+                <label class="politics_label"
+                  ><input type="checkbox" required />
+                  <span data-translate-key="accept">Я приймаю</span>
+                  <a
+                    href="politics.html"
+                    class="politics_link"
+                    data-translate-key="politics"
+                    >Політику конфіденційності</a
+                  ></label
+                >
+              </div>
+  
+              <button class="form_button btn-orange" type="submit" data-translate-key="signService">
+                Записатися на сервіс
+              </button>
+            </form>
+          </div>
+        <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
        
         <!-- Meta Pixel Code -->
@@ -1181,7 +1145,9 @@
             })(window, document, "clarity", "script", "p0f31py6en");
         </script>
  <script src="./js/additional.js"></script>
- <script src="./js/calculator-form.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+     <script src="./js/form.js"></script>
 </body>
 
 </html>

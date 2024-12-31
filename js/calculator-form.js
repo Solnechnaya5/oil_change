@@ -2,7 +2,7 @@
 const carSelect = document.querySelector("#car_make");
 const modelSelect = document.querySelector("#car_model");
 const carSelectedValue = carSelect.value;
-const openModal = document.querySelector(".open-popup");
+const openModals = document.querySelectorAll(".open-popup");
 const modalWindow = document.getElementById("modal_window");
 const closeModalBtn = document.querySelector(".modal_close_btn");
 const modalForm = document.querySelector(".modal_form");
@@ -31,7 +31,7 @@ function closeModal() {
 function resetFormFields() {
   const form = modalWindow.querySelector(".modal_form");
   form.reset();
-  form.querySelector('input[type="tel"]').value = "+43";
+  form.querySelector('input[type="tel"]').value = "+000000000000";
   document.getElementById("car_model").innerHTML =
   lang === "en"
   ? '<option value="" disabled selected>Choose your car model!</option>'
@@ -41,26 +41,17 @@ function resetFormFields() {
   ?'<option value="" disabled selected>Виберіть свою модель автомобіля!</option>'
   : "Language not supported";
 }
-openModal.addEventListener("click", () => 
- {   modalWindow.classList.add("active");}
-  );
-
-modalWindow.addEventListener("mousedown", (event) => {
-  if (event.target !== modalWindow) {
-    return;
-  }
-  closeModal();
+// open modal
+openModals.forEach((button) => {
+  button.addEventListener("click", () => {
+    modalWindow.classList.add("active");
+  });
 });
 
 closeModalBtn.addEventListener("click", () => {
   closeModal();
 });
 
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeModal();
-  }
-});
 
 // Selects with Cars
 carSelect.addEventListener("change", () => {
@@ -224,8 +215,8 @@ carSelect.addEventListener("change", () => {
 });
 
 // CALCULATOR
-const changeOil = 30;
-const changeFilter = 30;
+const changeOil = 20;
+const changeFilter = 25;
 const additional = 30;
 
 
@@ -360,233 +351,90 @@ document.querySelectorAll("input[type='checkbox']").forEach((checkbox) => {
   checkbox.addEventListener("change", calculateTotal);
 });
 
-
-async function hashPhoneNumber(phoneNumber) {
-
-  const encoder = new TextEncoder();
-  const data = encoder.encode(phoneNumber);
-
-  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  const hashedPhone = hashArray
-    .map((byte) => byte.toString(16).padStart(2, "0"))
-    .join("");
-
-  return hashedPhone;
-}
-
-
-async function sendEmail2(params) {
-    const emailJSID = "f-9iJDVJajodVpgnA"; // Ваш ID
-    const SERVICE_ID = "service_duehlmq"; // Ваш Service ID
-    const TEMPLATE_ID = "template_yn4v6qu"; // Ваш Template ID
-
-  emailjs.init(emailJSID);
-
-  try {
-    const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, params);
-    console.log("Email успішно відправлено!", response.status, response.text);
-    return true; // Успешная отправка
-  } catch (error) {
-    console.error("Помилка відправки:", error);
-    return false; // Ошибка отправки
-  }
-}
-
-const sendPostRequest = async (apiVersion, pixelId, token, eventData) => {
-  const url = `https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${token}`;
-
-  const payload = {
-    data: eventData,
-  };
-
-  try {
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error("Ошибка запроса:", errorData);
-    } else {
-      const responseData = await response.json();
-      console.log("Успешная отправка:", responseData);
-    }
-  } catch (error) {
-    console.error("Ошибка выполнения запроса:", error);
-  }
-};
-
-// Обработчик отправки формы
-
-
 modalForm.addEventListener("submit", async (e) => {
-  e.preventDefault(); // Отмена стандартного поведения формы
+  e.preventDefault(); // Зупиняємо стандартне відправлення форми
 
-  // Получение значений полей
-  const name = modalForm.querySelector('input[name="name"]').value.trim();
-  const phoneInput = modalForm.querySelector(".input_phone");
-  const carMake = modalForm.querySelector("#car_make").value;
-  const carModel = modalForm.querySelector("#car_model").value;
-  const acceptPolitics = modalForm.querySelector("#politics").checked;
-  const selectedServices = Array.from(
-    modalForm.querySelectorAll(
-      ".modal_form_services input[type='checkbox']:checked"
-    )
-  ).map((checkbox) => checkbox.nextElementSibling.textContent.trim());
-  const totalPrice = modalForm.querySelector("#result").textContent.trim();
-  
-  // Локализация сообщений
-  const errorMessages = {
-    fillFields: {
-      ua: "Будь ласка, заповніть всі поля і прийміть політику конфіденційності!",
-      en: "Please fill in all fields and accept the privacy policy!",
-      de: "Bitte füllen Sie alle Felder aus und akzeptieren Sie die Datenschutzrichtlinie!",
-    },
-    invalidPhone: {
-      ua: "Будь ласка, введіть дійсний номер телефону!",
-      en: "Please enter a valid phone number!",
-      de: "Bitte geben Sie eine gültige Telefonnummer ein!",
-    },
-    success: {
-      ua: "Дані успішно відправлені!",
-      en: "Data has been successfully sent!",
-      de: "Daten wurden erfolgreich gesendet!",
-    },
-  };
+  // Перевірка на заповненість полів
+  const name = document.querySelector('#modal_name_input').value;
+  const phone =  modalPhoneInput.value;
+  const carMake = carSelect.value;
+  const carModel = modelSelect.value;
+  const selectedServices = []; // Твій список послуг
+  const totalPrice = resultDisplay.textContent;
 
-  const errorMessageFillFields =
-    errorMessages.fillFields[lang] || "Language not supported";
-  const errorMessageInvalidPhone =
-    errorMessages.invalidPhone[lang] || "Language not supported";
-  const successMessage =
-    errorMessages.success[lang] || "Language not supported";
-
-  // Проверка всех условий
-  if (!name || !phoneInput.value.trim() || !carMake || !acceptPolitics) {
-    Toastify({
-      text: errorMessageFillFields,
-      duration: 3000,
-      close: true,
-      gravity: "top",
-      position: "center",
-      backgroundColor: "#FF6347", // Красный для ошибки
-    }).showToast();
-    return;
+  if (!name || !phone || !carMake || !carModel || selectedServices.length === 0) {
+    alert('Будь ласка, заповніть всі поля!');
+    return; // Виходимо з функції, якщо є порожні поля
   }
 
-  if (!isPhoneValid) {
-    Toastify({
-      text: errorMessageInvalidPhone,
-      duration: 3000,
-      close: true,
-      gravity: "top",
-      position: "center",
-      backgroundColor: "#FF6347", // Красный для ошибки
-    }).showToast();
-    phoneInput.style.border = "2px solid red";
-    return;
-  }
-
-  phoneInput.style.border = ""; // Сбрасываем стили ошибок
-
-  const clickedLinks = JSON.parse(localStorage.getItem("clicked_links")) || [];
-
-  // Формируем сообщение
-  const message = `
-    Нова заявка:\nНазва сайту: Shell Auto Öl\nІм'я: ${name}\nТелефон: ${
-    phoneInput.value
-  }\nМарка авто: ${carMake}\nМодель авто: ${carModel}\nПослуги: ${
+  // Формуємо повідомлення
+  const message = `Нова заявка:\nІм'я: ${name}\nТелефон: ${phone}\nМарка авто: ${carMake}\nМодель авто: ${carModel}\nПослуги: ${
     selectedServices.length > 0 ? selectedServices.join(", ") : "Не обрані"
-  }\nСумма: ${totalPrice}\n\nUTM-мітки: ${clickedLinks
+  }\nСума: ${totalPrice}\n\nUTM-мітки: ${clickedLinks
     .map(
       (link, index) =>
-        `${index + 1}. Ссилка: ${link.href}\n  UTM Source: ${
-          link.utm_source
-        }\n  UTM Medium: ${link.utm_medium}\n  UTM Campaign: ${
+        `${index + 1}. Ссилка: ${link.href}\n  UTM Source: ${link.utm_source}\n  UTM Medium: ${link.utm_medium}\n  UTM Campaign: ${
           link.utm_campaign
-        }\n  Час: ${link.timestamp}`
+        }\n  Час: ${link.timestamp}` 
     )
-    .join("\n\n")}
-  `;
+    .join("\n\n")}`;
 
-  // Параллельная отправка в Telegram и EmailJS
-  try {
-    emailjs.init("f-9iJDVJajodVpgnA"); // Инициализация EmailJS
-    const emailResponse = await emailjs.send(
-      "service_duehlmq",
-      "template_yn4v6qu",
-      {
-        from_name: "Назва сайту - Oil change",
-        name: `${name}`,
-        carType: `${carMake}`,
-        service: `${
-          selectedServices.length > 0
-            ? selectedServices.join(", ")
-            : "Не обрані"
-        }`,
-        phone: `${phoneInput.value}`,
-        comments: `Модель авто: ${carModel}`,
-      }
-    );
+  // Хешуємо номер телефону
+  const phoneNumber = iti.getNumber(); // Отримуємо номер телефону в форматі E.164
+  const hashedPhone = await hashPhoneNumber(phoneNumber); // Хешуємо номер
 
-    if (emailResponse.status !== 200) {
-      throw new Error("Не удалось отправить сообщение на почту");
-    }
-
-    const phoneNumber = iti.getNumber(); // Получаем номер телефона в формате E.164
-    const hashedPhone = await hashPhoneNumber(phoneNumber); // Хэшируем номер
-
-    const eventData = [
-      {
-        event_name: "Lead",
-        event_time: Math.floor(Date.now() / 1000),
-        user_data: {
-          ph: hashedPhone,
-        },
-        custom_data: {
-          currency: "EUR",
-          value: parseFloat(totalPrice.replace(/[^\d.-]/g, "")) || 0,
-          services:
-            selectedServices.length > 0
-              ? selectedServices
-              : ["No services selected"],
-        },
+  // Створюємо дані для Facebook API
+  const eventData = [
+    {
+      event_name: "Lead",
+      event_time: Math.floor(Date.now() / 1000),
+      user_data: {
+        ph: hashedPhone,
       },
-    ];
+      custom_data: {
+        currency: "EUR",
+        value: parseFloat(totalPrice.replace(/[^\d.-]/g, "")) || 0,
+        services:
+          selectedServices.length > 0
+            ? selectedServices
+            : ["No services selected"],
+      },
+    },
+  ];
 
-    const apiVersion = "v12.0";
-    const pixelId = "927079089087237"; 
-    const token =
-"EAA2CZAuNcWIABOzULs5stMMqb4B25WsrL6ep01cJof4Tt1QiSqV8aecnwjhX4RX44bUqFVgu8GpgzwlQXhMhAYjAt8IXHJr1RrOZAYVAsmgwZCerArmZAqGR6nzcuW2IUQKxtA1BWoqI2NpZBlyVoYx19utRGR0mopDMOuhFfUGPakpV2RjVHi8yU33SvvENeqwZDZD"
-    await sendPostRequest(apiVersion, pixelId, token, eventData);
+  // Відправляємо дані на Facebook
+  const apiVersion = "v12.0";
+  const pixelId = "927079089087237"; 
+  const token = "EAA2CZAuNcWIABO2teerfXDNZBl8JVBckLyweuI4I4hy528XsJXjE3dfNZCd64XROdKGRZBNQKx1FMcijLGr0AddqZARHid3kZA9psJP7VYWS6dTkZAAihJkRRZCBCtbRfP5REZCVqPGD4DqF3yvzBi3cHCs0AaDEU6X5nHWYa4pHxHhHN53ZAzQbDZBG7UAsD00Yr7ZAsQZDZD";
+  await sendPostRequest(apiVersion, pixelId, token, eventData);
 
-    Toastify({
-      text: successMessage,
-      duration: 3000,
-      close: true,
-      gravity: "top",
-      position: "center",
-      backgroundColor: "#4CAF50", // Зеленый для успеха
-    }).showToast();
+  // Відправка AJAX запиту до PHP скрипта
+  const formData = new FormData();
+  formData.append('name', name);
+  formData.append('phone', phone);
+  formData.append('car_make', carMake);
+  formData.append('car_model', carModel);
+  formData.append('services', selectedServices.join(", "));
+  formData.append('total_price', totalPrice);
+  formData.append('utm_data', JSON.stringify(clickedLinks.map(link => ({
+    href: link.href,
+    utm_source: link.utm_source,
+    utm_medium: link.utm_medium,
+    utm_campaign: link.utm_campaign,
+    timestamp: link.timestamp
+  }))));
 
-    // Сброс формы и закрытие модалки
+  const response = await fetch('send_email.php', {
+    method: 'POST',
+    body: formData
+  });
+
+  const result = await response.text();
+  if (result === 'Лист успішно відправлений') {
     modalForm.reset();
     closeModal();
-  } 
-  catch (error) {
-    console.error("Ошибка:", error);
-    Toastify({
-      text: "Ошибка отправки данных. Попробуйте позже.",
-      duration: 3000,
-      close: true,
-      gravity: "top",
-      position: "center",
-      backgroundColor: "#FF6347", // Красный для ошибки
-    }).showToast();
+    alert('Заявка успішно надіслана!');
+  } else {
+    alert('Сталася помилка при відправці заявки!');
   }
 });

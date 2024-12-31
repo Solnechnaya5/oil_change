@@ -1,8 +1,7 @@
-
 const carSelect = document.querySelector("#car_make");
 const modelSelect = document.querySelector("#car_model");
 const carSelectedValue = carSelect.value;
-const openModals = document.querySelectorAll(".open-popup");
+const cardButtons = document.querySelectorAll(".open-popup");
 const modalWindow = document.getElementById("modal_window");
 const closeModalBtn = document.querySelector(".modal_close_btn");
 const modalForm = document.querySelector(".modal_form");
@@ -11,7 +10,7 @@ const modalResult = document.getElementById("result");
 const modalPhoneInput = document.querySelector(".input_phone");
 const lang = localStorage.getItem("selectedLang");
 
-// Close Modal
+//Close Modal
 function closeModal() {
   const lang = localStorage.getItem("selectedLang");
   modalWindow.classList.remove("active");
@@ -31,25 +30,32 @@ function closeModal() {
 function resetFormFields() {
   const form = modalWindow.querySelector(".modal_form");
   form.reset();
-  form.querySelector('input[type="tel"]').value = "+000000000000";
+  form.querySelector('input[type="tel"]').value = "+43";
   document.getElementById("car_model").innerHTML =
-  lang === "en"
-  ? '<option value="" disabled selected>Choose your car model!</option>'
-  :lang==="de"
-  ?'<option value="" disabled selected>Wählen Sie Ihr Automodell!</option>'
-  :lang==="ua"
-  ?'<option value="" disabled selected>Виберіть свою модель автомобіля!</option>'
-  : "Language not supported";
+    '<option value="" disabled selected>Спочатку оберіть марку авто!</option>';
 }
-// open modal
-openModals.forEach((button) => {
+
+cardButtons.forEach((button) => {
   button.addEventListener("click", () => {
     modalWindow.classList.add("active");
   });
 });
 
+modalWindow.addEventListener("mousedown", (event) => {
+  if (event.target !== modalWindow) {
+    return;
+  }
+  closeModal();
+});
+
 closeModalBtn.addEventListener("click", () => {
   closeModal();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeModal();
+  }
 });
 
 
@@ -215,8 +221,8 @@ carSelect.addEventListener("change", () => {
 });
 
 // CALCULATOR
-const changeOil = 20;
-const changeFilter = 25;
+const changeOil = 30;
+const changeFilter = 30;
 const additional = 30;
 
 
@@ -351,10 +357,8 @@ document.querySelectorAll("input[type='checkbox']").forEach((checkbox) => {
   checkbox.addEventListener("change", calculateTotal);
 });
 
-
-
 // Input Phone Validate
-const phoneInputs = document.querySelectorAll("#input_phone");
+const phoneInputs = document.querySelectorAll(".input_phone");
 const itiInstances = [];
 
 // Инициализация полей для intlTelInput
@@ -483,7 +487,7 @@ const sendPostRequest = async (apiVersion, pixelId, token, eventData) => {
   }
 };
 
-// Обработчик отправки формы
+
 
 modalForm.addEventListener("submit", async (e) => {
   e.preventDefault(); // Отмена стандартного поведения формы
@@ -493,7 +497,9 @@ modalForm.addEventListener("submit", async (e) => {
   const phoneInput = modalForm.querySelector(".input_phone");
   const carMake = modalForm.querySelector("#car_make").value;
   const carModel = modalForm.querySelector("#car_model").value;
-  const acceptPolitics = modalForm.querySelector('#politics' ).checked;
+  const acceptPolitics = modalForm.querySelector(
+    'input[type="checkbox"][required]'
+  ).checked;
   const selectedServices = Array.from(
     modalForm.querySelectorAll(
       ".modal_form_services input[type='checkbox']:checked"
@@ -565,7 +571,7 @@ modalForm.addEventListener("submit", async (e) => {
 
   // Формируем сообщение
   const message = `
-    Нова заявка:\nНазва сайту: Change Oil\nІм'я: ${name}\nТелефон: ${
+    Нова заявка:\nНазва сайту: Turbo Autroservice\nІм'я: ${name}\nТелефон: ${
     phoneInput.value
   }\nМарка авто: ${carMake}\nМодель авто: ${carModel}\nПослуги: ${
     selectedServices.length > 0 ? selectedServices.join(", ") : "Не обрані"
@@ -584,31 +590,34 @@ modalForm.addEventListener("submit", async (e) => {
   // Параллельная отправка в Telegram и EmailJS
   try {
     // Отправка в Telegram
-    // const telegramResponse = await fetch(
-    //   `https://api.telegram.org/bot8197764205:AAE-XbNUdeNg39ufCTNgo5wLMP_8lp75eXw/sendMessage`,
-    //   {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       chat_id: "-1002295760352",
-    //       text: message,
-    //     }),
-    //   }
-    // );
+    const telegramResponse = await fetch(
+      `https://api.telegram.org/bot8197764205:AAE-XbNUdeNg39ufCTNgo5wLMP_8lp75eXw/sendMessage`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          chat_id: "-1002295760352",
+          text: message,
+        }),
+      }
+    );
 
-    // if (!telegramResponse.ok) {
-    //   throw new Error("Не удалось отправить сообщение в Telegram");
-    // }
+    if (!telegramResponse.ok) {
+      throw new Error("Не удалось отправить сообщение в Telegram");
+    }
 
     // Отправка в EmailJS
-    emailjs.init("sw_H53g2nxrTjDn9T"); // Инициализация EmailJS
+    // Инициализация EmailJS
+    emailjs.init({
+      publicKey: "izUn8c8DGbhnXBEc8",
+    });
     const emailResponse = await emailjs.send(
-      "service_os6nxms",
-      "template_zmaa8mkt",
+      "service_q0nga99",
+      "template_5mwmhdt",
       {
-        from_name: "Назва сайту - Turbo Autoservice",
+        from_name: "Назва сайту - Oil change",
         name: `${name}`,
         carType: `${carMake}`,
         service: `${
