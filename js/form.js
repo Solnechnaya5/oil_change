@@ -487,8 +487,6 @@ const sendPostRequest = async (apiVersion, pixelId, token, eventData) => {
   }
 };
 
-
-
 modalForm.addEventListener("submit", async (e) => {
   e.preventDefault(); // Отмена стандартного поведения формы
 
@@ -571,7 +569,7 @@ modalForm.addEventListener("submit", async (e) => {
 
   // Формируем сообщение
   const message = `
-    Нова заявка:\nНазва сайту: Turbo Autroservice\nІм'я: ${name}\nТелефон: ${
+    Нова заявка:\nЗАМІНА ОЛИВИ\nІм'я: ${name}\nТелефон: ${
     phoneInput.value
   }\nМарка авто: ${carMake}\nМодель авто: ${carModel}\nПослуги: ${
     selectedServices.length > 0 ? selectedServices.join(", ") : "Не обрані"
@@ -617,7 +615,7 @@ modalForm.addEventListener("submit", async (e) => {
       "service_q0nga99",
       "template_5mwmhdt",
       {
-        from_name: "Назва сайту - Oil change",
+        from_name: "Назва сайту - SchnellAutoÖl.at",
         name: `${name}`,
         carType: `${carMake}`,
         service: `${
