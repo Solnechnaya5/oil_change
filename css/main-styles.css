@@ -21,6 +21,13 @@ body {
 #calendar .Hqb7Ue {
   display: none !important;
 }
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+.goog-te-combo{
+  height: 30px !important;
+  background: var(--orange);
+}
 /* logo */
 .company-logo-icon {
   width: 120px;
@@ -210,6 +217,7 @@ body {
   font-weight: 700;
   line-height: 110%;
   text-align: center;
+  background-color: var(--shadow-black2);
 }
 .second-title {
   color: var(--title-color);
@@ -233,7 +241,9 @@ body {
 }
 
 .top-content_wiget-subtitle {
-  color: var(--black);
+  color: white;
+  background-color: var(--shadow-black2);
+  
 }
 /* color bg */
 .orange-bg {
@@ -375,7 +385,7 @@ body {
   margin-right: 30px;
 }
 .banner-btn {
-  width: auto;
+  width: 240px;
   height: 40px;
   padding: 10px 15px;
 }

@@ -381,7 +381,7 @@ const translations = {
     promo_service_1: {
         ua: "Заміна масла на: якісне фірмове моторне масло з бочки.",
         en: "Oil change to: high-quality branded motor oil from a barrel.",
-        de: "ÖÖlwechsel auf: hochwertiges Marken-Motoröl aus dem Fass."
+        de: "Ölwechsel auf: hochwertiges Marken-Motoröl aus dem Fass."
     },
     promo_service_2: {
         ua: "Поміняємо масляний фільтр і подбаємо про екологічну утилізацію старих деталей.",

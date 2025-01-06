@@ -16,14 +16,7 @@ function closeModal() {
   modalWindow.classList.remove("active");
   closeModalBtn.classList.remove("active");
   resetFormFields();
-  modalResult.textContent =
-    lang === "en"
-      ? "Total cost from: €0.00"
-      : lang === "de"
-      ? "Summe ab: €0.00"
-      : lang === "ua"
-      ? "Сума від: €0.00"
-      : "Language not supported";
+  modalResult.textContent = "Gesamtkosten ab: €0.00";
   modalPhoneInput.style.border = "";
 }
 
@@ -32,7 +25,7 @@ function resetFormFields() {
   form.reset();
   form.querySelector('input[type="tel"]').value = "+43";
   document.getElementById("car_model").innerHTML =
-    '<option value="" disabled selected>Спочатку оберіть марку авто!</option>';
+    '<option value="" disabled selected>Bitte wählen Sie zuerst eine Automarke!</option>';
 }
 
 cardButtons.forEach((button) => {
@@ -350,7 +343,7 @@ function calculateTotal() {
     total += additional * multiplier;
   }
 
-  resultDisplay.textContent = `Total cost from: €${total.toFixed(2)}`;
+  resultDisplay.textContent = `Gesamtkosten ab: €${total.toFixed(2)}`;
 }
 
 document.querySelectorAll("input[type='checkbox']").forEach((checkbox) => {
@@ -569,7 +562,7 @@ modalForm.addEventListener("submit", async (e) => {
 
   // Формируем сообщение
   const message = `
-    Нова заявка:\nЗАМІНА ОЛИВИ\nІм'я: ${name}\nТелефон: ${
+    Нова заявка:\n з сайту oil.avtoinstallservis.site - ЗАМІНА ОЛИВИ\nІм'я: ${name}\nТелефон: ${
     phoneInput.value
   }\nМарка авто: ${carMake}\nМодель авто: ${carModel}\nПослуги: ${
     selectedServices.length > 0 ? selectedServices.join(", ") : "Не обрані"
@@ -615,7 +608,7 @@ modalForm.addEventListener("submit", async (e) => {
       "service_q0nga99",
       "template_5mwmhdt",
       {
-        from_name: "Назва сайту - SchnellAutoÖl.at",
+        from_name: "Нова заявка: з сайту oil.avtoinstallservis.site - ЗАМІНА ОЛИВИ",
         name: `${name}`,
         carType: `${carMake}`,
         service: `${
