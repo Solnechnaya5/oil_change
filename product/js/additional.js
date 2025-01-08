@@ -34,6 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
   counters.forEach((counter) => observer.observe(counter));
 });
 //   sliders
+const usefullInfoSwiper = new Swiper(".usefull-info-slider", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  autoplay: {
+    delay: 5000,
+  },
+});
 
 const testimonialsSwiper = new Swiper(".testimonials-slider", {
   slidesPerView: 2,
