@@ -320,6 +320,7 @@ body {
   align-items: center;
 }
 .site-header_messengers {
+  display: flex;
   margin-right: 30px;
 }
 .site-header_messengers a {
@@ -344,7 +345,6 @@ body {
 .site-header__navigation {
   width: 100%;
   display: flex;
-  justify-content: center;
 }
 #lang_select {
   background-color: var(--orange);
@@ -1071,6 +1071,8 @@ body {
 .site-footer__navigation:visited,
 .privacy-policy,
 .privacy-policy:visited,
+.public-offer-link,
+.public-offer-link:visited,
 .copyright {
   display: flex;
   align-items: center;
@@ -1216,4 +1218,14 @@ body {
 }
 .policy-p {
   margin-bottom: 30px;
+}
+.public-offer .subtitle{
+text-align: left;
+margin: 30px 0;
+}
+.public-offer-link{
+  margin-left: 15px;
+}
+.footer-low{
+  display: flex;
 }
