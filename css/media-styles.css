@@ -970,11 +970,11 @@
         right: 40px;
     
     }
-    .company-logo-icon {
+    /* .company-logo-icon {
         width: 120px;
         height: 60px;
         fill: var(--orange);
-    }
+    } */
     .company-logo_footer img {
         width: auto;
         height: 100px;
@@ -1123,7 +1123,7 @@
     }
     .company-logo {
         height: 70px;
-        width: 90px;
+        width: 70px;
         margin-right: 20px;
     }
     .goog-te-combo{

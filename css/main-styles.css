@@ -29,9 +29,10 @@ body {
   background: var(--orange);
 }
 /* logo */
-.company-logo-icon {
-  width: 120px;
-  height: 60px;
+.company-logo {
+  display: block;
+  width: 100px;
+  height: 100px;
   fill: var(--orange);
 }
 .company-logo_footer img {
@@ -335,6 +336,7 @@ body {
 }
 .company-logo {
   display: flex;
+  width: 100px;
   height: 100px;
   /* margin-right: 120px; */
   margin-right: 50px;
@@ -1055,7 +1057,7 @@ body {
 }
 .company-logo_footer {
   display: block;
-  width: 120px;
+  width: 100px;
   height: 100px;
   margin-bottom: 30px;
 }
