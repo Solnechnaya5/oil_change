@@ -18,6 +18,9 @@
     .site-header_contacts{
         flex-wrap: wrap;
     }
+    .site-header {
+        height: 150px;
+    }
 }
 @media (max-width: 1241px) {
     /* titles */
