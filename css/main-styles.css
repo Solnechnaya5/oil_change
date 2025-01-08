@@ -141,7 +141,7 @@ body {
 }
 .site-container_first {
   position: relative;
-  height: calc(100vh + 90px);
+  height: calc(100vh + 135px);
   width: 100%;
   display: flex;
   justify-content: center;
